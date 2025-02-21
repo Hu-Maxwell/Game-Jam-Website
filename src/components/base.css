@@ -1,0 +1,64 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* removes the weird gap at the top */ 
+    padding: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+/* 
+==============================
+HEADER 
+==============================
+*/ 
+
+header {
+    background: green;
+    color: white; /* why is header color not white???? */ 
+    padding: 15px 0; 
+}
+
+nav ul {
+    list-style: none; /* removes the bulletpoints */ 
+    padding: 0; /* less fat */
+    margin: 0;
+    display: flex; /* flexes horizontally by default */ 
+    justify-content: right; /* moves list to the right */ 
+}
+
+nav ul li {
+    margin: 0 15px; /* every part of the list has a bit of margin now */ 
+}
+
+nav ul li a {
+    text-decoration: none; /* removes the link underline */ 
+    font-size: 18px;
+}
+
+/* 
+==============================
+HEADER 
+==============================
+*/ 
+
+
+/* 
+==============================
+FOOTER 
+==============================
+*/
+
+footer { 
+    /* how do i get the footer to the bottom lol */
+    /* if all the other elements are not big enough, the footer will float */  
+    padding: 20px;
+    background: blue;
+}
+
+.socials img {
+    width: 30px;
+    margin: 0 10px;
+}

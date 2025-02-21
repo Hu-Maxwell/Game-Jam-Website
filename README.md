@@ -8,6 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 <h1>Set Up</h1>
-<h3>1. Clone repo: "git clone https://github.com/Hu-Maxwell/Game-Jam-Website.git"</h3>
-<h3>2. Run "npm install"</h3>
-<h3>3. Start the localhost environment using "npm run dev"</h3>
+<h4>1. Clone repo: "git clone https://github.com/Hu-Maxwell/Game-Jam-Website.git"</h4>
+<h4>2. Run "npm install"</h4>
+<h4>3. Start the localhost environment using "npm run dev"</h4>

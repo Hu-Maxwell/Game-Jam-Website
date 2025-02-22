@@ -1,0 +1,19 @@
+.sponsors {
+    background-color: red;
+    text-align: center;
+    padding: 20px;
+
+    width: 1000px;  
+    height: 200px;
+    margin: 20px auto; 
+}
+
+.sponsors h2 {
+    font-size: 28px;
+    color: white;
+}
+
+.sponsors p {
+    font-size: 18px;
+    color: lightgray;
+}

@@ -1,8 +1,8 @@
 import "./footer.css"
 
-import tiktokIcon from "./../../assets/tiktok.png";
-import instagramIcon from "./../../assets/instagram.png";
-import discordIcon from "./../../assets/discord.png";
+import tiktokIcon from "@assets/tiktok.png";
+import instagramIcon from "@assets/instagram.png";
+import discordIcon from "@assets/discord.png";
 
 const Footer = () => {
     return (

@@ -1,0 +1,33 @@
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 10vw;
+    padding-top: 10vh;
+}
+
+.box-left {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 4vh;
+    background-color: #80D0C7;
+    border-radius: 2rem;
+}
+
+.left-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.left-image-placeholder {
+    width: fit-content;
+    height: 200px;
+}

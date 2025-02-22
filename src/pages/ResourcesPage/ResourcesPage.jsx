@@ -1,18 +1,17 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
-import Res from "./components/ResourcesMain/ResourcesMain";
+import Resources from "./components/ResourcesMain/ResourcesMain";
 
-
-import "./resources-page.css";
+import styles from "./resources-page.module.css";
 
 const ResourcesPage = () => {
     return (
-        <>
+        <div className={styles.page}>
             <NavBar />
-            <Res /> 
+            <Resources /> 
             <Footer />
-        </>
+        </div>
     );
 };
 

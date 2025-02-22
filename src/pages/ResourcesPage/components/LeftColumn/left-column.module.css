@@ -1,4 +1,4 @@
-.left-column {
+.leftColumn {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -6,13 +6,13 @@
     padding-top: 10vh;
 }
 
-.box-left {
+.boxLeft {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
 
-.image-container {
+.imageContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -21,13 +21,13 @@
     border-radius: 2rem;
 }
 
-.left-title {
+.leftTitle {
     font-size: 30px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.left-image-placeholder {
+.leftImagePlaceholder {
     width: fit-content;
     height: 200px;
 }

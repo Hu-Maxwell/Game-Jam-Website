@@ -1,22 +1,22 @@
-import "./right-column.css";
+import styles from "./right-column.module.css";
 
 import catTutor from "@assets/cat-1.jpg"
 
 const RightColumn = () => {
     return (
-        <div className="right-column">
-            <span className="mentors-title">Mentors</span>
-            <div className="box-right">
-                <img className="image-placeholder" src={catTutor} alt="Mentor"/>
-                <div className="box-text">
-                    <span className="box-title">Placeholder mentor name</span>
+        <div className={styles.rightColumn}>
+            <span className={styles.mentorsTitle}>Mentors</span>
+            <div className={styles.boxRight}>
+                <img className={styles.imagePlaceholder} src={catTutor} alt="Mentor"/>
+                <div className={styles.boxText}>
+                    <span className={styles.boxTitle}>Placeholder mentor name</span>
                     <p>Some information about mentors: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
             </div>
-            <div className="box-right">
-                <img className="image-placeholder" src={catTutor} alt="Mentor"/>
-                <div className="box-text">
-                    <span className="box-title">Placeholder mentor name</span>
+            <div className={styles.boxRight}>
+                <img className={styles.imagePlaceholder} src={catTutor} alt="Mentor"/>
+                <div className={styles.boxText}>
+                    <span className={styles.boxTitle}>Placeholder mentor name</span>
                     <p>Some information about mentors: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
             </div>

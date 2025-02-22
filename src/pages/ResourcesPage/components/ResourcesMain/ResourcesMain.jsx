@@ -1,12 +1,13 @@
-import "./resources-main.css";
 import LeftColumn from "./../LeftColumn/LeftColumn";
 import RightColumn from "./../RightColumn/RightColumn";
 
-const ressss = () => {
+import styles from "./resources-main.module.css";
+
+const Resources = () => {
     return (
-        <section className="resources-main">
-            <h1 className="resources-title">Resources</h1>
-            <div className="resources-body">
+        <section className={styles.resourcesMain}>
+            <h1 className={styles.resourcesTitle}>Resources</h1>
+            <div className={styles.resourcesBody}>
                 <LeftColumn />
                 <RightColumn />
             </div>
@@ -14,4 +15,4 @@ const ressss = () => {
     );
 };
 
-export default ressss;
+export default Resources;

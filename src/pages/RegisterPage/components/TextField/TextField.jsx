@@ -1,4 +1,4 @@
-import "./text-field.css"
+import styles from "./text-field.module.css"
 
 const TextField = () => {
     return (
@@ -9,5 +9,3 @@ const TextField = () => {
 };
 
 export default TextField; 
-
-// do i name it FAQSmall or FaqSmall???

@@ -1,12 +1,16 @@
 import "./footer.css"
 
+import tiktokIcon from "./../../assets/tiktok.png";
+import instagramIcon from "./../../assets/instagram.png";
+import discordIcon from "./../../assets/discord.png";
+
 const Footer = () => {
     return (
         <footer>
             <div className="socials">
-                <a href="#"><img src="images/tiktok.png" alt="TikTok" /></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
-                <a href="#"><img src="images/discord.png" alt="Discord" /></a>
+                <a href="#"><img src={tiktokIcon} alt="TikTok" /></a>
+                <a href="#"><img src={instagramIcon} alt="Instagram" /></a>
+                <a href="#"><img src={discordIcon} alt="Discord" /></a>
             </div>
         </footer>
     );

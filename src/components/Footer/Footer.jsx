@@ -6,7 +6,7 @@ import discordIcon from "@assets/discord.png";
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <div className="socials">
                 <a href="#"><img src={tiktokIcon} alt="TikTok" /></a>
                 <a href="#"><img src={instagramIcon} alt="Instagram" /></a>

@@ -6,7 +6,6 @@ import Location from "./components/Location/Location";
 import Team from "./components/Team/Team";
 import ContactInfo from "./components/ContactInfo/ContactInfo";
 
-
 import "./contact-page.css";
 
 const ContactPage = () => {

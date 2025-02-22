@@ -1,10 +1,10 @@
-footer {
+.footer {
     padding: 20px;
     background: blue;
     text-align: center;
 }
 
-.socials img {
+.footer .socials img {
     width: 30px;
     margin: 0 10px;
 }

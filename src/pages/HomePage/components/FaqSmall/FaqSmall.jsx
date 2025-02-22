@@ -1,8 +1,8 @@
-import "./faqsmall.css"
+import styles from "./faqsmall.module.css"
 
 const FaqSmall = () => {
     return (
-        <section className="faq">
+        <section className={styles.faq}>
             <h2>FAQ</h2>
             <p>PLACEHOLDER</p>
         </section>

@@ -2,7 +2,7 @@ import "./navbar.css";
 
 const NavBar = () => {
     return (
-        <header>
+        <header className="navbar">
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -11,7 +11,7 @@ const NavBar = () => {
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="https://itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a></li>
-                    <li><a href="https://forms.google.com">Register</a></li>
+                    <li><a href="/register">Register</a></li>
                 </ul>
             </nav>
         </header>

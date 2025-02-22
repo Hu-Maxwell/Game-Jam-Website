@@ -6,18 +6,18 @@ import Location from "./components/Location/Location";
 import Team from "./components/Team/Team";
 import ContactInfo from "./components/ContactInfo/ContactInfo";
 
-import "./contact-page.css";
+import styles from "./contact-page.module.css";
 
 const ContactPage = () => {
     return (
-        <>
+        <div className={styles.page}>
             <NavBar />
             <Contact />
             <Location />
             <Team />
             <ContactInfo />
             <Footer />
-        </>
+        </div>
     );
 };
 

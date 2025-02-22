@@ -1,9 +1,9 @@
-.team-section {
+.teamSection {
     text-align: center;
     margin: 20px 0;
 }
 
-.people-grid {
+.peopleGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(2, auto);  
@@ -12,6 +12,6 @@
     align-items: center;
 }
 
-.team-member {
+.teamMember {
     text-align: center;
 }

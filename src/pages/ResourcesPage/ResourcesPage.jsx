@@ -1,16 +1,14 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
-import Res from "./components/ResourcesMain/ResourcesMain";
-
-
 import "./resources-page.css";
+import ResourcesBody from "./components/ResourcesMain/ResourcesMain";
 
 const ResourcesPage = () => {
     return (
         <>
             <NavBar />
-            <Res /> 
+            <ResourcesBody/> 
             <Footer />
         </>
     );

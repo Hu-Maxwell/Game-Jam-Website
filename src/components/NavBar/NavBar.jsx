@@ -2,17 +2,18 @@ import "./navbar.css";
 
 const NavBar = () => {
     return (
-        <header className="navbar">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/resources">Resources</a></li>
-                    <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="https://itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a></li>
-                    <li><a href="/register">Register</a></li>
-                </ul>
+        <header className="header">
+            <div className="websitename">
+                Game Jam Website
+            </div>
+            <nav className="navbar">
+                <a className="navbutton" href="/">Home</a>
+                <a className="navbutton" href="/about">About</a>
+                <a className="navbutton" href="/contact">Contact</a>
+                <a className="navbutton" href="/schedule">Schedule</a>
+                <a className="navbutton" href="/resources">Resources</a>
+                <a className="navbutton"  target="_blank" rel="noopener noreferrer">Itch.io</a>
+                <a className="navbutton" href="https://forms.google.com">Register</a>
             </nav>
         </header>
     );

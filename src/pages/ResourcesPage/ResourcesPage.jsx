@@ -6,11 +6,11 @@ import ResourcesBody from "./components/ResourcesMain/ResourcesMain";
 
 const ResourcesPage = () => {
     return (
-        <>
+        <div className={styles.page}>
             <NavBar />
             <ResourcesBody/> 
             <Footer />
-        </>
+        </div>
     );
 };
 

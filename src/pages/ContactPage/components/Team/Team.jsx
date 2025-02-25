@@ -1,6 +1,7 @@
 import styles from "./team.module.css";
 
 import personPlaceholder from "@assets/white_square_1.png";
+import secondPerson from "@assets/audacity.png";
 
 const teamMembers = [
     "Person 1",
@@ -11,6 +12,15 @@ const teamMembers = [
     "Person 6"
 ];
 
+const memberImages = [
+    personPlaceholder,
+    secondPerson,
+    personPlaceholder,
+    personPlaceholder,
+    personPlaceholder,
+    personPlaceholder
+]
+
 const TeamSection = () => {
     return (
         <section className={styles.teamSection}>
@@ -19,7 +29,7 @@ const TeamSection = () => {
 
                 {teamMembers.map((member, index) => (
                     <div key={index} className={styles.teamMember}>
-                        <img src={personPlaceholder} alt="Placeholder" width="200px" />
+                        <img src={memberImages[index]} alt="Picture of team member" width="200px" />
                         <p>{member}</p>
                     </div>
                 ))}

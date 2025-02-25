@@ -6,7 +6,6 @@ const ContactInfo = () => {
             <p className="header">
                 To keep up to date with all the latest club news, follow our Twitter and Discord at XXX.
             </p>
-            <p>For inquiries, please contact us at EMAIL.</p>
         </section>
     );
 };

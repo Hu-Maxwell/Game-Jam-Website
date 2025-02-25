@@ -1,7 +1,7 @@
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
-import "./resources-page.css";
+import styles from "./resources-page.module.css";
 import ResourcesBody from "./components/ResourcesMain/ResourcesMain";
 
 const ResourcesPage = () => {

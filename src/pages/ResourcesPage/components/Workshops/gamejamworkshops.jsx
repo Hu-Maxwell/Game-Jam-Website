@@ -1,41 +1,40 @@
-import "./gamejamworkshops.css";
+import styles from "./game-jam-workshops.module.css";
 
 const GameJamWorkshops = () => {
     return (
-        <section className="Workshop-Container">
-            <span className="title">Workshops</span>
-            <div className="Workshop-section-container">
-                <div className="Workshop-container">
-                    <img className="Workshop-icon"/>
-                    <div className="Workshop-desc-container">
-                        <span className="Workshop-title">Workshop Name</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 1</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 2</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 3</span>
+        <section className={styles.workshopContainer}>
+            <span className={styles.title}>Workshops</span>
+            <div className={styles.workshopSectionContainer}>
+                <div className={styles.workshopContainer}>
+                    <img className={styles.workshopIcon} />
+                    <div className={styles.workshopDescContainer}>
+                        <span className={styles.workshopTitle}>Workshop Name</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 1</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 2</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 3</span>
                     </div>
                 </div>
-                <div className="Workshop-container">
-                    <img className="Workshop-icon"/>
-                    <div className="Workshop-desc-container">
-                        <span className="Workshop-title">Workshop Name</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 1</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 2</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 3</span>
+                <div className={styles.workshopContainer}>
+                    <img className={styles.workshopIcon} />
+                    <div className={styles.workshopDescContainer}>
+                        <span className={styles.workshopTitle}>Workshop Name</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 1</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 2</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 3</span>
                     </div>
                 </div>
-                <div className="Workshop-container">
-                    <img className="Workshop-icon"/>
-                    <div className="Workshop-desc-container">
-                        <span className="Workshop-title">Workshop Name</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 1</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 2</span>
-                        <span className="Workshop-desc"> Important Workshop Fact 3</span>
+                <div className={styles.workshopContainer}>
+                    <img className={styles.workshopIcon} />
+                    <div className={styles.workshopDescContainer}>
+                        <span className={styles.workshopTitle}>Workshop Name</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 1</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 2</span>
+                        <span className={styles.workshopDesc}> Important Workshop Fact 3</span>
                     </div>
                 </div>
-
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default GameJamWorkshops
+export default GameJamWorkshops;

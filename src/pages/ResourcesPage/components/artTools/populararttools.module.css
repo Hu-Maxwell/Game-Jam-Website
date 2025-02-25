@@ -1,4 +1,4 @@
-.Container {
+.container {
     width: 45vw;
     height: fit-content;
     display: flex;
@@ -13,7 +13,7 @@
     font-weight: 600;
 }
 
-.game-engine-container {
+.artToolContainer {
     display: flex;
     width: 75%;
     height: fit-content;
@@ -24,26 +24,27 @@
     box-shadow: 5px 5px 0px 0px #C5D2A7;
 }
 
-.game-engine-icon {
+.artToolIcon {
     width: 10vw;
     margin-right: 2vw;
 }
 
-.game-engine-desc-container {
+.artToolDescContainer {
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-.game-engine-title {
+.artToolTitle {
     font-size: 28px;
     color: #C5D2A7;
     margin-bottom: 10px;
     font-weight: bolder;
 }
 
-.game-engine-reason {
+.artToolReason {
     font-size: 16px;
     margin-top: 12px;
     color: #306230;
 }
+

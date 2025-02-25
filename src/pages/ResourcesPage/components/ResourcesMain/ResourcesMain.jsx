@@ -1,25 +1,27 @@
-import "./resources-main.css";
-import PopularGameEngines from "../Popular-Game-Engines/populargameengines";
-import pixelTree from "../../../../assets/pixeltree2.png"
+import styles from "./resources-main.module.css";
+
+import pixelTree from "@assets/pixeltree2.png"
+
 import GameJamWorkshops from "../Workshops/gamejamworkshops";
-import PopularArtTools from "../art-tools/populararttools";
-import PopularSoundTools from "../sound-tools/popularsoundtools";
+import PopularGameEngines from "../PopularGameEngines/populargameengines";
+import PopularArtTools from "../artTools/populararttools";
+import PopularSoundTools from "../soundTools/popularSoundTools";
 
 const ResourcesBody = () => {
     return (
-        <section className="resources-main">
-            <h1 className="resources-title">Resources</h1>
-            <div className="body-container">
+        <section className={styles.resourcesMain}>
+            <h1 className={styles.resourcesTitle}>Resources</h1>
+            <div className={styles.bodyContainer}>
                 <GameJamWorkshops/>
                 <PopularGameEngines />
             </div>
-            <div className="body-container">
+            <div className={styles.bodyContainer}>
                 <PopularSoundTools />
                 <PopularArtTools />
             </div>
             <div className="resourcesfooter">
-                <img src={pixelTree} className="img"/>
-                <img src={pixelTree} className="img"/>
+                <img src={pixelTree} className={styles.img}/>
+                <img src={pixelTree} className={styles.img}/>
             </div>
         </section>
     );

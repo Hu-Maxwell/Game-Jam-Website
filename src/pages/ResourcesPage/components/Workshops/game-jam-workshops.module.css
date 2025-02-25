@@ -1,4 +1,4 @@
-.Workshop-Container {
+.workshopContainer {
     width: 45vw;
     height: fit-content;
     display: flex;
@@ -14,7 +14,7 @@
     font-weight: 600;
 }
 
-.Workshop-section-container {
+.workshopSectionContainer {
     display: flex;
     width: 90%;
     height: 30vh;
@@ -24,14 +24,14 @@
     justify-content: space-between;
 }
 
-.Workshop-container {
+.workshopContainer {
     display: flex;
     flex-direction: column;
     width: 24%;
     height: fit-content;
 }
 
-.Workshop-icon {
+.workshopIcon {
     width: 100%;
     height: 20vh;
     background-color: #C5D2A7;
@@ -39,20 +39,20 @@
     box-shadow: 5px 5px 0px 0px #306230;
 }
 
-.Workshop-desc-container {
+.workshopDescContainer  {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     width: 100%;
 }
 
-.Workshop-title {
+.workshopTitle {
     font-size: 20px;
     color: #C5D2A7;
     margin-bottom: 5px;
 }
 
-.Workshop-desc {
+.workshopDesc {
     text-align: start;
     margin-top: 5px;
     font-size: 15px;

@@ -5,13 +5,29 @@
 
 .peopleGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, auto);  
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
 .teamMember {
     text-align: center;
+    max-width: 100%;
+}
+
+.teamMember img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px){
+    .peopleGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px){
+    .peopleGrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

@@ -1,6 +1,6 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
-
+import FullPizza from "./FullPizza";
 
 import styles from "./schedule-page.module.css";
 
@@ -9,7 +9,7 @@ const SchedulePage = () => {
         <div className={styles.page}>
             <NavBar />
             <main>
-                <p>schedule</p>
+                <FullPizza />
             </main>
             <Footer />
         </div>

@@ -1,5 +1,9 @@
 .contactTitle {
     text-align: center;
     font-size: 36px;
-    color: white;
+    color: #723e19;
+    background-color: #cca173;
+    margin: 20px;
+    border: 6px solid #723e19;
+    padding: 30px;
 }

@@ -1,7 +1,7 @@
 import styles from "./team.module.css";
 
-import personPlaceholder from "@assets/white_square_1.png";
-import secondPerson from "@assets/audacity.png";
+import personPlaceholder from "@assets/wizard.png";
+import secondPerson from "@assets/wizard.png";
 
 const teamMembers = [
     "Person 1",

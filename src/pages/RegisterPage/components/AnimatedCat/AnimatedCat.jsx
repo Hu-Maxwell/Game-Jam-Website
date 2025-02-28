@@ -8,7 +8,8 @@ import catFrame3 from "@assets/catFrame/catFrame3.png";
 import catFrame4 from "@assets/catFrame/catFrame4.png"; 
 import catFrame5 from "@assets/catFrame/catFrame5.png"; 
 
-const frames = [catFrame1, catFrame2, catFrame3, catFrame4, catFrame5, catFrame2]; 
+// this is absolutely terrible but it's fine for now 
+const frames = [catFrame1, catFrame2, catFrame2, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1, catFrame1]; 
 
 const AnimatedCat = () => {
     // at first, useState(0) assigns 0 to curFrame
@@ -20,7 +21,7 @@ const AnimatedCat = () => {
         const interval = setInterval(() => {
             // prev is the most recent frame
             setFrameIndex((prev) => (prev + 1) % frames.length); 
-        }, 500); 
+        }, 100); 
     
         return () => clearInterval(interval);
     }, []);   

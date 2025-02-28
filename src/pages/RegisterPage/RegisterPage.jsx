@@ -10,7 +10,7 @@ import styles from "./register-page.module.css";
 
 const RegisterPage = () => {
     return (
-        <>
+        <div className={styles.page}>
             <NavBar />
 
             <div className={styles.questionContainer}>
@@ -26,7 +26,7 @@ const RegisterPage = () => {
             </div> 
 
             <Footer />
-        </>
+        </div>
     );
 };
 

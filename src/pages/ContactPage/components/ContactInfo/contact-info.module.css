@@ -1,9 +1,40 @@
 .contactInfo {
-    text-align: center;
     margin-top: 30px;
     color: white;
 }
 
-.contactInfo .connect {
-    font-size: 20px;
+.contactText {
+    height: 500px;
+    margin-bottom: 100px;
+}
+
+#connect {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    float: right;
+    border-style: double;
+    margin-top: -20px;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    font-size:larger;
+}
+
+.contactImages {
+    margin-top: -20px;
+    position:absolute;
+    width: 49%;
+    border: double;
+    height: 500px;
+    float: left;
+}
+#contactImg1 {
+    width: 75%;
+    height: 75%;
+    border:solid;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
 }

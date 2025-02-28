@@ -7,3 +7,23 @@
     border: 6px solid #723e19;
     padding: 30px;
 }
+
+.contactTitle {
+    animation: transitionIn 1s;
+}
+
+#test {
+    transition-duration: 1s;
+    transform:translateY(90px);
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform:translateY(-90px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}

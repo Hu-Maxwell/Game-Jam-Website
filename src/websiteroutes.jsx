@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router"
-import Homepage from "./pages/HomePage/homepage"
-import ContactPage from "./pages/contactpage/contactpage"
-import ResourcesPage from "./pages/resourcespage/resourcespage"
-import SchedulePage from "./pages/schedulepage/schedulepage"
-import AboutPage from "./pages/aboutpage/aboutpage"
+import Homepage from "./pages/HomePage/HomePage"
+import ContactPage from "./pages/ContactPage/ContactPage"
+import ResourcesPage from "./pages/ResourcesPage/ResourcesPage"
+import SchedulePage from "./pages/SchedulePage/SchedulePage"
+import AboutPage from "./pages/AboutPage/AboutPage"
 import RegisterPage from  "./pages/RegisterPage/RegisterPage"
 
 function WebsiteRoutes() {

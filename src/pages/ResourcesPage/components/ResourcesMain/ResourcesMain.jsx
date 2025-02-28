@@ -3,8 +3,8 @@ import styles from "./resources-main.module.css";
 import pixelTree from "@assets/pixeltree2.png"
 
 import GameJamWorkshops from "../Workshops/gamejamworkshops";
-import PopularGameEngines from "../PopularGameEngines/populargameengines";
-import PopularArtTools from "../artTools/populararttools";
+import PopularGameEngines from "../PopularGameEngines/popularGameEngines";
+import PopularArtTools from "../artTools/popularArtTools";
 import PopularSoundTools from "../soundTools/popularSoundTools";
 
 const ResourcesBody = () => {

@@ -1,6 +1,6 @@
 import styles from "./populargameengines.module.css";
-import UnityIcon from "../../../../assets/unity.png";
-import GodotIcon from "../../../../assets/Godot.png";
+import UnityIcon from "@assets/unity.png";
+import GodotIcon from "@assets/godot.png";
 
 const PopularGameEngines = () => {
     return (

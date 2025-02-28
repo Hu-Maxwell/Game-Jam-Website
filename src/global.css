@@ -1,0 +1,6 @@
+/* this file removes the gap at the top because css modules cannot do that with .page */
+
+body {
+    margin: 0; /* removes the weird gap at the top */ 
+    padding: 0;
+}

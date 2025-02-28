@@ -1,3 +1,12 @@
+.page {
+    font-family: Arial, sans-serif;
+    margin: 0; /* removes the weird gap at the top */ 
+    padding: 0;
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+
 .questionContainer {
     display: flex;
     justify-content: space-between;
@@ -8,7 +17,7 @@
     box-sizing: border-box;
 }
 
-.dragon {
+.animatedCat {
     flex: 1;
     display: flex;
     justify-content: center;

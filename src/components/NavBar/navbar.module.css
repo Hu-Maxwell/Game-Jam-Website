@@ -9,19 +9,20 @@
     padding-right: 1vw;
 }
 
+/* navbar or navBar?? */
 .navbar {
     display: flex;
     align-items: center;
     width: fit-content;
 }
 
-.websitename {
+.websiteName {
     font-size: 40px;
     color: #C5D2A7;
     font-weight: 900;
 }
 
-.navbutton {
+.navButton {
     display: flex;
     width: 5vw;
     height: 4vh;

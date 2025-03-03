@@ -1,19 +1,19 @@
-import "./navbar.css";
+import styles from "./navbar.module.css";
 
 const NavBar = () => {
     return (
-        <header className="header">
-            <div className="websitename">
+        <header className={styles.header}>
+            <div className={styles.websiteName}>
                 Game Jam Website
             </div>
-            <nav className="navbar">
-                <a className="navbutton" href="/">Home</a>
-                <a className="navbutton" href="/about">About</a>
-                <a className="navbutton" href="/contact">Contact</a>
-                <a className="navbutton" href="/schedule">Schedule</a>
-                <a className="navbutton" href="/resources">Resources</a>
-                <a className="navbutton"  target="_blank" rel="noopener noreferrer">Itch.io</a>
-                <a className="navbutton" href="https://forms.google.com">Register</a>
+            <nav className={styles.navbar}>
+                <a className={styles.navButton} href="/">Home</a>
+                <a className={styles.navButton} href="/about">About</a>
+                <a className={styles.navButton} href="/contact">Contact</a>
+                <a className={styles.navButton} href="/schedule">Schedule</a>
+                <a className={styles.navButton} href="/resources">Resources</a>
+                <a className={styles.navButton}  target="_blank" rel="noopener noreferrer">Itch.io</a>
+                <a className={styles.navButton} href="/register">Register</a>
             </nav>
         </header>
     );

@@ -1,0 +1,6 @@
+.scrollImage {
+    /* makes scroll fixed width */
+    width: 200px; 
+    height: auto; 
+    display: block;
+}

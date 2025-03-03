@@ -1,27 +1,32 @@
-.questionContainer {
-    display: flex;
+.page {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.contentContainer {
+    display: flex; 
+
     justify-content: space-between;
     align-items: center;
+    
     width: 100%;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+    height: 100vh; 
+
+
+    /* is this okay for different screen sizes? */
 }
 
-.dragon {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* this is a bit complicated, cuz it creates its own flexbox AND acts as a child of the parent flexbox (contentContainer) */
+.animatedCatContainer, .questionContainer {
+    /* creates a flexbox in the left/right side of the screen */
+    display: flex; 
+    /* centers itself within the flexbox. e.g. in the middle of the left half */
+    justify-content: center; 
+
+
+    /* tells contentContainer that both the child containers want to grow the same amount. this makes it so left / right half are equal */
+    flex: 1; 
+    
 }
 
-.formContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    max-width: 400px;
-    margin-right: 50px;
-}
+

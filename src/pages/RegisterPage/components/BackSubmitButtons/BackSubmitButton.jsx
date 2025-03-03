@@ -1,6 +1,6 @@
-import styles from "./submit-button.module.css" 
+import styles from "./back-submit-button.module.css" 
 
-const SubmitButton = () => {
+const BackSubmitButton = () => {
     return (
         <div>
             <button className={styles.btn}>Submit</button>

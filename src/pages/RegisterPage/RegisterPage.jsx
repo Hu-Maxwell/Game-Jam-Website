@@ -13,12 +13,11 @@ const RegisterPage = () => {
             <NavBar />
 
             <div className={styles.contentContainer}> 
-                <div className={styles.catContainer}> 
-                    <AnimatedCat className={styles.AnimatedCat}/>
+                <div className={styles.animatedCatContainer}> 
+                    <AnimatedCat />
                 </div>
-
-                <div>
-                    <Question className={styles.formContainer} />
+                <div className={styles.questionContainer}>
+                    <Question />
                 </div>
             </div> 
     

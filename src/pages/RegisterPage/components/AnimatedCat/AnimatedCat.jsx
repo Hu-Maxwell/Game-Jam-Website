@@ -28,7 +28,7 @@ const AnimatedCat = () => {
 
     return (
         <div>
-            <img src={frames[frameIndex]} alt="Cat" />
+            <img className={styles.animatedCat} src={frames[frameIndex]} alt="Cat" />
         </div>
     );
 };

@@ -9,8 +9,6 @@ import AnimatedScroll from "../AnimatedScroll/AnimatedScroll";
 const Question = () => {
     return (
         <>
-            <TextField />
-
             <div className={styles.scrollContainer}> 
                 <AnimatedScroll />
 
@@ -18,9 +16,6 @@ const Question = () => {
                     <InputField />
                 </div>
             </div> 
-
-
-            <SubmitButton />
         </> 
     );
 }

@@ -1,10 +1,7 @@
 import styles from "./question.module.css"; 
 
-import TextField from "../TextField/TextField";
-import InputField from "../InputField/InputField";
-import SubmitButton from "../SubmitButton/SubmitButton";
-
 import AnimatedScroll from "../AnimatedScroll/AnimatedScroll";
+import InputField from "../InputField/InputField";
 
 const Question = () => {
     return (

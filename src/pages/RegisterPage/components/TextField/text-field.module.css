@@ -1,0 +1,23 @@
+.speechBubbleContainer {
+    display: flex;
+
+    position: relative;
+    align-items: center;
+    
+    width: fit-content; 
+}
+
+.textFieldContainer {
+    position: absolute;
+    top: 35%; 
+    left: 38%; 
+}
+
+
+.speechBubble {
+    height: 35vh;
+}
+
+.textBox {
+    /* set font here */
+}

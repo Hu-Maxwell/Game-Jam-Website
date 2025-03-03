@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer";
 
 import AnimatedCat from "./components/AnimatedCat/AnimatedCat";
 import Question from "./components/Question/Question";
+import TextField from "./components/TextField/TextField";
 
 import styles from "./register-page.module.css";
 
@@ -12,11 +13,21 @@ const RegisterPage = () => {
         <div className={styles.page}>
             <NavBar />
 
+            {/* styling using containers instead of container itself to center on 
+                left and right half easier */}
+
             <div className={styles.contentContainer}> 
-                {/* styling using containers instead of container itself to center on left and right half easier */}
+                {/* left */}
                 <div className={styles.animatedCatContainer}> 
                     <AnimatedCat />
                 </div>
+
+                {/* middle (this has absolute positioning) */}
+                <div className={styles.textFieldContainer}> 
+                    <TextField /> 
+                </div>
+
+                {/* right */}
                 <div className={styles.questionContainer}>
                     <Question />
                 </div>

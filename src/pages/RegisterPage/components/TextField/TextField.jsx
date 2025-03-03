@@ -1,10 +1,16 @@
 import styles from "./text-field.module.css"
 
+import speechBubble from "@assets/speechBubble.png";
+
 const TextField = () => {
     return (
-        <section className="textField">
-            <p>What is your name, traveler? </p>
-        </section>
+        <div className={styles.speechBubbleContainer}> 
+            <img className={styles.speechBubble} src={speechBubble} alt="speech bubble" /> 
+
+            <div className={styles.textFieldContainer}>
+                <p className={styles.textField }>Enter your name. </p>
+            </div>
+        </div> 
     );
 };
 

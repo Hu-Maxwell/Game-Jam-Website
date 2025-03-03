@@ -25,8 +25,11 @@
 
 
     /* tells contentContainer that both the child containers want to grow the same amount. this makes it so left / right half are equal */
-    flex: 1; 
-    
+    flex: 1;     
 }
 
-
+.textFieldContainer {
+    position: absolute; 
+    top: 8%; 
+    left: 47%;
+}

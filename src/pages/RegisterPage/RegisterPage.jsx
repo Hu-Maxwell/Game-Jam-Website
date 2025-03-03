@@ -13,6 +13,7 @@ const RegisterPage = () => {
             <NavBar />
 
             <div className={styles.contentContainer}> 
+                {/* styling using containers instead of container itself to center on left and right half easier */}
                 <div className={styles.animatedCatContainer}> 
                     <AnimatedCat />
                 </div>

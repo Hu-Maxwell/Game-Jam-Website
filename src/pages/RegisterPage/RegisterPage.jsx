@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import AnimatedCat from "./components/AnimatedCat/AnimatedCat";
 import Question from "./components/Question/Question";
 import TextField from "./components/TextField/TextField";
+import BackSubmitButton from "./components/BackSubmitButton/BackSubmitButton";
 
 import styles from "./register-page.module.css";
 
@@ -30,6 +31,7 @@ const RegisterPage = () => {
                 {/* right */}
                 <div className={styles.questionContainer}>
                     <Question />
+                    <BackSubmitButton />
                 </div>
             </div> 
     

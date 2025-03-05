@@ -17,14 +17,23 @@
 }
 
 /* this is a bit complicated, cuz it creates its own flexbox AND acts as a child of the parent flexbox (contentContainer) */
-.animatedCatContainer, .questionContainer {
+.animatedCatContainer {
     /* creates a flexbox in the left/right side of the screen */
     display: flex; 
     /* centers itself within the flexbox. e.g. in the middle of the left half */
     justify-content: center; 
 
-
     /* tells contentContainer that both the child containers want to grow the same amount. this makes it so left / right half are equal */
+    flex: 1;     
+}
+
+.questionContainer { 
+    display: flex; 
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
     flex: 1;     
 }
 

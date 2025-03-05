@@ -11,3 +11,7 @@
 6. style textbox / scroll 
 
 7. create background 
+
+- component name "Question" is stupid. change it to scroll or scrollInput or something
+
+https://medium.com/@ozhanli/passing-data-from-child-to-parent-components-in-react-e347ea60b1bb

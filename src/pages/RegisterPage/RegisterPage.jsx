@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 // change to @ later
@@ -20,7 +22,17 @@ const questions = [
     // if first question, back button is gone 
     // if last question, next becomes "submit"
 
+// pass these props to button: questions.length and questionIndex 
+    // in button: have useEffect 
+        // this adjusts the button text / if its clickable or not according to the question array
+
 const RegisterPage = () => {
+    const [questionIndex, setQuestionIndex]= useState(0); 
+
+    const onQuestionChange = (newIndex) => {
+        setQuestionIndex(newIndex)
+    }
+
     return (
         <div className={styles.page}>
             <NavBar />
@@ -36,13 +48,17 @@ const RegisterPage = () => {
 
                 {/* middle (this has absolute positioning) */}
                 <div className={styles.textFieldContainer}> 
-                    <TextField /> 
+                    <TextField question={questions[questionIndex]} /> 
                 </div>
 
                 {/* right */}
                 <div className={styles.questionContainer}>
                     <Question />
-                    <BackSubmitButton />
+                    <BackSubmitButton 
+                        onQuestionChange={onQuestionChange}
+                        questionIndex={questionIndex}
+                        questionLength={questions.length}
+                    />
                 </div>
             </div> 
     

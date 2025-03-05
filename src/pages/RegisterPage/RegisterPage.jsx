@@ -9,6 +9,17 @@ import BackSubmitButton from "./components/BackSubmitButton/BackSubmitButton";
 
 import styles from "./register-page.module.css";
 
+const questions = [ 
+    "what is your name", 
+    "what is your major", 
+    "question 3 ayayayay", 
+    "question 4 nnonoon"
+];
+
+// when buttons is clicked, move the questionIndex up one
+    // if first question, back button is gone 
+    // if last question, next becomes "submit"
+
 const RegisterPage = () => {
     return (
         <div className={styles.page}>

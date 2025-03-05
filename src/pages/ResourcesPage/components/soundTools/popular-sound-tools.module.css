@@ -1,4 +1,4 @@
-.soundToolsContainer {
+.Container {
     width: 45vw;
     height: fit-content;
     display: flex;
@@ -31,21 +31,21 @@
     height: fit-content;
 }
 
+
 .soundToolsIcon {
-    width: 100%;
+    max-width: 100%;
     height: 20vh;
     object-fit: contain;
     background-color: #C5D2A7;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 0px 0px #306230;
-
 }
 
 .soundToolsDescContainer {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    width: 100%;
+    max-width: 100%;
 }
 
 .soundToolsTitle {

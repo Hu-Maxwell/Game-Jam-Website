@@ -5,10 +5,10 @@ import Chiptone from "@assets/chiptone.png";
 
 const PopularSoundTools = () => {
     return (
-        <section className={styles.soundToolsContainer}>
+        <section className={styles.Container}>
             <span className={styles.title}>Popular Sound Tools</span>
             <div className={styles.soundToolsSectionContainer}>
-                <div className={styles.soundToolsContainerItem}>
+                <div className={styles.soundToolsContainer}>
                     <img className={styles.soundToolsIcon} src={Chiptone} />
                     <div className={styles.soundToolsDescContainer}>
                         <span className={styles.soundToolsTitle}>ChipTone</span>
@@ -17,7 +17,7 @@ const PopularSoundTools = () => {
                         <span className={styles.soundToolsDesc}>You may want to use Chiptone because of reason 1</span>
                     </div>
                 </div>
-                <div className={styles.soundToolsContainerItem}>
+                <div className={styles.soundToolsContainer}>
                     <img className={styles.soundToolsIcon} src={Audacity} />
                     <div className={styles.soundToolsDescContainer}>
                         <span className={styles.soundToolsTitle}>Audacity</span>
@@ -26,7 +26,7 @@ const PopularSoundTools = () => {
                         <span className={styles.soundToolsDesc}>You may want to use Audacity because of reason 1</span>
                     </div>
                 </div>
-                <div className={styles.soundToolsContainerItem}>
+                <div className={styles.soundToolsContainer}>
                     <img className={styles.soundToolsIcon} src={Bfxr} />
                     <div className={styles.soundToolsDescContainer}>
                         <span className={styles.soundToolsTitle}>Bfxr</span>

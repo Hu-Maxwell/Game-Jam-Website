@@ -2,7 +2,7 @@ import styles from "./game-jam-workshops.module.css";
 
 const GameJamWorkshops = () => {
     return (
-        <section className={styles.workshopContainer}>
+        <section className={styles.container}>
             <span className={styles.title}>Workshops</span>
             <div className={styles.workshopSectionContainer}>
                 <div className={styles.workshopContainer}>

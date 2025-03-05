@@ -7,6 +7,7 @@ import PopularGameEngines from "../PopularGameEngines/popularGameEngines";
 import PopularArtTools from "../artTools/popularArtTools";
 import PopularSoundTools from "../soundTools/popularSoundTools";
 
+
 const ResourcesBody = () => {
     return (
         <section className={styles.resourcesMain}>
@@ -19,7 +20,7 @@ const ResourcesBody = () => {
                 <PopularSoundTools />
                 <PopularArtTools />
             </div>
-            <div className="resourcesfooter">
+            <div className={styles.resourcesFooter}>
                 <img src={pixelTree} className={styles.img}/>
                 <img src={pixelTree} className={styles.img}/>
             </div>

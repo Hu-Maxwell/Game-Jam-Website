@@ -1,7 +1,7 @@
 @font-face {
     font-family: scrollFont;
     /* how do i use default filepath??? */
-    src: url(./../../../../assets/fonts/Hypertiroid.otf);
+    src: url(@assets/fonts/Hypertiroid.otf);
 }
 
 .inputField { 

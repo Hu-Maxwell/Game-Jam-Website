@@ -2,21 +2,27 @@ import {useState, useEffect} from "react";
 
 import styles from "./animated-scroll.module.css" 
 
-import scroll1 from "@assets/scroll/scroll1.png"; 
-import scroll2 from "@assets/scroll/scroll2.png";
-import scroll3 from "@assets/scroll/scroll3.png";
-import scroll4 from "@assets/scroll/scroll4.png";
-import scroll5 from "@assets/scroll/scroll5.png";
-import scroll6 from "@assets/scroll/scroll6.png";
-import scroll7 from "@assets/scroll/scroll7.png";
-import scroll8 from "@assets/scroll/scroll8.png";
-import scroll9 from "@assets/scroll/scroll9.png";
-import scroll10 from "@assets/scroll/scroll10.png";
-import scroll11 from "@assets/scroll/scroll11.png";
-import scroll12 from "@assets/scroll/scroll12.png";
+// i chatgpted this, but here's all i understand about the code
 
-// this is absolutely terrible but it's fine for now 
-const frames = [scroll1, scroll2, scroll3, scroll4, scroll5, scroll6, scroll7, scroll8, scroll9, scroll10, scroll11, scroll12]; 
+// import.meta.glob() 
+    // returns object where: 
+        // keys are filepath
+        // values are the imported file
+// eager: true
+
+// Object.entries
+    // array of key-value pairs
+    // ["/src/assets/scroll/1.png", "http://localhost:3000/assets/1.png"], [ next file path, next image url ]
+
+// then this is sorted with .sort
+// finally, .map takes only the URLs, which is the actual imported file
+
+const frames = Object.entries(
+    import.meta.glob("/src/assets/scroll/*.png", { eager: true, as: "url" })
+)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([_, url]) => url);
+
 
 const AnimatedScroll = () => {
     // at first, useState(0) assigns 0 to curFrame

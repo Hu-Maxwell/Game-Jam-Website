@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./populargameengines.module.css";
 
 import UnityIcon from "@assets/resources/unity.png";
@@ -48,6 +50,10 @@ const PopularGameEngines = ({ DisplayProps }) => {
             </button>
         </section>
     );
+};
+
+PopularGameEngines.propTypes = {
+    DisplayProps: PropTypes.any,
 };
 
 export default PopularGameEngines;

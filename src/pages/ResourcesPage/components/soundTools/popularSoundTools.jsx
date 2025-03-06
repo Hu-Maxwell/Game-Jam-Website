@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./popular-sound-tools.module.css";
 import Audacity from "@assets/resources/audacity.png";
 import Bfxr from "@assets/resources/bfxr.png";
@@ -64,5 +66,10 @@ const PopularSoundTools = ({ DisplayProps }) => {
         </section>
     );
 };
+
+PopularSoundTools.propTypes = {
+    DisplayProps: PropTypes.any,
+};
+
 
 export default PopularSoundTools;

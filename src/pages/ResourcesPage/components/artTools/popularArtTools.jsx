@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./populararttools.module.css";
 
 import Aesprite from "@assets/resources/aesprite.png";
@@ -49,5 +51,10 @@ const PopularArtTools = ({ DisplayProps }) => {
         </section>
     );
 };
+
+PopularArtTools.propTypes = {
+    DisplayProps: PropTypes.any,
+};
+
 
 export default PopularArtTools;

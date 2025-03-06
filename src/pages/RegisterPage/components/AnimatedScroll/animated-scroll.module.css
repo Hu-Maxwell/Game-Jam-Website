@@ -3,4 +3,10 @@
     width: 600px; 
     height: auto; 
     display: block;
+    transform: perspective(600px) rotateX(30deg);
+    /* commented out for now! this is important 
+    transform: rotate(90deg); */
+    transform-origin: top center;
+    image-rendering: pixelated;
 }
+

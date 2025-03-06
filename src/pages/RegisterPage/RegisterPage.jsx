@@ -35,7 +35,6 @@ const RegisterPage = () => {
 
     return (
         <div className={styles.page}>
-            <NavBar />
 
             {/* styling using containers instead of container itself to center on 
                 left and right half easier */}
@@ -54,11 +53,14 @@ const RegisterPage = () => {
                 {/* right */}
                 <div className={styles.scrollInputContainer}>
                     <ScrollInput />
-                    <BackSubmitButton 
+                    
+                    <div className={styles.backSubmitButtonContainer}> 
+                    <BackSubmitButton
                         onQuestionChange={onQuestionChange}
                         questionIndex={questionIndex}
                         questionLength={questions.length}
                     />
+                    </div>
                 </div>
             </div> 
     

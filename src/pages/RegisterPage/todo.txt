@@ -1,3 +1,11 @@
+idea: 
+
+- cat sitting on the left
+- scroll on the right, laying flat, on table
+- 
+
+
+
 X. create the textbox, should be on the center of the page 
 
 X. create buttons below scroll

@@ -1,0 +1,7 @@
+.animatedCat {
+    width: 600px;
+    image-rendering: pixelated;
+
+    /* flips across its y axis */
+    transform: scaleX(-1); 
+}

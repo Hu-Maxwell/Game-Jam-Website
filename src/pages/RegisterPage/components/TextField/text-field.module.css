@@ -9,15 +9,22 @@
 
 .textFieldContainer {
     position: absolute;
-    top: 35%; 
-    left: 38%; 
+    bottom: 8%; 
+    left: 20%; 
 }
-
 
 .speechBubble {
-    height: 35vh;
+    width: 600px;
+    image-rendering: pixelated;
 }
 
-.textBox {
-    /* set font here */
+@font-face {
+    font-family: pixelFont;
+    /* how do i use default filepath??? */
+    src: url(@assets/fonts/PixelifySans.ttf);
+}
+
+.textField {
+    font-family: pixelFont;
+    font-size: 40px;
 }

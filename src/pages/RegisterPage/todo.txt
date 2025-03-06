@@ -23,6 +23,8 @@ X. make textbox change question when back / next clicked
 
 8. add assets
 
-- component name "Question" is stupid. change it to scroll or scrollInput or something
+X. component name "Question" is stupid. change it to scroll or scrollInput or something
+
+X. The glob option "as" has been deprecated in favour of "query". Please update `as: 'url'` to `query: '?url', import: 'default'`.
 
 https://medium.com/@ozhanli/passing-data-from-child-to-parent-components-in-react-e347ea60b1bb

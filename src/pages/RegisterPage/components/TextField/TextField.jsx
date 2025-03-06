@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import styles from "./text-field.module.css"
 
-import speechBubble from "@assets/speechBubble.png";
+import speechBubble from "@assets/register/speechBubble/speechBubble.png";
 
 const TextField = ({ question }) => {
     return (

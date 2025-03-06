@@ -2,9 +2,9 @@ import {useState, useEffect} from "react";
 
 import styles from "./animated-cat.module.css" 
 
-import catFrame1 from "@assets/catFrame/catFrame1.png"; 
-import catFrame2 from "@assets/catFrame/catFrame2.png"; 
-import catFrame3 from "@assets/catFrame/catFrame3.png"; 
+import catFrame1 from "@assets/register/catFrame/catFrame1.png"; 
+import catFrame2 from "@assets/register/catFrame/catFrame2.png"; 
+import catFrame3 from "@assets/register/catFrame/catFrame3.png"; 
 
 const frames = [catFrame1, catFrame2, catFrame3, catFrame2]; 
 

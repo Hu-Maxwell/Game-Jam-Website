@@ -1,8 +1,8 @@
 import styles from "./popular-sound-tools.module.css";
-import Audacity from "@assets/resourcespage/audacity.png";
-import Bfxr from "@assets/resourcespage/bfxr.png";
-import Chiptone from "@assets/resourcespage/chiptone.png";
-import Sound from "@assets/resourcespage/sound.png"
+import Audacity from "@assets/resources/audacity.png";
+import Bfxr from "@assets/resources/bfxr.png";
+import Chiptone from "@assets/resources/chiptone.png";
+import Sound from "@assets/resources/sound.png"
 
 const PopularSoundTools = ({ DisplayProps }) => {
     const {

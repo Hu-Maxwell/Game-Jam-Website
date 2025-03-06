@@ -1,7 +1,8 @@
-import Aesprite from "@assets/resourcespage/aesprite.png";
-import Procreate from "@assets/resourcespage/procreate.png";
 import styles from "./populararttools.module.css";
-import Paintbrush from "@assets/resourcespage/paintbrush.png"
+
+import Aesprite from "@assets/resources/aesprite.png";
+import Procreate from "@assets/resources/procreate.png";
+import Paintbrush from "@assets/resources/paintbrush.png"
 
 const PopularArtTools = ({ DisplayProps }) => {
     const {

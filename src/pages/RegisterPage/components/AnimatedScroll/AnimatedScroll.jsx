@@ -18,7 +18,7 @@ import styles from "./animated-scroll.module.css"
 // finally, .map takes only the URLs, which is the actual imported file
 
 const frames = Object.entries(
-    import.meta.glob("/src/assets/scroll/*.png", { eager: true, as: "url" })
+    import.meta.glob("/src/assets/register/scroll/*.png", { eager: true, as: "url" })
 )
     .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
     .map(([_, url]) => url);

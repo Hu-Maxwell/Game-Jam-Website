@@ -3,5 +3,5 @@
     image-rendering: pixelated;
 
     /* flips across its y axis */
-    transform: scaleX(-1); 
-}
+    transform: perspective(600px) rotateX(20deg) scaleX(-1);
+}  

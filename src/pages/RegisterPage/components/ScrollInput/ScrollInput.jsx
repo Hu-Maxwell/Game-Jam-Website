@@ -1,9 +1,9 @@
-import styles from "./question.module.css"; 
+import styles from "./scroll-input.module.css"; 
 
 import AnimatedScroll from "../AnimatedScroll/AnimatedScroll";
 import InputField from "../InputField/InputField";
 
-const Question = () => {
+const ScrollInput = () => {
     return (
         <>
             <div className={styles.scrollContainer}> 
@@ -17,4 +17,4 @@ const Question = () => {
     );
 }
 
-export default Question;
+export default ScrollInput;

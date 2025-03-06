@@ -27,7 +27,7 @@
     flex: 1;     
 }
 
-.questionContainer { 
+.scrollInputContainer { 
     display: flex; 
     flex-direction: column;
 

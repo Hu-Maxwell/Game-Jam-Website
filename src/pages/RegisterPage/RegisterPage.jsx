@@ -5,7 +5,7 @@ import Footer from "@/components/Footer/Footer";
 // change to @ later
 
 import AnimatedCat from "./components/AnimatedCat/AnimatedCat";
-import Question from "./components/Question/Question";
+import ScrollInput from "./components/ScrollInput/ScrollInput";
 import TextField from "./components/TextField/TextField";
 import BackSubmitButton from "./components/BackSubmitButton/BackSubmitButton";
 
@@ -52,8 +52,8 @@ const RegisterPage = () => {
                 </div>
 
                 {/* right */}
-                <div className={styles.questionContainer}>
-                    <Question />
+                <div className={styles.scrollInputContainer}>
+                    <ScrollInput />
                     <BackSubmitButton 
                         onQuestionChange={onQuestionChange}
                         questionIndex={questionIndex}

@@ -3,6 +3,7 @@ X. create the textbox, should be on the center of the page
 X. create buttons below scroll
 
 X. make textbox change question when back / next clicked
+- link whatevers at the textbox later
 
 4. make function for scroll to open / close whenever submit or back is clicked 
 

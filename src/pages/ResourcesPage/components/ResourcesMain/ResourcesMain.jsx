@@ -1,14 +1,15 @@
-import styles from "./resources-main.module.css";
-
-import pixelTree from "@assets/resourcespage/pixeltree2.png"
+import { useState } from "react";
 
 import GameJamWorkshops from "../Workshops/gamejamworkshops";
-import PopularGameEngines from "../PopularGameEngines/popularGameEngines";
-import PopularArtTools from "../artTools/popularArtTools";
-import PopularSoundTools from "../soundTools/popularSoundTools";
-import { useState } from "react";
-import logs from "@assets/resourcespage/logs.png"
-import test from "@assets/resourcespage/test.png"
+import GameEngines from "../GameEngines/GameEngines";
+import ArtTools from "../ArtTools/ArtTools";
+import SoundTools from "../SoundTools/SoundTools";
+
+import styles from "./resources-main.module.css";
+
+import pixelTree from "@assets/resources/pixeltree2.png"
+import logs from "@assets/resources/logs.png"
+import test from "@assets/resources/test.png"
 
 const ResourcesBody = () => {
     const [displayWorkshopInfo, setDisplayWorkshopInfo] = useState(false);
@@ -68,11 +69,11 @@ const ResourcesBody = () => {
             </div>
             <div className={styles.bodyContainer}>
                 <GameJamWorkshops DisplayProps={DisplayProps}/>
-                <PopularGameEngines DisplayProps={DisplayProps}/>
+                <GameEngines DisplayProps={DisplayProps}/>
             </div>
             <div className={styles.bodyContainer}>
-                <PopularSoundTools DisplayProps={DisplayProps}/>
-                <PopularArtTools DisplayProps={DisplayProps}/>
+                <SoundTools DisplayProps={DisplayProps}/>
+                <ArtTools DisplayProps={DisplayProps}/>
             </div>
             <div className={styles.resourcesFooter}>
                 <img src={pixelTree} className={styles.img}/>

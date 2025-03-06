@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
+
 import styles from "./game-jam-workshops.module.css";
-import Hammer from "@assets/resourcespage/hammer.png"
+import Hammer from "@assets/resources/hammer.png"
 
 const GameJamWorkshops = ({ DisplayProps }) => {
     const {
@@ -55,5 +57,9 @@ const GameJamWorkshops = ({ DisplayProps }) => {
         </section>
     );
 };
+
+GameJamWorkshops.propTypes = {
+    DisplayProps: PropTypes.any,
+}
 
 export default GameJamWorkshops;

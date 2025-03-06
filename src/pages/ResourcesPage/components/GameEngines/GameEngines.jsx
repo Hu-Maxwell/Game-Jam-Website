@@ -1,9 +1,12 @@
-import styles from "./populargameengines.module.css";
-import UnityIcon from "@assets/resourcespage/unity.png";
-import GodotIcon from "@assets/resourcespage/godot.png";
-import Gear from "@assets/resourcespage/gear.png"
+import PropTypes from "prop-types";
 
-const PopularGameEngines = ({ DisplayProps }) => {
+import styles from "./game-engines.module.css";
+
+import UnityIcon from "@assets/resources/unity.png";
+import GodotIcon from "@assets/resources/godot.png";
+import Gear from "@assets/resources/gear.png"
+
+const GameEngines = ({ DisplayProps }) => {
     const {
         setDisplayWorkshopInfo,
         setGameEngineInfo,
@@ -49,4 +52,8 @@ const PopularGameEngines = ({ DisplayProps }) => {
     );
 };
 
-export default PopularGameEngines;
+GameEngines.propTypes = {
+    DisplayProps: PropTypes.any,
+};
+
+export default GameEngines;

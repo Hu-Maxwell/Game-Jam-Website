@@ -1,7 +1,10 @@
-import Aesprite from "@assets/resourcespage/aesprite.png";
-import Procreate from "@assets/resourcespage/procreate.png";
-import styles from "./populararttools.module.css";
-import Paintbrush from "@assets/resourcespage/paintbrush.png"
+import PropTypes from "prop-types";
+
+import styles from "./art-tools.module.css";
+
+import Aesprite from "@assets/resources/aesprite.png";
+import Procreate from "@assets/resources/procreate.png";
+import Paintbrush from "@assets/resources/paintbrush.png"
 
 const PopularArtTools = ({ DisplayProps }) => {
     const {
@@ -48,5 +51,10 @@ const PopularArtTools = ({ DisplayProps }) => {
         </section>
     );
 };
+
+PopularArtTools.propTypes = {
+    DisplayProps: PropTypes.any,
+};
+
 
 export default PopularArtTools;

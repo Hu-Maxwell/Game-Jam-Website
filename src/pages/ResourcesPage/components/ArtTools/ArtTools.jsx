@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import styles from "./populararttools.module.css";
+import styles from "./art-tools.module.css";
 
 import Aesprite from "@assets/resources/aesprite.png";
 import Procreate from "@assets/resources/procreate.png";

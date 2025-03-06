@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 
-import styles from "./popular-sound-tools.module.css";
 import Audacity from "@assets/resources/audacity.png";
 import Bfxr from "@assets/resources/bfxr.png";
 import Chiptone from "@assets/resources/chiptone.png";
 import Sound from "@assets/resources/sound.png"
+
+import styles from "./sound-tools.module.css";
+
 
 const PopularSoundTools = ({ DisplayProps }) => {
     const {

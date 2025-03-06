@@ -8,5 +8,8 @@
 }
 
 .inputContainer {
+    /* why does position: absolute default to middle of scroll?? */
     position: absolute;
+    top: 20%; 
+    left: 15%; 
 }

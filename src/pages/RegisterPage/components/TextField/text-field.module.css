@@ -1,0 +1,30 @@
+.speechBubbleContainer {
+    display: flex;
+
+    position: relative;
+    align-items: center;
+    
+    width: fit-content; 
+}
+
+.textFieldContainer {
+    position: absolute;
+    bottom: 8%; 
+    left: 20%; 
+}
+
+.speechBubble {
+    width: 600px;
+    image-rendering: pixelated;
+}
+
+@font-face {
+    font-family: pixelFont;
+    /* how do i use default filepath??? */
+    src: url(@assets/fonts/PixelifySans.ttf);
+}
+
+.textField {
+    font-family: pixelFont;
+    font-size: 40px;
+}

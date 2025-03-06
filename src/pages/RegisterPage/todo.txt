@@ -1,13 +1,28 @@
-1. create the textbox, should be on the center of the page 
+idea: 
 
-2. create buttons below scroll
+- cat sitting on the left
+- scroll on the right, laying flat, on table
+- 
 
-3. style the textbox
+
+
+X. create the textbox, should be on the center of the page 
+
+X. create buttons below scroll
+
+X. make textbox change question when back / next clicked
+- link whatevers at the textbox later
 
 4. make function for scroll to open / close whenever submit or back is clicked 
 
 5. create animation for textbox 
 
-6. style textbox / scroll 
+6. style everything
 
-7. create background 
+7. create background
+
+8. add assets
+
+- component name "Question" is stupid. change it to scroll or scrollInput or something
+
+https://medium.com/@ozhanli/passing-data-from-child-to-parent-components-in-react-e347ea60b1bb

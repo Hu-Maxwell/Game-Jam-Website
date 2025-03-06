@@ -1,0 +1,18 @@
+@font-face {
+    font-family: scrollFont;
+    /* how do i use default filepath??? */
+    src: url(@assets/fonts/Hypertiroid.otf);
+}
+
+.inputField { 
+    height: 5vh;
+    width: 25vh; 
+
+    font-family: scrollFont;
+    font-size: 30px;
+    
+    border: none; 
+    background: transparent;
+    transform: perspective(600px) rotateX(30deg);
+
+}

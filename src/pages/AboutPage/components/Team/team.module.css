@@ -13,12 +13,6 @@
     margin: auto;
 }
 
-.teamMember img {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-}
-
 @media (max-width: 1200px) {
     .peopleGrid {
         grid-template-columns: repeat(2, 1fr); 
@@ -32,3 +26,27 @@
         gap: 4px;
     }
 }
+
+.teamMember {
+    position: relative; /* Establishes a positioning context */
+  }
+  
+  .teamMember img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .teamMember p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  

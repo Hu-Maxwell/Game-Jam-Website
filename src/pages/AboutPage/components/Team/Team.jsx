@@ -29,7 +29,6 @@ const memberImages = [
 const TeamSection = () => {
     return (
         <section className={styles.teamSection}>
-            <h3 className={styles.header}>Our Team</h3>
             <div className={styles.peopleGrid}>
 
                 {teamMembers.map((member, index) => (

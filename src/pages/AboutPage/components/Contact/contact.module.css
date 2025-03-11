@@ -1,9 +1,54 @@
 .contactTitle {
     text-align: center;
-    font-size: 36px;
-    color: #723e19;
-    background-color: #cca173;
-    margin: 20px;
-    border: 6px solid #723e19;
-    padding: 30px;
+    font-size: 140px;
+    color: #dbdbdb;
+    background-color: rgba(47, 47, 47, 0.7);
+    margin: 0px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.contactContainer {
+    width: 100%;
+    height: 120vh;
+    background-image: url("@assets/grey-square.png"); 
+    margin: 0px;
+}
+
+@media (max-width: 2000px) {
+    .contactTitle {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .contactTitle {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contactTitle {
+        font-size: 70px;
+    }
+}
+
+.contactImage {
+    display: block;
+    margin: 20px auto 0;
+    max-width: 100%; 
+    height: auto;
+    width: 80;
+}
+
+@media (max-width: 900px) {
+    .contactImage {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 600px) {
+    .contactImage {
+        width: 100%;
+    }
 }

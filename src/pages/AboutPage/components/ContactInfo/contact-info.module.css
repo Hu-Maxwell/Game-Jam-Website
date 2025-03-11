@@ -1,9 +1,36 @@
 .contactInfo {
-    text-align: center;
-    margin-top: 30px;
-    color: white;
+    overflow: hidden; 
+    background-color: rgb(138, 138, 138); 
+    padding: 10px 0;
+    white-space: nowrap;
 }
 
-.contactInfo .connect {
+.marquee {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marqueeContent {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    min-width: 200%; 
+}
+
+.marqueeContent p {
     font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }

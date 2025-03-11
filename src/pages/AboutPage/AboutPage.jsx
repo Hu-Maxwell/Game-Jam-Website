@@ -12,8 +12,8 @@ const AboutPage = () => {
         <div className={styles.page}>
             <NavBar />
             <Contact />
-            <Team />
             <ContactInfo />
+            <Team />
             <Footer />
         </div>
     );

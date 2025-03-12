@@ -2,74 +2,113 @@ import React, { useState, useEffect } from "react";
 import PizzaSlice from "./PizzaSlice";
 
 const FullPizza = () => {
-  const [isRotating, setIsRotating] = useState(false); // Updates isRotating to false when initial load
-  const [rotationAngle, setRotationAngle] = useState(0); // Updates rotational angle (0 on default)
-  const [activeSlice, setActiveSlice] = useState(null); // Deactivates any hovered slices
+  // Keeps track of whether the pizza is spinning or not
+  const [isRotating, setIsRotating] = useState(false); 
 
+  // Stores the current angle of rotation (starts at 0)
+  const [rotationAngle, setRotationAngle] = useState(0); 
+
+  // Keeps track of which slice was clicked (null means none is selected)
+  const [clickedSlice, setClickedSlice] = useState(null); 
+
+  // Number of slices in the pizza (change this if you want more/less slices)
   const sliceCount = 8;
-  const radius = 150; // Adjust radius for pizza size
 
+  // Radius controls how big the pizza is
+  const radius = 150; 
 
+  // List of events, each slice will have one
+  const events = [
+    { name: "Event 1", description: "Description of Event 1" },
+    { name: "Event 2", description: "Description of Event 2" },
+    { name: "Event 3", description: "Description of Event 3" },
+    { name: "Event 4", description: "Description of Event 4" },
+    { name: "Event 5", description: "Description of Event 5" },
+    { name: "Event 6", description: "Description of Event 6" },
+    { name: "Event 7", description: "Description of Event 7" },
+    { name: "Event 8", description: "Description of Event 8" },
+  ];
 
+  // Handles clicking a slice—if it's already clicked, unselect it
+  const handleSliceClick = (index) => {
+    setClickedSlice(clickedSlice === index ? null : index);
+  };
 
-  // Handles the rotation
-  useEffect(() => { // Runs whenever isRotating changes
+  // Runs the rotation animation when isRotating is true
+  useEffect(() => { 
     let animationFrameId;
-    const rotate = () => { // Function for rotating the pizza
+
+    const rotate = () => {
       if (isRotating) {
-        setRotationAngle((prev) => (prev + 0.3) % 360); // Updates rotation angle by adding 0.3 to previous angle. "% 360" makes sure angle stays in between 0 - 359 degrees
-        animationFrameId = requestAnimationFrame(rotate); // Runs rotate() again on the next frame for smooth animation
+        setRotationAngle((prev) => (prev + 0.15) % 360); // Keeps adding to angle, resets at 360
+        animationFrameId = requestAnimationFrame(rotate); // Keeps looping to make it smooth
       }
     };
 
-    if (isRotating) { // Same code as above but it starts the animation
-      animationFrameId = requestAnimationFrame(rotate);
+    if (isRotating) {
+      animationFrameId = requestAnimationFrame(rotate); // Starts the animation
     }
 
-    return () => cancelAnimationFrame(animationFrameId); // Stops the animation when isRotating is toggled
+    return () => cancelAnimationFrame(animationFrameId); // Stops animation if isRotating is false
+  }, [isRotating]); // Runs this effect when isRotating changes
 
-  }, [isRotating]); // Effect only runs when isRotating changes 
-
-
-
+  // Figures out what event info to show
+  const renderEventInfo = () => {
+    if (clickedSlice !== null) {
+      // Show the event for the clicked slice
+      return (
+        <div>
+          <h2>{events[clickedSlice].name}</h2>
+          <p>{events[clickedSlice].description}</p>
+        </div>
+      );
+    } else {
+      // If nothing is clicked, just show a default event
+      return (
+        <div>
+          <h2>Current Event</h2>
+          <p>{events[0].description}</p>
+        </div>
+      );
+    }
+  };
 
   return (
-    <div style={{ position: "relative", width: "100vw", height: "100vh", overflow: "hidden" }}>
+    <div style={{ display: "flex", position: "relative", width: "100vw", height: "100vh", overflow: "hidden" }}>
       <svg 
-        width="175vw" // Makes SVG larger
-        height="175vh" // Makes SVG larger
-        viewBox={`${-radius} ${-radius} ${radius * 2} ${radius * 2}`} // Centers at (0,0) and covers the entire pizza wheel with (radius * 2) 
+        width="175vw" // Makes the pizza bigger
+        height="175vh" // Same as above
+        viewBox={`${-radius} ${-radius} ${radius * 2} ${radius * 2}`} // Centers everything nicely
         style={{
-          position: "absolute", // Keeps inside DIV but allows free positioning
-          left: "0",
-          //top: "50%",
-          transform: `translate(-50%, -50%) rotate(${rotationAngle}deg)`, // Moves center of pizza to center of screen and rotates pizza based on rotationAngle
-          overflow: "visible" //allows slices to extend beyond SVG bounds
+          position: "absolute", // Lets us move it freely
+          transform: `translate(-50%, -50%) rotate(${rotationAngle}deg)`, // Moves it to center & rotates it
+          overflow: "visible" // Allows slices to extend outside the SVG bounds
         }}
       >
-        {Array.from({ length: sliceCount }, (_, i) => ( // Generates array of length sliceCount
+        {Array.from({ length: sliceCount }, (_, i) => ( // Creates slices dynamically
           <PizzaSlice
-            key={i} // Identifier for React
+            key={i} // Helps React keep track of slices
             index={i} 
             totalSlices={sliceCount}
             radius={radius}
-            activeSlice={activeSlice}
-            setActiveSlice={setActiveSlice} // Updates active slice
-            rotationAngle={rotationAngle} // Passes rotation angle to rotate text inside the slices so it stays upright
+            rotationAngle={rotationAngle} // So text inside stays upright
+            isClicked={clickedSlice === i}
+            onClick={() => handleSliceClick(i)}
           />
         ))}
       </svg>
 
+      {/* Button to start/stop the rotation */}
       <button 
         onClick={() => setIsRotating(!isRotating)}
         style={{
           position: "absolute",
-          top: "20px",
+          bottom: "20px",
           left: "50%",
           transform: "translateX(-50%)",
           padding: "10px 20px",
           fontSize: "16px",
-          background: isRotating ? "#FF4500" : "#4CAF50",
+          background: isRotating ? "#FF4500" : "#4CAF50", // Changes color depending on state
           color: "white",
           border: "none",
           borderRadius: "5px",

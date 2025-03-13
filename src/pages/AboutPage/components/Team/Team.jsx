@@ -1,43 +1,48 @@
+import { useState } from "react";
 import styles from "./team.module.css";
 
-import personBlock from "@assets/pixel-square.png";
+import a from "@assets/alfred.png";
+import m from "@assets/matthew.png";
+import mx from "@assets/maxwell.png";
+import ad from "@assets/adit.png";
+import ma from "@assets/marian.png";
+import c from "@assets/connie.png";
+import j from "@assets/jun.png";
+import is from "@assets/ishan.png";
+import s from "@assets/serge.png";
 
-const teamMembers = [
-    "Person 1",
-    "Person 2",
-    "Person 3",
-    "Person 4",
-    "Person 5",
-    "Person 6",
-    "Person 7",
-    "Person 8",
-    "Person 9",
-];
+import alfred from "@assets/President - Alfred Roy Manongsong.png";
+import matthew from "@assets/Vice President - Matthew Acuna.png";
+import maxwell from "@assets/Secretary - Maxwell Hu.png";
+import adit from "@assets/Treasurer - Adit Khandelwal.png";
+import marian from "@assets/Event Coordinator - Marian Zuniga.png";
+import connie from "@assets/Connie Wang - Programming Chair.png";
+import jun from "@assets/Jun Lu - Programming Chair.png";
+import ishan from "@assets/Ishan Chawla - Programming Chair.png";
+import serge from "@assets/Serge Lobach - Audio Chair.png";
 
-const memberImages = [
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock,
-    personBlock
-]
+const initialImages = [a, m, mx, ad, ma, c, j, is, s];
+const hoverImages = [alfred, matthew, maxwell, adit, marian, connie, jun, ishan, serge];
 
 const TeamSection = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     return (
         <section className={styles.teamSection}>
             <div className={styles.peopleGrid}>
-
-                {teamMembers.map((member, index) => (
-                    <div key={index} className={styles.teamMember}>
-                        <img src={memberImages[index]} alt="Picture of team member"/>
-                        <p>{member}</p>
+                {initialImages.map((img, index) => (
+                    <div
+                        key={index}
+                        className={styles.teamMember}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                    >
+                        <img 
+                            src={hoveredIndex === index ? hoverImages[index] : img} 
+                            alt="Picture of team member" 
+                        />
                     </div>
                 ))}
-
             </div>
         </section>
     );

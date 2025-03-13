@@ -10,6 +10,9 @@ import c from "@assets/connie.png";
 import j from "@assets/jun.png";
 import is from "@assets/ishan.png";
 import s from "@assets/serge.png";
+import b from "@assets/brandon.png";
+import mg from "@assets/megan.png";
+import ja from "@assets/jai.png";
 
 import alfred from "@assets/President - Alfred Roy Manongsong.png";
 import matthew from "@assets/Vice President - Matthew Acuna.png";
@@ -20,9 +23,12 @@ import connie from "@assets/Connie Wang - Programming Chair.png";
 import jun from "@assets/Jun Lu - Programming Chair.png";
 import ishan from "@assets/Ishan Chawla - Programming Chair.png";
 import serge from "@assets/Serge Lobach - Audio Chair.png";
+import brandon from "@assets/Brandon Del Mundo - Developer.png";
+import megan from "@assets/Megan Ciraulo - Developer.png";
+import jai from "@assets/Jai Sanghrajka - Developer.png";
 
-const initialImages = [a, m, mx, ad, ma, c, j, is, s];
-const hoverImages = [alfred, matthew, maxwell, adit, marian, connie, jun, ishan, serge];
+const initialImages = [a, m, mx, ad, ma, c, j, is, s, b, mg, ja];
+const hoverImages = [alfred, matthew, maxwell, adit, marian, connie, jun, ishan, serge, brandon, megan, jai];
 
 const TeamSection = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);

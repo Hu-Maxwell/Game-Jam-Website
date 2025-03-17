@@ -5,6 +5,6 @@ what is makeDefault?
 
 
 X. add movement
-2. add loading
+X. add loading (will need to have all models separately tracked, and loaded at the end)
 3. add throne room
 4. add scrolling 

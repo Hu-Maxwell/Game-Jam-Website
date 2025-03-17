@@ -2,10 +2,12 @@ import { useThree } from '@react-three/fiber';
 import { PerspectiveCamera, PointerLockControls } from '@react-three/drei';
 
 import useKeyboardMovement from "./../../hooks/useKeyboardMovement";
+import useScrollCamera from "./../../hooks/useScrollCamera";
 
 const Camera = () => {
   const { camera } = useThree();
 
+  useScrollCamera(camera); 
   useKeyboardMovement(camera); 
 
   return (

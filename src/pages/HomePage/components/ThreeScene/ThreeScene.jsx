@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 
 import { Canvas } from '@react-three/fiber';
 
@@ -7,11 +7,21 @@ import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
 import Crown from "./../Crown/Crown";
 
+import useScrollCamera from "./../../hooks/useScrollCamera";
+
 const ThreeScene = ({ props }) => {
   // have meshes set isLoaded to true
   const [isLoaded, setIsLoaded] = useState(false);
 
   const cameraRef = useRef(null);
+  const crownRef = useRef(null);
+
+  // cuz you dont wanna pass null to useScrollCamera
+  useEffect(() => {
+    if (cameraRef.current) {
+      useScrollCamera(cameraRef.current, crownRef.current);
+    }
+  }, [cameraRef.current]);
 
   return (
     <>
@@ -24,7 +34,11 @@ const ThreeScene = ({ props }) => {
       >
         <Suspense fallback={null}> 
 
-          <Camera />
+          <Camera 
+            ref={cameraRef}
+            position={[0, 5, 0]}
+            fov={85}
+          />
 
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1} />

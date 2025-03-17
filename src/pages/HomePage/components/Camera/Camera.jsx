@@ -1,20 +1,23 @@
+import { forwardRef, useImperativeHandle } from 'react';
+
 import { useThree } from '@react-three/fiber';
 import { PerspectiveCamera, PointerLockControls } from '@react-three/drei';
 
 import useKeyboardMovement from "./../../hooks/useKeyboardMovement";
-import useScrollCamera from "./../../hooks/useScrollCamera";
 
-const Camera = () => {
+const Camera = forwardRef((props, ref) => {
   const { camera } = useThree();
 
-  useScrollCamera(camera); 
   useKeyboardMovement(camera); 
 
+  useImperativeHandle(ref, () => camera, [camera]);
+
   return (
-    <PerspectiveCamera makeDefault position={[0, 5, 0]} fov={85}>
+    <>
+      <PerspectiveCamera makeDefault {...props} />
       <PointerLockControls />
-    </PerspectiveCamera>
+    </>
   );
-}
+}); 
 
 export default Camera;

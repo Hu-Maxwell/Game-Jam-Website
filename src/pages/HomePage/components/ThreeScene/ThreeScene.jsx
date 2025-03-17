@@ -1,0 +1,36 @@
+import { useState, Suspense } from 'react';
+
+import { Canvas } from '@react-three/fiber';
+
+import LoadingScreen from "./../LoadingScreen/LoadingScreen";
+import Camera from "./../Camera/Camera";
+import Ground from "./../Ground/Ground";
+
+const ThreeScene = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <>
+      {/* if not loaded, then display the loading screen */}
+      {/* {!isLoaded && <LoadingScreen />}  */}
+
+      <Canvas
+        pixelratio={window.devicePixelRatio}
+        style={{ width: '100vw', height: '100vh' }}
+      >
+        <Suspense fallback={null}> 
+
+          <Camera />
+
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+
+          <Ground />
+
+        </Suspense>
+      </Canvas>
+    </>
+  );
+};
+
+export default ThreeScene;

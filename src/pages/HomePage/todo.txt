@@ -1,0 +1,4 @@
+useMemo?
+
+<PerspectiveCamera makeDefault position={[0, 5, 0]} fov={85}>
+what is makeDefault?

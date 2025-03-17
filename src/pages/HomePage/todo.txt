@@ -1,4 +1,5 @@
 useMemo?
+forwardRef? 
 
 <PerspectiveCamera makeDefault position={[0, 5, 0]} fov={85}>
 what is makeDefault?
@@ -8,3 +9,15 @@ X. add movement
 X. add loading (will need to have all models separately tracked, and loaded at the end)
 3. add throne room
 4. add scrolling 
+
+
+
+scroll
+- useScrollCamera hook 
+  - this hook manages the scroll amount and changes stuff accordingly (camera position, rotation)
+  - this hook also takes in props like camera, crown
+- inside of threescene: 
+  - put camera and crown inside of useRef - this way, i can change camera and crown 
+  - (important!!) cameraRef and crownRef are the props that are passed into the hook
+  - inside camera and crown, there is a forwardRef exposes internal Three.js properties to ThreeScene
+

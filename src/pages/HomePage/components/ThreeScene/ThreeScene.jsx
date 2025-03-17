@@ -14,8 +14,7 @@ const ThreeScene = ({ props }) => {
   return (
     <>
       {/* if not loaded, then display the loading screen */}
-      {/* nothing to load yet */}
-      {/* {!isLoaded && <LoadingScreen />}  */}
+      {!isLoaded && <LoadingScreen />} 
 
       <Canvas
         pixelratio={window.devicePixelRatio}
@@ -32,6 +31,7 @@ const ThreeScene = ({ props }) => {
           <Crown
             position={[0, 5, 10]}  
             scale={1.5}
+            onLoad={() => setIsLoaded(true)}
           />
 
         </Suspense>

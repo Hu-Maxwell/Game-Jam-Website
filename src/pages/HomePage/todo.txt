@@ -2,3 +2,9 @@ useMemo?
 
 <PerspectiveCamera makeDefault position={[0, 5, 0]} fov={85}>
 what is makeDefault?
+
+
+1. add movement
+2. add loading
+3. add throne room
+4. add scrolling 

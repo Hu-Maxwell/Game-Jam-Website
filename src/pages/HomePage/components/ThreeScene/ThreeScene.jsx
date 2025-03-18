@@ -17,11 +17,7 @@ const ThreeScene = ({ props }) => {
   const crownRef = useRef(null);
 
   // cuz you dont wanna pass null to useScrollCamera
-  useEffect(() => {
-    if (cameraRef.current) {
-      useScrollCamera(cameraRef.current, crownRef.current);
-    }
-  }, [cameraRef.current]);
+  useScrollCamera(cameraRef.current, crownRef.current);
 
   return (
     <>
@@ -36,7 +32,7 @@ const ThreeScene = ({ props }) => {
 
           <Camera 
             ref={cameraRef}
-            position={[0, 5, 0]}
+            position={[0, 5, 35]}
             fov={85}
           />
 
@@ -46,7 +42,7 @@ const ThreeScene = ({ props }) => {
           <Ground />
           <Crown
             ref={crownRef}
-            position={[0, 5, 10]}  
+            position={[0, 5, 5]}  
             scale={1.5}
             onLoad={() => setIsLoaded(true)}
           />

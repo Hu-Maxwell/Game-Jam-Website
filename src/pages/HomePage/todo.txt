@@ -8,8 +8,12 @@ what is makeDefault?
 X. add movement
 X. add loading (will need to have all models separately tracked, and loaded at the end)
 3. add throne room
-4. add scrolling 
+X. add scrolling 
+5. add scroll from place 1 to place 2
+6. add scroll to rotate crown
+7. add transition from crown into screen 2 
 
+im so uncreative i start every one with add 
 
 
 scroll

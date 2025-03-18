@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { gsap } from 'gsap'; 
 
-import { CINEMATIC_START_POS, CINEMATIC_FINAL_POS } from "./../utils/constants";
+import { START_POS_ONE, FINAL_POS_ONE } from "./../utils/constants";
 
 const useScrollCamera = (camera, crown) => {
   // scrollProgress is a percentage of the the amount of scrolls done from 0 - 1
@@ -31,13 +31,24 @@ const useScrollCamera = (camera, crown) => {
     if (!camera || !crown ) { return; }
 
     gsap.to(camera.position, {
-      x: CINEMATIC_START_POS.x + (CINEMATIC_FINAL_POS.x - CINEMATIC_START_POS.x) * scrollProgress,
-      y: CINEMATIC_START_POS.y + (CINEMATIC_FINAL_POS.y - CINEMATIC_START_POS.y) * scrollProgress,
-      z: CINEMATIC_START_POS.z + (CINEMATIC_FINAL_POS.z - CINEMATIC_START_POS.z) * scrollProgress,
+      x: START_POS_ONE.x + (FINAL_POS_ONE.x - START_POS_ONE.x) * scrollProgress,
+      y: START_POS_ONE.y + (FINAL_POS_ONE.y - START_POS_ONE.y) * scrollProgress,
+      z: START_POS_ONE.z + (FINAL_POS_ONE.z - START_POS_ONE.z) * scrollProgress,
       duration: 0.5,
       ease: "power2.out",
     })
   }, [scrollProgress]);
+
+  // if scroll to position 1 is done, start scroll from position 1 to position 2 
+  useEffect(() => {
+    // 
+  }, [])
+
+
+  // if scroll to position 2 is done, then start rotating crown 
+  useEffect(() => {
+    // 
+  }, [])
 
 
 }

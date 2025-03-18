@@ -9,7 +9,7 @@ X. add movement
 X. add loading (will need to have all models separately tracked, and loaded at the end)
 3. add throne room
 X. add scrolling 
-5. add scroll from place 1 to place 2
+X. add scroll from place 1 to place 2
 6. add scroll to rotate crown
 7. add transition from crown into screen 2 
 

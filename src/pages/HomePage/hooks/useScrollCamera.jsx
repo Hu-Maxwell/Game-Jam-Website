@@ -1,18 +1,23 @@
 import { useState, useEffect } from 'react'; 
 
+import { gsap } from 'gsap'; 
+
 import { CINEMATIC_START_POS, CINEMATIC_FINAL_POS } from "./../utils/constants";
 
 const useScrollCamera = (camera, crown) => {
-  // scrollProgress goes from 0 - 100
+  // scrollProgress is a percentage of the the amount of scrolls done from 0 - 1
   const [scrollProgress, setScrollProgress ] = useState(0); 
-  const maxScrollProgress = Math.abs(CINEMATIC_START_POS.z - CINEMATIC_FINAL_POS.z); 
-  const initialCameraPosZ = CINEMATIC_START_POS.z;  
+  const maxScroll = 20; // 20 ticks of scrolling
 
   // sets scroll progress
   useEffect(() => {
     // note: when scrolling down, deltaY is positive. up is negative.
+    if(scrollProgress >= 1) {
+      return;
+    }
+
     const handleWheel = (event) => {
-      setScrollProgress(scrollProgress + (event.deltaY / 100));
+      setScrollProgress(((scrollProgress * maxScroll) + (event.deltaY / 100)) / maxScroll);
     }; 
     window.addEventListener('wheel', handleWheel);
 
@@ -23,25 +28,16 @@ const useScrollCamera = (camera, crown) => {
 
   // sets position
   useEffect(() => {
-    // because ref is null at start
-    if(!camera || !crown) {
-      return; 
-    }
+    if (!camera || !crown ) { return; }
 
-    // some readable math that calculates the camera's new z pos from scroll 
-    if (maxScrollProgress > scrollProgress) {
-      const direction = Math.sign(CINEMATIC_FINAL_POS.z - CINEMATIC_START_POS.z); 
-      const dist = Math.abs(CINEMATIC_FINAL_POS.z - CINEMATIC_START_POS.z); 
-      const percentage = scrollProgress / maxScrollProgress; 
-      const deltaZ = percentage * dist;
-    
-      const newZ = initialCameraPosZ + (deltaZ * direction); 
-
-      camera.position.set(camera.position.x, camera.position.y, newZ) 
-
-      console.log("camPos" + camera.position.z);
-    }
-  }, [scrollProgress])
+    gsap.to(camera.position, {
+      x: CINEMATIC_START_POS.x + (CINEMATIC_FINAL_POS.x - CINEMATIC_START_POS.x) * scrollProgress,
+      y: CINEMATIC_START_POS.y + (CINEMATIC_FINAL_POS.y - CINEMATIC_START_POS.y) * scrollProgress,
+      z: CINEMATIC_START_POS.z + (CINEMATIC_FINAL_POS.z - CINEMATIC_START_POS.z) * scrollProgress,
+      duration: 0.5,
+      ease: "power2.out",
+    })
+  }, [scrollProgress]);
 
 
 }

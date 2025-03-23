@@ -1,56 +1,71 @@
-import { useState, useEffect } from 'react'; 
+import { useRef, useEffect } from 'react'; 
 
 import { gsap } from 'gsap'; 
 
-import { START_POS_ONE, FINAL_POS_ONE } from "./../utils/constants";
+import { START_POS_ONE, FINAL_POS_ONE, START_POS_TWO, FINAL_POS_TWO } from "./../utils/constants";
 
 const useScrollCamera = (camera, crown) => {
   // scrollProgress is a percentage of the the amount of scrolls done from 0 - 1
-  const [scrollProgress, setScrollProgress ] = useState(0); 
+  const scrollProgress = useRef(0); 
   const maxScroll = 20; // 20 ticks of scrolling
-
-  // sets scroll progress
-  useEffect(() => {
-    // note: when scrolling down, deltaY is positive. up is negative.
-    if(scrollProgress >= 1) {
-      return;
-    }
-
-    const handleWheel = (event) => {
-      setScrollProgress(((scrollProgress * maxScroll) + (event.deltaY / 100)) / maxScroll);
-    }; 
-    window.addEventListener('wheel', handleWheel);
-
-    console.log("biags" + scrollProgress);
-
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [scrollProgress]); 
+  let curScrollPhase = 1;
 
   // sets position
-  useEffect(() => {
+  const animateCamera = () => {
     if (!camera || !crown ) { return; }
 
-    gsap.to(camera.position, {
-      x: START_POS_ONE.x + (FINAL_POS_ONE.x - START_POS_ONE.x) * scrollProgress,
-      y: START_POS_ONE.y + (FINAL_POS_ONE.y - START_POS_ONE.y) * scrollProgress,
-      z: START_POS_ONE.z + (FINAL_POS_ONE.z - START_POS_ONE.z) * scrollProgress,
+    // curScrollPhase manager: changes curScrollPhase and resets scrollProgress 
+    if (scrollProgress.current >= 1) { 
+      scrollProgress.current = 0; 
+      if (curScrollPhase === 1) { curScrollPhase = 2; } 
+      else if (curScrollPhase === 2) {curScrollPhase = 3; }
+    }
+
+    // animation manager
+    if (curScrollPhase == 1) { animateCameraOne(); } 
+    else if (curScrollPhase == 2) { animateCameraTwo(); }
+    else if (curScrollPhase == 3 ) { animateCameraThree(); }
+  }
+
+  const animateCameraOne = () => {  
+    gsap.to(camera.current.position, {
+      x: START_POS_ONE.x + (FINAL_POS_ONE.x - START_POS_ONE.x) * scrollProgress.current,
+      y: START_POS_ONE.y + (FINAL_POS_ONE.y - START_POS_ONE.y) * scrollProgress.current,
+      z: START_POS_ONE.z + (FINAL_POS_ONE.z - START_POS_ONE.z) * scrollProgress.current,
       duration: 0.5,
       ease: "power2.out",
     })
-  }, [scrollProgress]);
+  };
 
-  // if scroll to position 1 is done, start scroll from position 1 to position 2 
+  // kinda bad cuz i copied and pasted but whatever 
+  const animateCameraTwo = () => {
+    gsap.to(camera.current.position, {
+      x: START_POS_TWO.x + (FINAL_POS_TWO.x - START_POS_TWO.x) * scrollProgress.current,
+      y: START_POS_TWO.y + (FINAL_POS_TWO.y - START_POS_TWO.y) * scrollProgress.current,
+      z: START_POS_TWO.z + (FINAL_POS_TWO.z - START_POS_TWO.z) * scrollProgress.current,
+      duration: 0.5,
+      ease: "power2.out",
+    })
+  }
+
+  // rotates crown
+  const animateCameraThree = () => {
+
+  }
+
+  // sets scroll progress
+  // note: when scrolling down, deltaY is positive. up is negative.
   useEffect(() => {
-    // 
-  }, [])
+    if(scrollProgress.current >= 1) { return; }
 
+    const handleWheel = (event) => {
+      scrollProgress.current = gsap.utils.clamp(0, 2, ((scrollProgress.current * maxScroll) + (event.deltaY / 100)) / maxScroll);
+      animateCamera();
+    }; 
+    window.addEventListener('wheel', handleWheel);
 
-  // if scroll to position 2 is done, then start rotating crown 
-  useEffect(() => {
-    // 
-  }, [])
-
-
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, []); 
 }
 
 export default useScrollCamera; 

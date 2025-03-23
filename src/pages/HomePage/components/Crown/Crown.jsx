@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 
 const Crown = forwardRef(({ onLoad, ...props }, ref) => {
   const { scene } = useGLTF('crown/untitled.gltf');
-  const [ loaded, setLoaded ] = useState(false); 
+  const [loaded, setLoaded] = useState(false); 
 
   useEffect(() => {
     if(!loaded) {

@@ -17,7 +17,7 @@ const ThreeScene = ({ props }) => {
   const crownRef = useRef(null);
 
   // cuz you dont wanna pass null to useScrollCamera
-  useScrollCamera(cameraRef.current, crownRef.current);
+  useScrollCamera(cameraRef, crownRef);
 
   return (
     <>

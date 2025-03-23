@@ -15,7 +15,6 @@ X. add scroll from place 1 to place 2
 
 im so uncreative i start every one with add 
 
-
 scroll
 - useScrollCamera hook 
   - this hook manages the scroll amount and changes stuff accordingly (camera position, rotation)

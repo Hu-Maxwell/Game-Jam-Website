@@ -2,7 +2,7 @@ import { useState, useEffect, forwardRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 const Crown = forwardRef(({ onLoad, ...props }, ref) => {
-  const { scene } = useGLTF('crown/crownWithText.gltf');
+  const { scene } = useGLTF('crown/crownWithText2.gltf');
   const [loaded, setLoaded] = useState(false); 
 
   useEffect(() => {

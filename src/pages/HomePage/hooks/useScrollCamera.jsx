@@ -14,7 +14,6 @@ const useScrollCamera = (camera, crown) => {
   const maxScroll = 20; // 20 ticks of scrolling
   let curScrollPhase = 1;
 
-
   // sets position
   const animateCamera = () => {
     if (!camera || !crown ) { return; }

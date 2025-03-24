@@ -1,9 +1,9 @@
 import { useRef, useEffect } from 'react'; 
 
+import * as THREE from "three";
+
 import { gsap } from 'gsap'; 
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { MeshBasicMaterial, Mesh } from 'three';
+import { useGLTF } from '@react-three/drei';
 
 
 import { START_POS_ONE, FINAL_POS_ONE, START_POS_TWO, FINAL_POS_TWO } from "./../utils/constants";
@@ -18,14 +18,40 @@ const useScrollCamera = (camera, crown) => {
   const animateCamera = () => {
     if (!camera || !crown ) { return; }
 
+
+
     // curScrollPhase manager: changes curScrollPhase and resets scrollProgress 
     if (scrollProgress.current >= 1) { 
       scrollProgress.current = 0; 
 
       if (curScrollPhase === 1) { curScrollPhase = 2; } 
       else if (curScrollPhase === 2) { curScrollPhase = 3; }
-      // else if (curScrollPhase === 3) { curScrollPhase = 4; }
     }
+
+    // manages rotating crown phase
+    // this is incorrect. i want to be able to get the angle threshold given where the camera is looking, and comparing it with where the crown is looking. 
+    // what i am doing rn is just getting the angle between camera and crown.
+    // so to fix, take the camera's angle and pos, and draw a vector to the crown
+    // then, 
+    if (curScrollPhase == 3) {
+      const directionOne = new THREE.Vector3();
+      camera.current.getWorldDirection(directionOne);
+      const angle1 = THREE.MathUtils.radToDeg(Math.atan2(directionOne.x, directionOne.z)); 
+
+      const directionTwo = new THREE.Vector3();
+      crown.current.getWorldDirection(directionTwo);
+      const angle2 = THREE.MathUtils.radToDeg(Math.atan2(directionTwo.x, directionTwo.z)); 
+      
+      const angleDiff = angle1 - angle2;
+      // keep between -180 and 180
+      const deltaAngle = ((angleDiff + 180) % 360 + 360) % 360 - 180; 
+
+      // if looking at back of crown
+      if (deltaAngle > -140 && deltaAngle < -90) {
+        console.log("good");
+      }
+    }
+
 
     // animation manager
     if (curScrollPhase == 1) { animateCameraOne(); } 

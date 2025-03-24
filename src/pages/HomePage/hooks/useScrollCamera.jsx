@@ -1,6 +1,10 @@
 import { useRef, useEffect } from 'react'; 
 
 import { gsap } from 'gsap'; 
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { MeshBasicMaterial, Mesh } from 'three';
+
 
 import { START_POS_ONE, FINAL_POS_ONE, START_POS_TWO, FINAL_POS_TWO } from "./../utils/constants";
 
@@ -10,6 +14,7 @@ const useScrollCamera = (camera, crown) => {
   const maxScroll = 20; // 20 ticks of scrolling
   let curScrollPhase = 1;
 
+
   // sets position
   const animateCamera = () => {
     if (!camera || !crown ) { return; }
@@ -17,8 +22,10 @@ const useScrollCamera = (camera, crown) => {
     // curScrollPhase manager: changes curScrollPhase and resets scrollProgress 
     if (scrollProgress.current >= 1) { 
       scrollProgress.current = 0; 
+
       if (curScrollPhase === 1) { curScrollPhase = 2; } 
-      else if (curScrollPhase === 2) {curScrollPhase = 3; }
+      else if (curScrollPhase === 2) { curScrollPhase = 3; }
+      // else if (curScrollPhase === 3) { curScrollPhase = 4; }
     }
 
     // animation manager
@@ -50,7 +57,7 @@ const useScrollCamera = (camera, crown) => {
 
   // rotates crown
   const animateCameraThree = () => {
-
+    crown.current.rotation.y += .1; 
   }
 
   // sets scroll progress

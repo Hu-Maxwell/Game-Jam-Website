@@ -10,10 +10,17 @@ X. add loading (will need to have all models separately tracked, and loaded at t
 3. add throne room
 X. add scrolling 
 X. add scroll from place 1 to place 2
-6. add scroll to rotate crown
+X. add scroll to rotate crown
 7. add transition from crown into screen 2 
 
 im so uncreative i start every one with add 
+
+
+- scroll to rotate crown: 
+  - first model of crown: have text on back "mercedjam 2025"
+  - unload first model and load second model
+  - second model of crown: have text on front, "36 hours. make a game"
+  - rotate, then zoom in into a new scene  
 
 scroll
 - useScrollCamera hook 

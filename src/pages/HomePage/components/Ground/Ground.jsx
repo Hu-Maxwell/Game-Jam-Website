@@ -1,15 +1,14 @@
-import { useMemo, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import * as THREE from 'three';
+import { useLoader } from '@react-three/fiber'
 
 const Ground = () => {
-  const texture = useMemo(() => new THREE.TextureLoader().load('/cobblestone_1.png'), []);
+  const texture = useLoader(THREE.TextureLoader, '/cobblestone_1.png');
 
-  useEffect(() => {
-    // wtf is this line
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set(10, 20);
-  }, [texture])
+    texture.needsUpdate = true;
 
   return (
     // how does this work
@@ -22,7 +21,6 @@ const Ground = () => {
       />
     </mesh>
   );
-
 };
 
 export default Ground;

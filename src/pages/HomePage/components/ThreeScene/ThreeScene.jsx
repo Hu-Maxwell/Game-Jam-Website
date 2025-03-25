@@ -45,22 +45,19 @@ const ThreeScene = ({ props }) => {
 
           <Ground />
 
-          {crownOneVisible && (
-            <CrownOne
-              ref={crownOneRef}
-              position={[0, 5, 5]}  
-              scale={1.5}
-              onLoad={() => setIsLoaded(true)}
-            />
-          )}
+          <CrownOne
+            ref={crownOneRef}
+            position={[0, 5, 5]}  
+            scale={1.5}
+            onLoad={() => setIsLoaded(true)}
+            visible={crownOneVisible} 
+          />
 
           <CrownTwo 
             ref={crownTwoRef} 
             position={[0, 5, 5]}  
             scale={1.5}
-            onLoad={() => {
-              setIsLoaded(true);
-            }}
+            onLoad={() => setIsLoaded(true)}
             visible={crownTwoVisible} 
           />
           

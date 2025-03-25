@@ -82,6 +82,7 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
   // rotates crown
   const rotateCrown = () => {
     crown.current.rotation.y += .1; 
+    crownTwo.current.rotation.y += .1; 
   }
 
   const animateCameraFour = () => {

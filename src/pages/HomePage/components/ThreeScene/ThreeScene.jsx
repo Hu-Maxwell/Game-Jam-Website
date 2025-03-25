@@ -5,19 +5,23 @@ import { Canvas } from '@react-three/fiber';
 import LoadingScreen from "./../LoadingScreen/LoadingScreen";
 import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
-import Crown from "./../Crown/Crown";
+import CrownOne from "../Crown/CrownOne";
+import CrownTwo from "../Crown/CrownTwo";
 
 import useScrollCamera from "./../../hooks/useScrollCamera";
 
 const ThreeScene = ({ props }) => {
   // have meshes set isLoaded to true
   const [isLoaded, setIsLoaded] = useState(false);
+  const [crownOneVisible, setCrownOneVisible] = useState(true);
+  const [crownTwoVisible, setCrownTwoVisible] = useState(false);
 
   const cameraRef = useRef(null);
-  const crownRef = useRef(null);
+  const crownOneRef = useRef(null);
+  const crownTwoRef = useRef(null);
 
   // cuz you dont wanna pass null to useScrollCamera
-  useScrollCamera(cameraRef, crownRef);
+  useScrollCamera(cameraRef, crownOneRef, crownTwoRef, setCrownOneVisible, setCrownTwoVisible);
 
   return (
     <>
@@ -40,13 +44,26 @@ const ThreeScene = ({ props }) => {
           <directionalLight position={[10, 10, 5]} intensity={1} />
 
           <Ground />
-          <Crown
-            ref={crownRef}
+
+          {crownOneVisible && (
+            <CrownOne
+              ref={crownOneRef}
+              position={[0, 5, 5]}  
+              scale={1.5}
+              onLoad={() => setIsLoaded(true)}
+            />
+          )}
+
+          <CrownTwo 
+            ref={crownTwoRef} 
             position={[0, 5, 5]}  
             scale={1.5}
-            onLoad={() => setIsLoaded(true)}
+            onLoad={() => {
+              setIsLoaded(true);
+            }}
+            visible={crownTwoVisible} 
           />
-
+          
         </Suspense>
       </Canvas>
     </>

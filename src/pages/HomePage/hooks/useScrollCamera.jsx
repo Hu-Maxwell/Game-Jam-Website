@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei';
 
 import { START_POS_ONE, FINAL_POS_ONE, START_POS_TWO, FINAL_POS_TWO } from "./../utils/constants";
 
-const useScrollCamera = (camera, crown) => {
+const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVisible) => {
   // scrollProgress is a percentage of the the amount of scrolls done from 0 - 1
   const scrollProgress = useRef(0); 
   const maxScroll = 20; // 20 ticks of scrolling
@@ -18,7 +18,8 @@ const useScrollCamera = (camera, crown) => {
   const animateCamera = () => {
     if (!camera || !crown ) { return; }
 
-
+    // temp
+    camera.current.lookAt(crown.current.position);
 
     // curScrollPhase manager: changes curScrollPhase and resets scrollProgress 
     if (scrollProgress.current >= 1) { 
@@ -28,11 +29,6 @@ const useScrollCamera = (camera, crown) => {
       else if (curScrollPhase === 2) { curScrollPhase = 3; }
     }
 
-    // manages rotating crown phase
-    // this is incorrect. i want to be able to get the angle threshold given where the camera is looking, and comparing it with where the crown is looking. 
-    // what i am doing rn is just getting the angle between camera and crown.
-    // so to fix, take the camera's angle and pos, and draw a vector to the crown
-    // then, 
     if (curScrollPhase == 3) {
       const directionOne = new THREE.Vector3();
       camera.current.getWorldDirection(directionOne);
@@ -48,7 +44,10 @@ const useScrollCamera = (camera, crown) => {
 
       // if looking at back of crown
       if (deltaAngle > -140 && deltaAngle < -90) {
+        // switch crown model out from crownwithtext to crownwithtext2
         console.log("good");
+        setCrownVisible(false); 
+        setCrownTwoVisible(true); 
       }
     }
 
@@ -56,7 +55,7 @@ const useScrollCamera = (camera, crown) => {
     // animation manager
     if (curScrollPhase == 1) { animateCameraOne(); } 
     else if (curScrollPhase == 2) { animateCameraTwo(); }
-    else if (curScrollPhase == 3 ) { animateCameraThree(); }
+    else if (curScrollPhase == 3 ) { rotateCrown(); }
   }
 
   const animateCameraOne = () => {  
@@ -81,8 +80,12 @@ const useScrollCamera = (camera, crown) => {
   }
 
   // rotates crown
-  const animateCameraThree = () => {
+  const rotateCrown = () => {
     crown.current.rotation.y += .1; 
+  }
+
+  const animateCameraFour = () => {
+
   }
 
   // sets scroll progress

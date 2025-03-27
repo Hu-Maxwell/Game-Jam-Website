@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef, Suspense } from 'react';
+import { useState, useRef, Suspense } from 'react';
 
+import { EffectComposer } from "@react-three/postprocessing";
 import { Canvas } from '@react-three/fiber';
 
 import LoadingScreen from "./../LoadingScreen/LoadingScreen";
@@ -7,6 +8,7 @@ import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
 import CrownOne from "../Crown/CrownOne";
 import CrownTwo from "../Crown/CrownTwo";
+import PixelShader from "../PixelShader/PixelShader"
 
 import useScrollCamera from "./../../hooks/useScrollCamera";
 
@@ -60,8 +62,11 @@ const ThreeScene = ({ props }) => {
             onLoad={() => setIsLoaded(true)}
             visible={crownTwoVisible} 
           />
-          
+
         </Suspense>
+        <EffectComposer> 
+          <PixelShader />
+        </EffectComposer>
       </Canvas>
     </>
   );

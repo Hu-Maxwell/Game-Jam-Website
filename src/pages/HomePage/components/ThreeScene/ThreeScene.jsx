@@ -38,7 +38,8 @@ const ThreeScene = ({ props }) => {
 
           <Camera 
             ref={cameraRef}
-            position={[0, 5, 35]}
+            position={[0, 5, -35]}
+            rotation={[0, Math.PI, 0]}
             fov={85}
           />
 
@@ -49,7 +50,8 @@ const ThreeScene = ({ props }) => {
 
           <CrownOne
             ref={crownOneRef}
-            position={[0, 5, 5]}  
+            position={[0, 8, 0]}  
+            rotation={[.6, 0, 0]}
             scale={1.5}
             onLoad={() => setIsLoaded(true)}
             visible={crownOneVisible} 
@@ -57,16 +59,17 @@ const ThreeScene = ({ props }) => {
 
           <CrownTwo 
             ref={crownTwoRef} 
-            position={[0, 5, 5]}  
+            position={[0, 8, 0]}
+            rotation={[.6 , 0, 0]}  
             scale={1.5}
             onLoad={() => setIsLoaded(true)}
             visible={crownTwoVisible} 
           />
 
         </Suspense>
-        <EffectComposer> 
+        {/* <EffectComposer> 
           <PixelShader />
-        </EffectComposer>
+        </EffectComposer> */}
       </Canvas>
     </>
   );

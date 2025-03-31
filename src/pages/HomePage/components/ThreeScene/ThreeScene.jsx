@@ -9,6 +9,7 @@ import Ground from "./../Ground/Ground";
 import CrownOne from "../Crown/CrownOne";
 import CrownTwo from "../Crown/CrownTwo";
 import PixelShader from "../PixelShader/PixelShader"
+import Text from "./Text";
 
 import useScrollCamera from "./../../hooks/useScrollCamera";
 
@@ -66,10 +67,13 @@ const ThreeScene = ({ props }) => {
             visible={crownTwoVisible} 
           />
 
+        <Text position={[0, 5, 1]} scale={[1, 1, .01]} /> 
+
         </Suspense>
         {/* <EffectComposer> 
           <PixelShader />
         </EffectComposer> */}
+
       </Canvas>
     </>
   );

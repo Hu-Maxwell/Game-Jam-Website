@@ -69,6 +69,8 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
         ease: "power2.out",
       })
     } else if (curScrollPhase === 1) {
+
+      // TODO: make this so it gets closer and closer to the crown
       const newScrollProgress = scrollProgress.current - 1;
       gsap.to(camera.current.position, {
         x: START_POS_TWO.x + (FINAL_POS_TWO.x - START_POS_TWO.x) * newScrollProgress,
@@ -145,13 +147,6 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
     world.addBody(groundBody);
     groundBodyRef.current = groundBody; 
 
-    // ground properties
-    const contactMaterial = new CANNON.ContactMaterial(crownMaterial, groundMaterial, {
-      friction: 1, 
-      restitution: .5, // bounciness 
-    });
-    world.addContactMaterial(contactMaterial);
-
     const crownMaterial = new CANNON.Material();
 
     const crownBody = new CANNON.Body({
@@ -165,6 +160,14 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
     crownBody.angularDamping = 0.1;
     world.addBody(crownBody);
     crownBodyRef.current = crownBody; 
+
+        // ground properties
+    const contactMaterial = new CANNON.ContactMaterial(crownMaterial, groundMaterial, {
+      friction: 1, 
+      restitution: .5, // bounciness 
+    });
+    world.addContactMaterial(contactMaterial);
+
 
     updatePhysics();
   };

@@ -6,9 +6,9 @@ import * as THREE from 'three';
 
 import pixelShader from './pixelShader.glsl?raw';
 
-const pixelSize_ = 1; 
+const pixelSize_ = 5; 
 const palette_ = [
-  new THREE.Vector3(0.50666666666, 0.39215686274, 0.36078431372),  // red
+  new THREE.Vector3(0.1, 0.0, 0.0),  
   new THREE.Vector3(0.20784313725, 0.15686274509, 0.15294117647), 
   new THREE.Vector3(0.270,0.235,0.200)
 ];

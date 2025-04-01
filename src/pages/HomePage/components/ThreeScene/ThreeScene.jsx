@@ -6,26 +6,23 @@ import { Canvas } from '@react-three/fiber';
 import LoadingScreen from "./../LoadingScreen/LoadingScreen";
 import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
-import CrownOne from "../Crown/CrownOne";
-import CrownTwo from "../Crown/CrownTwo";
-import Anvil from "../Anvil/Anvil"
+import Anvil from "../Anvil/Anvil";
+import Hammer from "../Hammer/Hammer";
+import Sword from "../Sword/Sword";
+
 import PixelShader from "../PixelShader/PixelShader"
 
-import useScrollCamera from "./../../hooks/useScrollCamera";
+import useScrollCamera from "../../hooks/useScrollCamera";
 
 const ThreeScene = ({ props }) => {
-  // have meshes set isLoaded to true
   const [isLoaded, setIsLoaded] = useState(false);
-  const [crownOneVisible, setCrownOneVisible] = useState(true);
-  const [crownTwoVisible, setCrownTwoVisible] = useState(false);
 
   const cameraRef = useRef(null);
-  const crownOneRef = useRef(null);
-  const crownTwoRef = useRef(null);
   const anvilRef = useRef(null);
+  const hammerRef = useRef(null);
+  const swordRef = useRef(null);
 
-  // cuz you dont wanna pass null to useScrollCamera
-  useScrollCamera(cameraRef, crownOneRef, crownTwoRef, setCrownOneVisible, setCrownTwoVisible);
+  useScrollCamera(cameraRef);
 
   return (
     <>
@@ -45,42 +42,45 @@ const ThreeScene = ({ props }) => {
             fov={85}
           />
 
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <spotLight 
+            position={[0, 10, 0]}  
+            angle={Math.PI} 
+            penumbra={0.5}  
+            intensity={30}  
+            castShadow
+            target={anvilRef.current}
+          />
 
           <Ground />
 
-          {/* <CrownOne
-            ref={crownOneRef}
-            position={[0, 8, 0]}  
-            rotation={[.6, 0, 0]}
-            scale={1.5}
-            onLoad={() => setIsLoaded(true)}
-            visible={crownOneVisible} 
-          />
-
-          <CrownTwo 
-            ref={crownTwoRef} 
-            position={[0, 8, 0]}
-            rotation={[.6 , 0, 0]}  
-            scale={1.5}
-            onLoad={() => setIsLoaded(true)}
-            visible={crownTwoVisible} 
-          /> */}
-
           <Anvil
             ref={anvilRef}
-            position={[0, 1, 0]}  
+            position={[0, .5, 0]}  
             rotation={[0, 0, 0]}
             scale={1.5}
-            onLoad={() => setIsLoaded(true)}
-            visible={crownOneVisible} 
+            onLoad={() => setIsLoaded(true)} 
+          />
+
+          <Hammer 
+            ref={hammerRef}
+            position={[-1, 3.4, -1]}  
+            rotation={[1, Math.PI / 2, 0]}
+            scale={.03}
+            onLoad={() => setIsLoaded(true)} 
+          />
+
+          <Sword 
+            ref={swordRef}
+            position={[-1, 3.7, 0]}  
+            rotation={[0, 0, Math.PI]}
+            scale={[8, 8, 20]}
+            onLoad={() => setIsLoaded(true)} 
           />
 
         </Suspense>
-        {/* <EffectComposer> 
+        <EffectComposer> 
           <PixelShader />
-        </EffectComposer> */}
+        </EffectComposer>
 
       </Canvas>
     </>

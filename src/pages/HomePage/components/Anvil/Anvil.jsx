@@ -1,7 +1,7 @@
 import { useState, useEffect, forwardRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
-const Crown = forwardRef(({ onLoad, ...props }, ref) => {
+const Anvil = forwardRef(({ onLoad, ...props }, ref) => {
   const { scene } = useGLTF('anvil/scene.gltf');
   const [loaded, setLoaded] = useState(false); 
 
@@ -15,4 +15,4 @@ const Crown = forwardRef(({ onLoad, ...props }, ref) => {
   return <primitive object={scene} ref={ref} {...props} />
 });
 
-export default Crown;
+export default Anvil; 

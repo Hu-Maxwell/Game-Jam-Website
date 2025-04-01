@@ -14,7 +14,7 @@ const Ground = () => {
     // how does this work
     <mesh rotation={[-Math.PI / 2, 0, 0]}> 
       <planeGeometry args={[100, 200]} />
-      <meshBasicMaterial 
+      <meshStandardMaterial 
         attach="material"
         map={texture}
         side={THREE.DoubleSide}

@@ -1,0 +1,292 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1449,
+      "max": [
+        0.11789737641811371,
+        0.017854616045951843,
+        1.0724247694015503
+      ],
+      "min": [
+        -0.11789737641811371,
+        -0.01785457879304886,
+        -0.25058841705322266
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 17388,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 11592,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 23184,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 34776,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 46368,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 57960,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 69552,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 81144,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 92736,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 104328,
+      "componentType": 5126,
+      "count": 1449,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 5580,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "generator": "fab-model-conversion",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 22320,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 115920,
+      "byteOffset": 22320,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 34776,
+      "byteOffset": 138240,
+      "byteStride": 12,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 173016,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/default_baseColor.png"
+    },
+    {
+      "uri": "textures/default_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "default",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sword_Long_A.001_default_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2,
+            "TEXCOORD_1": 3,
+            "TEXCOORD_2": 4,
+            "TEXCOORD_3": 5,
+            "TEXCOORD_4": 6,
+            "TEXCOORD_5": 7,
+            "TEXCOORD_6": 8,
+            "TEXCOORD_7": 9,
+            "TEXCOORD_8": 10,
+            "TEXCOORD_9": 11
+          },
+          "indices": 12,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "b55e84db291e4a7d806628f502ccce43.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        2.220446049250313e-14,
+        8.271806125530277e-23,
+        -100.0,
+        0.0,
+        -1.192487866350612e-06,
+        99.99999999999999,
+        -8.271806125530277e-23,
+        0.0,
+        100.0,
+        1.192487866350612e-06,
+        2.220446049250313e-14,
+        0.0,
+        -13.161905288696289,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sword_Long_A.001"
+    },
+    {
+      "mesh": 0,
+      "name": "Sword_Long_A.001_default_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}

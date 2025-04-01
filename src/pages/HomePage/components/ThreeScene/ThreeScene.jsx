@@ -8,8 +8,8 @@ import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
 import CrownOne from "../Crown/CrownOne";
 import CrownTwo from "../Crown/CrownTwo";
+import Anvil from "../Anvil/Anvil"
 import PixelShader from "../PixelShader/PixelShader"
-import Text from "./Text";
 
 import useScrollCamera from "./../../hooks/useScrollCamera";
 
@@ -22,6 +22,7 @@ const ThreeScene = ({ props }) => {
   const cameraRef = useRef(null);
   const crownOneRef = useRef(null);
   const crownTwoRef = useRef(null);
+  const anvilRef = useRef(null);
 
   // cuz you dont wanna pass null to useScrollCamera
   useScrollCamera(cameraRef, crownOneRef, crownTwoRef, setCrownOneVisible, setCrownTwoVisible);
@@ -49,7 +50,7 @@ const ThreeScene = ({ props }) => {
 
           <Ground />
 
-          <CrownOne
+          {/* <CrownOne
             ref={crownOneRef}
             position={[0, 8, 0]}  
             rotation={[.6, 0, 0]}
@@ -65,9 +66,16 @@ const ThreeScene = ({ props }) => {
             scale={1.5}
             onLoad={() => setIsLoaded(true)}
             visible={crownTwoVisible} 
-          />
+          /> */}
 
-        <Text position={[0, 5, 1]} scale={[1, 1, .01]} /> 
+          <Anvil
+            ref={anvilRef}
+            position={[0, 1, 0]}  
+            rotation={[0, 0, 0]}
+            scale={1.5}
+            onLoad={() => setIsLoaded(true)}
+            visible={crownOneVisible} 
+          />
 
         </Suspense>
         {/* <EffectComposer> 

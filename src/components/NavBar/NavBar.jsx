@@ -12,8 +12,8 @@ const NavBar = () => {
                 <a className={styles.navButton} href="/contact">Contact</a>
                 <a className={styles.navButton} href="/schedule">Schedule</a>
                 <a className={styles.navButton} href="/resources">Resources</a>
-                <a className={styles.navButton}  target="_blank" rel="noopener noreferrer">Itch.io</a>
-                <a className={styles.navButton} href="/register">Register</a>
+                <a className={styles.navButton} href="https://itch.io/jam/uc-merced-gdc-game-jam-2025" rel="noopener noreferrer">Itch.io</a>
+                <a className={styles.navButton} href="https://docs.google.com/forms/d/e/1FAIpQLScV5XxcHgJc_ZHQEq5q7YzskoiEoo5BLV_hGB2vhNicPs-QBg/viewform">Register</a>
             </nav>
         </header>
     );

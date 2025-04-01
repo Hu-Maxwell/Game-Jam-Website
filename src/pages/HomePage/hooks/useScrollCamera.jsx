@@ -135,20 +135,7 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
     world.gravity.set(0, -9.81, 0);
     worldRef.current = world;
 
-    const groundMaterial = new CANNON.Material();
-
-    // ground
-    const groundBody = new CANNON.Body({
-      mass: 0, 
-      shape: new CANNON.Plane(),
-      material: groundMaterial,
-    });
-    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
-    world.addBody(groundBody);
-    groundBodyRef.current = groundBody; 
-
     const crownMaterial = new CANNON.Material();
-
     const crownBody = new CANNON.Body({
       mass: 1, 
       shape: new CANNON.Cylinder(1, 1, 1.5, 16), 
@@ -159,9 +146,20 @@ const useScrollCamera = (camera, crown, crownTwo, setCrownVisible, setCrownTwoVi
     crownBody.angularVelocity.set(2, 0, 1);
     crownBody.angularDamping = 0.1;
     world.addBody(crownBody);
-    crownBodyRef.current = crownBody; 
+    crownBodyRef.current = crownBody;
 
-        // ground properties
+    const groundMaterial = new CANNON.Material();
+    const groundBody = new CANNON.Body({
+      mass: 0, 
+      shape: new CANNON.Plane(),
+      position: new CANNON.Vec3(crown.current.position.x, crown.current.position.y - 10, crown.current.position.z),
+      material: groundMaterial,
+    });
+    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
+    world.addBody(groundBody);
+    groundBodyRef.current = groundBody; 
+
+    // ground properties
     const contactMaterial = new CANNON.ContactMaterial(crownMaterial, groundMaterial, {
       friction: 1, 
       restitution: .5, // bounciness 

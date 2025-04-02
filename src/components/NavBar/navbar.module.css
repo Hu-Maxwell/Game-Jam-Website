@@ -51,7 +51,8 @@
 
 .navbutton {
     display: flex;
-    width: 6vw;
+    min-width: 5vw;
+    padding: 5px 12px;
     height: 4vh;
     font-size: 21px;
     color: #aaaaaa;

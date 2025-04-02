@@ -14,7 +14,7 @@ const HomePage = () => {
             <main>
                 <HeroSection />
                 <FAQSection />
-                <SponsorsSection />
+                {/* <SponsorsSection /> No sponsors :( */}
             </main>
             <Footer />
         </div>

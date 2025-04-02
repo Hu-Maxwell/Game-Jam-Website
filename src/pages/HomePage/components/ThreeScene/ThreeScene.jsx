@@ -78,9 +78,9 @@ const ThreeScene = ({ props }) => {
           />
 
         </Suspense>
-        <EffectComposer> 
+        {/* <EffectComposer> 
           <PixelShader />
-        </EffectComposer>
+        </EffectComposer> */}
 
       </Canvas>
     </>

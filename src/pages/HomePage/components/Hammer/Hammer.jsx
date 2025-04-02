@@ -3,7 +3,6 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Sparks Component
 const Sparks = ({ position, visible }) => {
   const sparkRef = useRef();
   const lightRef = useRef();
@@ -69,7 +68,6 @@ const Sparks = ({ position, visible }) => {
   );
 };
 
-// Hammer Component
 const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   const { scene } = useGLTF('hammer/scene.gltf');
   const hammerRef = ref || useRef();

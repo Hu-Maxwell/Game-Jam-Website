@@ -6,9 +6,9 @@ import { useLoader } from '@react-three/fiber'
 const Ground = () => {
   const texture = useLoader(THREE.TextureLoader, '/cobblestone_1.png');
 
-    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(10, 20);
-    texture.needsUpdate = true;
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(10, 20);
+  texture.needsUpdate = true;
 
   return (
     // how does this work

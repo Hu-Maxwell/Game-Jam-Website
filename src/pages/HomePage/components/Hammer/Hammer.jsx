@@ -3,72 +3,10 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+import Sparks from "./Sparks";
+
 import TextureFilter from "../TextureFilter/TextureFilter";
 
-const Sparks = ({ position, visible }) => {
-  const sparkRef = useRef();
-  const lightRef = useRef();
-  const numParticles = 20;
-  const particles = new Float32Array(numParticles * 3);
-  const [lightIntensity, setLightIntensity] = useState(0);
-
-  for (let i = 0; i < numParticles; i++) {
-    particles[i * 3] = (Math.random() - 0.5) * 0.5; 
-    particles[i * 3 + 1] = Math.random() * 0.3; 
-    particles[i * 3 + 2] = (Math.random() - 0.5) * 0.5; 
-  }
-
-  useFrame((state, delta) => {
-    if (sparkRef.current) {
-      const positions = sparkRef.current.geometry.attributes.position.array;
-      for (let i = 0; i < numParticles; i++) {
-        positions[i * 3 + 1] += delta * 1.5;
-        positions[i * 3] += (Math.random() - 0.5) * delta * 0.5; 
-        positions[i * 3 + 2] += (Math.random() - 0.5) * delta * 0.5; 
-      }
-      sparkRef.current.geometry.attributes.position.needsUpdate = true;
-    }
-
-    if (lightRef.current) {
-      setLightIntensity((prev) => Math.max(0, prev - delta * 10));
-      lightRef.current.intensity = lightIntensity;
-    }
-  });
-
-  useEffect(() => {
-    if (visible) {
-      setLightIntensity(25); 
-    }
-  }, [visible]);
-
-  if (!visible) return null;
-
-
-
-  return (
-    <>
-      <points ref={sparkRef} position={[position.x, position.y, position.z + 1.5]}>
-        <bufferGeometry attach="geometry">
-          <bufferAttribute
-            attach="attributes-position"
-            array={particles}
-            count={numParticles}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <pointsMaterial attach="material" size={0.1} color="orange" transparent opacity={0.8} />
-      </points>
-      <pointLight
-        ref={lightRef}
-        position={[position.x, position.y + 10, position.z]}
-        color="orange"
-        intensity={15} 
-        distance={15} 
-        decay={2}
-      />
-    </>
-  );
-};
 
 const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   const { scene } = useGLTF('hammer/scene.gltf');
@@ -85,12 +23,12 @@ const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   useEffect(() => {
     if (loaded) return;
 
-    scene.traverse((child) => {
-      if (child.isMesh) {
-        const mat = child.material;
-        TextureFilter(mat, palette);
-      }
-    });
+    // scene.traverse((child) => {
+    //   if (child.isMesh) {
+    //     const mat = child.material;
+    //     TextureFilter(mat, palette);
+    //   }
+    // });
 
     setLoaded(true);
     onLoad();

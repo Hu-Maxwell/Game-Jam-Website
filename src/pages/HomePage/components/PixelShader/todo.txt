@@ -1,2 +1,0 @@
-- make pixels smaller the further away 
-- different palettes for different meshes

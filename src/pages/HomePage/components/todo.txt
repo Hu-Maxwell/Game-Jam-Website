@@ -1,8 +1,8 @@
 - make pixels smaller the further away 
 - different palettes for different meshes 
 
-
 - just change sword to diff color
 - add hammer swing on command 
 - add room 
 - add text 
+- light up room when mercedjam2025 finished

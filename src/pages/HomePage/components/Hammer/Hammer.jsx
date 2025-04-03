@@ -3,6 +3,8 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+import TextureFilter from "../TextureFilter/TextureFilter";
+
 const Sparks = ({ position, visible }) => {
   const sparkRef = useRef();
   const lightRef = useRef();
@@ -75,12 +77,24 @@ const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   const [showSparks, setShowSparks] = useState(false);
   const sparkPosition = useRef(new THREE.Vector3());
 
+  const palette = [
+    [255, 0, 0], 
+  ];
+
+
   useEffect(() => {
-    if (!loaded) {
-      setLoaded(true);
-      if (onLoad) onLoad();
-    }
-  }, [loaded, onLoad]);
+    if (loaded) return;
+
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        const mat = child.material;
+        TextureFilter(mat, palette);
+      }
+    });
+
+    setLoaded(true);
+    onLoad();
+  }, [loaded, onLoad, scene])
 
   useFrame((state, delta) => {
     if (!hammerRef.current) return;

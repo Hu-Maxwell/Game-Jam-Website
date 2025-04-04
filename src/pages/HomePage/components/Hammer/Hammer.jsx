@@ -5,7 +5,9 @@ import * as THREE from 'three';
 
 import Sparks from "./Sparks";
 
-const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
+import TextureFilter from "../TextureFilter/TextureFilter";
+
+const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
   const { scene } = useGLTF('hammer/scene.gltf');
   const [loaded, setLoaded] = useState(false);
 
@@ -20,13 +22,23 @@ const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   useEffect(() => {
     if (loaded) return;
 
-    // really laggy. why?
-    // scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     const mat = child.material;
-    //     TextureFilter(mat, palette);
-    //   }
-    // });
+    const processedMaterials = new Set();
+
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        const mat = child.material;
+        if (!processedMaterials.has(mat)) {
+          TextureFilter(mat, palette);
+          processedMaterials.add(mat);
+        }
+
+        mat.envMap = null;
+        mat.envMapIntensity = 0;
+        mat.reflectivity = 0;
+        mat.roughness = 1;
+        mat.metalness = 0;
+      }
+    });
 
     setLoaded(true);
     onLoad();
@@ -35,21 +47,14 @@ const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
   const hammerInitialPosRef = useRef(null);
   const [smashStartTime, setSmashStartTime] = useState(null);
 
-  useEffect(() => {
-    const handleClick = () => {
-      if (smashStartTime) { 
-        return;
-      } 
-      setSmashStartTime(performance.now() / 1000); 
-    };
-
-    window.addEventListener('click', handleClick);
-    return () => window.removeEventListener('click', handleClick);
-  }, []);
-
-
   // animation
   useFrame((state, delta) => {
+    if (hammerClicked.current && smashStartTime == null) {
+      setSmashStartTime(performance.now() / 1000);
+      console.log("smashing")
+      hammerClicked.current = false;
+    }
+
     if (smashStartTime == null) return;
 
     const elapsed = (performance.now() / 1000) - smashStartTime;
@@ -83,6 +88,9 @@ const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
         initialPos.z + backDistance 
       );
     }
+
+    if (progress > .15 && progress < .27) { setShowSparks(true); }
+    else { setShowSparks(false); }
 
     hammerRef.current.position.lerp(targetPosition, delta * 10);
 

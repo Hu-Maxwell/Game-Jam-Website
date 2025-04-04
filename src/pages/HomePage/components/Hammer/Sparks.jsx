@@ -27,7 +27,7 @@ const Sparks = ({ position, visible }) => {
 
   return (
     <>
-      <points position={[position.x, position.y, position.z + 1.5]}>
+      <points position={[position.x - 1.1, position.y + 3.7, position.z - .3]}>
         <bufferGeometry attach="geometry">
           <bufferAttribute
             attach="attributes-position"
@@ -36,7 +36,7 @@ const Sparks = ({ position, visible }) => {
             itemSize={3}
           />
         </bufferGeometry>
-        <pointsMaterial attach="material" size={0.1} color="orange" transparent opacity={0.8} />
+        <pointsMaterial attach="material" size={0.1} color="white" transparent opacity={0.8} />
       </points>
 
       <pointLight

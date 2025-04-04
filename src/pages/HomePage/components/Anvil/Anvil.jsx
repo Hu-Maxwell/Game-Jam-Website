@@ -8,9 +8,7 @@ const Anvil = forwardRef(({ onLoad, ...props }, ref) => {
   const [loaded, setLoaded] = useState(false); 
 
   const palette = [
-    [98, 100, 108], 
-    [155, 156, 159],  
-    [179, 188, 188],   
+    [0, 0, 255]
   ];
 
   useEffect(() => {
@@ -20,6 +18,12 @@ const Anvil = forwardRef(({ onLoad, ...props }, ref) => {
       if (child.isMesh) {
         const mat = child.material;
         TextureFilter(mat, palette);
+
+        mat.envMap = null;
+        mat.envMapIntensity = 0;
+        mat.reflectivity = 0;
+        mat.roughness = 1;
+        mat.metalness = 0;
       }
     });
 

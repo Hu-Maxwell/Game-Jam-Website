@@ -8,7 +8,7 @@ const Sword = forwardRef(({ onLoad, ...props }, ref) => {
   const [loaded, setLoaded] = useState(false); 
 
   const palette = [
-    [255, 0, 0], 
+    [0, 255, 0], 
   ];
 
   useEffect(() => {
@@ -18,6 +18,12 @@ const Sword = forwardRef(({ onLoad, ...props }, ref) => {
       if (child.isMesh) {
         const mat = child.material;
         TextureFilter(mat, palette);
+
+        mat.envMap = null;
+        mat.envMapIntensity = 0;
+        mat.reflectivity = 0;
+        mat.roughness = 1;
+        mat.metalness = 0;
       }
     });
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useClick = (hammer, sword, text) => {
+const useClick = (hammerClicked, sword, text) => {
   // when user clicks, 
     // hammer smashes
     // sword moves left a bit 
@@ -8,10 +8,13 @@ const useClick = (hammer, sword, text) => {
 
   useEffect(() => {
     const handleClick = () => {
-      console.log("clicked");
+      // send to hammer a click
+      hammerClicked.current = true;
 
-      // debug
-      sword.current.position.x += 1;
+      // wait 1 sec, then move sword pos left a bit. 
+      // sword.current.position.x += 1;
+
+      // set textClicked.current = true; 
     };
 
     window.addEventListener('click', handleClick);

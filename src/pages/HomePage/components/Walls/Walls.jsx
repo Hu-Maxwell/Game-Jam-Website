@@ -10,31 +10,31 @@ const Walls = () => {
     <>
       <mesh position={[0, roomHeight, 0]}>
         <boxGeometry args={[roomWidth, wallThickness, roomDepth]} />
-        <meshStandardMaterial color="darkgray" />
+        <meshStandardMaterial color="black" />
       </mesh>
 
       {/* Back Wall */}
       <mesh position={[0, roomHeight / 2, -roomDepth / 2 + wallThickness / 2]}>
         <boxGeometry args={[roomWidth, roomHeight, wallThickness]} />
-        <meshStandardMaterial color="white" />
+        <meshStandardMaterial color="black" />
       </mesh>
 
       {/* Front Wall */}
       <mesh position={[0, roomHeight / 2, roomDepth / 2]}>
         <boxGeometry args={[roomWidth, roomHeight, wallThickness]} />
-        <meshStandardMaterial color="white" />
+        <meshStandardMaterial color="black" />
       </mesh>
 
       {/* Left Wall */}
       <mesh position={[-roomWidth / 2, roomHeight / 2, 0]}>
         <boxGeometry args={[wallThickness, roomHeight, roomDepth]} />
-        <meshStandardMaterial color="white" />
+        <meshStandardMaterial color="black" />
       </mesh>
 
       {/* Right Wall */}
       <mesh position={[roomWidth / 2, roomHeight / 2, 0]}>
         <boxGeometry args={[wallThickness, roomHeight, roomDepth]} />
-        <meshStandardMaterial color="white" />
+        <meshStandardMaterial color="black" />
       </mesh>
     </>
   );

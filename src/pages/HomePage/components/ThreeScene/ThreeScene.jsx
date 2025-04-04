@@ -27,8 +27,10 @@ const ThreeScene = ({ props }) => {
   const swordRef = useRef(null);
   const textRef = useRef(null); 
 
+  const hammerClickedRef = useRef(false); 
+
   useScrollCamera(cameraRef);
-  useClick(hammerRef, swordRef, textRef)
+  useClick(hammerClickedRef, swordRef, textRef)
 
   // makes it so spotlight can't point at null 
   useEffect(() => {
@@ -36,7 +38,6 @@ const ThreeScene = ({ props }) => {
       lightRef.current.target = anvilRef.current;
     }
   }, [isLoaded]); 
-
 
   return (
     <>
@@ -61,7 +62,7 @@ const ThreeScene = ({ props }) => {
             position={[0, 10, 0]}  
             angle={Math.PI} 
             penumbra={0.5}  
-            intensity={30}  
+            intensity={60}  
             castShadow
           />
 
@@ -77,6 +78,7 @@ const ThreeScene = ({ props }) => {
 
           <Hammer 
             ref={hammerRef}
+            hammerClicked={hammerClickedRef}
             position={[-1, 3.4, -1]}  
             rotation={[1, Math.PI / 2, 0]}
             scale={.03}
@@ -94,9 +96,9 @@ const ThreeScene = ({ props }) => {
           <Walls />
 
         </Suspense>
-        {/* <EffectComposer> 
+        <EffectComposer> 
           <PixelShader />
-        </EffectComposer> */}
+        </EffectComposer>
 
       </Canvas>
     </>

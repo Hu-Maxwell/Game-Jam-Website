@@ -2,7 +2,7 @@ uniform sampler2D tDiffuse;
 uniform vec2 resolution;
 uniform float pixelSize;
 uniform int paletteLength;
-uniform vec3 palette[3];
+uniform vec3 palette[5];
 
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   // take the current pixel and convert it into the bigger pixel's index (which is block)

@@ -8,9 +8,42 @@ import pixelShader from './pixelShader.glsl?raw';
 
 const pixelSize_ = 5; 
 const palette_ = [
-  new THREE.Vector3(0.0, 0.0, 0.0),  
-  new THREE.Vector3(0.20784313725, 0.15686274509, 0.15294117647), 
-  new THREE.Vector3(0.270,0.235,0.200)
+  // red - hammer
+  (() => {
+    const c = new THREE.Color(66 / 255, 0, 0);
+    c.convertSRGBToLinear();
+    return new THREE.Vector3(c.r, c.g, c.b);
+  })(),
+
+  // green - sword
+  (() => {
+    const c = new THREE.Color(57 / 255, 193 / 255, 31 / 255);
+    c.convertSRGBToLinear();
+    return new THREE.Vector3(c.r, c.g, c.b);
+  })(),
+
+  // blue - anvil
+  (() => {
+    const c = new THREE.Color(0, 0, 188 / 255);
+    c.convertSRGBToLinear();
+    return new THREE.Vector3(c.r, c.g, c.b);
+  })(),
+
+  // black
+  (() => {
+    const c = new THREE.Color(0, 0, 0);
+    c.convertSRGBToLinear();
+    return new THREE.Vector3(c.r, c.g, c.b);
+  })(), 
+
+  // white
+  (() => {
+    const c = new THREE.Color(1, 1, 1);
+    c.convertSRGBToLinear();
+    return new THREE.Vector3(c.r, c.g, c.b);
+  })()
+
+
 ];
 
 const PixelationEffect = ({pixelSize = pixelSize_, palette = palette_}) => {

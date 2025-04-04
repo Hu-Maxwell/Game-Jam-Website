@@ -51,7 +51,6 @@ const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
   useFrame((state, delta) => {
     if (hammerClicked.current && smashStartTime == null) {
       setSmashStartTime(performance.now() / 1000);
-      console.log("smashing")
       hammerClicked.current = false;
     }
 

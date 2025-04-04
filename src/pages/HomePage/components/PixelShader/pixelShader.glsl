@@ -13,6 +13,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
   vec3 currentColor = sampledColor.rgb; 
   float bestDistance = 1e10;
   vec3 bestColor = currentColor;
+  int bestIndex = -1;
   
   // calculates the color from palette closest to the current pixel's color 
   for (int i = 0; i < paletteLength; i++) {
@@ -20,8 +21,28 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
     if (d < bestDistance) {
       bestDistance = d;
       bestColor = palette[i];
+      bestIndex = i;
     }
   }
+
+  // hammer
+  if (bestIndex == 0) {
+    bestColor = vec3(0.227, 0.184, 0.184);
+  }
+
+  // sword
+  if (bestIndex == 1) {
+    bestColor = vec3(0.498, 0.831, 1.0);
+  }
+
+  // anvil
+  if (bestIndex == 2) {
+    bestColor = vec3(0.1725, 0.1843, 0.2);
+  }
+
+  // 4 = white
+
+
   
   outputColor = vec4(bestColor, sampledColor.a);
 }

@@ -59,7 +59,7 @@ const ThreeScene = ({ props }) => {
 
           <spotLight 
             ref={lightRef}
-            position={[0, 10, 0]}  
+            position={[1, 10, 2]}  
             angle={Math.PI} 
             penumbra={0.5}  
             intensity={60}  

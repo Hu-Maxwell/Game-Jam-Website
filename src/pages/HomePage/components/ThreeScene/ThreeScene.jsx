@@ -10,27 +10,28 @@ import Anvil from "../Anvil/Anvil";
 import Hammer from "../Hammer/Hammer";
 import Sword from "../Sword/Sword";
 import Walls from "../Walls/Walls";
-import Text from "../Text/Text";
+import SwordText from "../SwordText/SwordText";
 
 import PixelShader from "../PixelShader/PixelShader"
 
-import useScrollCamera from "../../hooks/useScrollCamera";
+import useMoveCamera from "../../hooks/useMoveCamera";
 import useClick from "../../hooks/useClick";
 
 const ThreeScene = ({ props }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [swordText, setSwordText] = useState("");
 
   const cameraRef = useRef(null);
   const lightRef = useRef(null); 
   const anvilRef = useRef(null);
   const hammerRef = useRef(null);
   const swordRef = useRef(null);
-  const textRef = useRef(null); 
+  const swordTextRef = useRef(null); 
 
   const hammerClickedRef = useRef(false); 
 
-  useScrollCamera(cameraRef);
-  useClick(hammerClickedRef, swordRef, textRef)
+  useClick(hammerClickedRef, swordRef, swordTextRef, setSwordText)
+  useMoveCamera(cameraRef); 
 
   // makes it so spotlight can't point at null 
   useEffect(() => {
@@ -59,7 +60,7 @@ const ThreeScene = ({ props }) => {
 
           <spotLight 
             ref={lightRef}
-            position={[1, 10, 2]}  
+            position={[2, 10, 2]}  
             angle={Math.PI} 
             penumbra={0.5}  
             intensity={60}  
@@ -87,18 +88,23 @@ const ThreeScene = ({ props }) => {
 
           <Sword 
             ref={swordRef}
-            position={[-1, 3.7, 0]}  
-            rotation={[0, 0, Math.PI]}
-            scale={[8, 8, 20]}
+            position={[2.5, 3.8, 0]}  
+            rotation={[0, 0, Math.PI / 2]}
+            scale={[2, 3, 3]}
             onLoad={() => setIsLoaded(true)} 
+          />
+
+          <SwordText 
+            ref={swordTextRef}
+            swordText={swordText}  
           />
 
           <Walls />
 
         </Suspense>
-        <EffectComposer> 
+        {/* <EffectComposer> 
           <PixelShader />
-        </EffectComposer>
+        </EffectComposer> */}
 
       </Canvas>
     </>

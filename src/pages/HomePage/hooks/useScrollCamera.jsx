@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 import * as THREE from "three";
 import { gsap } from 'gsap'; 
 
-import { START_POS_ONE, FINAL_POS_ONE, START_POS_TWO, FINAL_POS_TWO } from "./../utils/constants";
+import { START_POS_ONE, FINAL_POS_ONE } from "./../utils/constants";
 
 const useScrollCamera = (camera) => {
   // #region scroll
@@ -46,7 +46,8 @@ const useScrollCamera = (camera) => {
   }
 
   const handleCameraPos = () => { 
-    if (curScrollPhase === 0) {
+    console.log(curScrollPhase);
+    if (curScrollPhase == 0) {
       gsap.to(camera.current.position, {
         x: START_POS_ONE.x + (FINAL_POS_ONE.x - START_POS_ONE.x) * scrollProgress.current,
         y: START_POS_ONE.y + (FINAL_POS_ONE.y - START_POS_ONE.y) * scrollProgress.current,
@@ -54,16 +55,7 @@ const useScrollCamera = (camera) => {
         duration: 0.5,
         ease: "power2.out",
       })
-    } else if (curScrollPhase === 1) {
-      const newScrollProgress = scrollProgress.current - 1;
-      gsap.to(camera.current.position, {
-        x: START_POS_TWO.x + (FINAL_POS_TWO.x - START_POS_TWO.x) * newScrollProgress,
-        y: START_POS_TWO.y + (FINAL_POS_TWO.y - START_POS_TWO.y) * newScrollProgress,
-        z: START_POS_TWO.z + (FINAL_POS_TWO.z - START_POS_TWO.z) * newScrollProgress,
-        duration: 2,  
-        ease: "power2.out",
-      });
-    }
+    } 
 
   };
     

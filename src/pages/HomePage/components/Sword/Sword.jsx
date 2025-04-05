@@ -11,12 +11,18 @@ const Sword = forwardRef(({ onLoad, ...props }, ref) => {
     [0, 255, 0], 
   ];
 
+// If you're doing this anywhere, remove it or null it out:
+scene.environment = null;
+
+
   useEffect(() => {
     if (loaded) return;
 
     scene.traverse((child) => {
       if (child.isMesh) {
+        child.material = child.material.clone();
         const mat = child.material;
+
         TextureFilter(mat, palette);
 
         mat.envMap = null;

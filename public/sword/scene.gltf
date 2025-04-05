@@ -3,181 +3,136 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 1449,
+      "count": 528,
       "max": [
-        0.11789737641811371,
-        0.017854616045951843,
-        1.0724247694015503
+        2.702194929122925,
+        4.997908592224121,
+        36.507835388183594
       ],
       "min": [
-        -0.11789737641811371,
-        -0.01785457879304886,
-        -0.25058841705322266
+        -2.9605679512023926,
+        -5.05069637298584,
+        -1.4140580892562866
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 17388,
+      "byteOffset": 6336,
       "componentType": 5126,
-      "count": 1449,
+      "count": 528,
+      "max": [
+        1.0,
+        0.9996763467788696,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.9999991655349731,
+        -0.9998646378517151
+      ],
       "type": "VEC3"
     },
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 11592,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 23184,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 34776,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 46368,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 57960,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 69552,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 81144,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 92736,
-      "componentType": 5126,
-      "count": 1449,
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 104328,
-      "componentType": 5126,
-      "count": 1449,
+      "count": 528,
+      "max": [
+        0.8100392818450928,
+        0.9092519283294678
+      ],
+      "min": [
+        0.07214581966400146,
+        0.034941256046295166
+      ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 5580,
+      "count": 798,
       "type": "SCALAR"
     }
   ],
   "asset": {
-    "generator": "fab-model-conversion",
+    "extras": {
+      "author": "Hector Official (https://sketchfab.com/hgofficial)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/low-poly-sword-3d-model-febbbdd1127347bdb7f2e9eaa51b44d1",
+      "title": "Low Poly Sword 3D Model"
+    },
+    "generator": "Sketchfab-16.45.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 22320,
+      "byteLength": 3192,
+      "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 115920,
-      "byteOffset": 22320,
+      "byteLength": 4224,
+      "byteOffset": 3192,
       "byteStride": 8,
+      "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 34776,
-      "byteOffset": 138240,
+      "byteLength": 12672,
+      "byteOffset": 7416,
       "byteStride": 12,
+      "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 173016,
+      "byteLength": 20088,
       "uri": "scene.bin"
-    }
-  ],
-  "images": [
-    {
-      "uri": "textures/default_baseColor.png"
-    },
-    {
-      "uri": "textures/default_metallicRoughness.png"
     }
   ],
   "materials": [
     {
       "doubleSided": true,
-      "name": "default",
+      "name": "Material.001",
       "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicRoughnessTexture": {
-          "index": 1
-        }
+        "baseColorTexture": { "index": 0 },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8211145618000169
       }
     }
   ],
   "meshes": [
     {
-      "name": "Sword_Long_A.001_default_0",
+      "name": "Cube.001_Material.001_0",
       "primitives": [
         {
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TEXCOORD_0": 2,
-            "TEXCOORD_1": 3,
-            "TEXCOORD_2": 4,
-            "TEXCOORD_3": 5,
-            "TEXCOORD_4": 6,
-            "TEXCOORD_5": 7,
-            "TEXCOORD_6": 8,
-            "TEXCOORD_7": 9,
-            "TEXCOORD_8": 10,
-            "TEXCOORD_9": 11
+            "TEXCOORD_0": 2
           },
-          "indices": 12,
+          "indices": 3,
           "material": 0,
           "mode": 4
         }
       ]
     }
   ],
+  "images": [
+    {
+      "uri": "texture.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    }
+  ],
+
   "nodes": [
     {
       "children": [
@@ -225,7 +180,7 @@
         0.0,
         1.0
       ],
-      "name": "b55e84db291e4a7d806628f502ccce43.fbx"
+      "name": "c5e32058510c4e3ea92c5e1e70e26a24.fbx"
     },
     {
       "children": [
@@ -238,36 +193,28 @@
         4
       ],
       "matrix": [
-        2.220446049250313e-14,
-        8.271806125530277e-23,
-        -100.0,
+        4.60789680480957,
         0.0,
-        -1.192487866350612e-06,
-        99.99999999999999,
-        -8.271806125530277e-23,
         0.0,
-        100.0,
-        1.192487866350612e-06,
-        2.220446049250313e-14,
         0.0,
-        -13.161905288696289,
+        0.0,
+        -9.484486106750321e-07,
+        -5.821536064147872,
+        0.0,
+        0.0,
+        5.821536064147872,
+        -9.484486106750321e-07,
+        0.0,
+        0.0,
         0.0,
         0.0,
         1.0
       ],
-      "name": "Sword_Long_A.001"
+      "name": "Cube.001"
     },
     {
       "mesh": 0,
-      "name": "Sword_Long_A.001_default_0"
-    }
-  ],
-  "samplers": [
-    {
-      "magFilter": 9729,
-      "minFilter": 9987,
-      "wrapS": 10497,
-      "wrapT": 10497
+      "name": "Cube.001_Material.001_0"
     }
   ],
   "scene": 0,
@@ -277,16 +224,6 @@
       "nodes": [
         0
       ]
-    }
-  ],
-  "textures": [
-    {
-      "sampler": 0,
-      "source": 0
-    },
-    {
-      "sampler": 0,
-      "source": 1
     }
   ]
 }

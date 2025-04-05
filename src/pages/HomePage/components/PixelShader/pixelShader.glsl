@@ -2,7 +2,7 @@ uniform sampler2D tDiffuse;
 uniform vec2 resolution;
 uniform float pixelSize;
 uniform int paletteLength;
-uniform vec3 palette[5];
+uniform vec3 palette[6];
 
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   // take the current pixel and convert it into the bigger pixel's index (which is block)
@@ -27,20 +27,29 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
 
   // hammer
   if (bestIndex == 0) {
-    bestColor = vec3(0.227, 0.184, 0.184);
+    bestColor = vec3(0.243, 0.149, 0.078);
   }
 
   // sword
   if (bestIndex == 1) {
-    bestColor = vec3(0.498, 0.831, 1.0);
+    bestColor = vec3(0.827, 0.612, 0.416);
   }
 
   // anvil
   if (bestIndex == 2) {
-    bestColor = vec3(0.1725, 0.1843, 0.2);
+    bestColor = vec3(0.243, 0.149, 0.078);
   }
 
   // 4 = white
+  if (bestIndex == 4) {
+    bestColor = vec3(1.0, 0.5686, 0.0);
+  }
+
+  // text
+  if (bestIndex == 5) {
+    bestColor = vec3(0.53333333333, 0.34509803921, 0.02745098039);
+  }
+
 
 
   

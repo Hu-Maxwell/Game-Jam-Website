@@ -36,13 +36,13 @@ const Sparks = ({ position, visible }) => {
             itemSize={3}
           />
         </bufferGeometry>
-        <pointsMaterial attach="material" size={0.1} color="white" transparent opacity={0.8} />
+        <pointsMaterial attach="material" size={0.1} color="yellow" />
       </points>
 
       <pointLight
         ref={lightRef}
         position={[position.x, position.y + 10, position.z]}
-        color="orange"
+        color="white"
         intensity={15} 
         distance={15} 
         decay={2}

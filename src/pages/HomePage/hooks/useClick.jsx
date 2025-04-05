@@ -1,20 +1,41 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-const useClick = (hammerClicked, sword, text) => {
-  // when user clicks, 
-    // hammer smashes
-    // sword moves left a bit 
-    // one more word is displayed
+import { gsap } from 'gsap';
+
+const useClick = (hammerClicked, sword, swordText, setSwordText) => {
+  const fullText = "MercedJam2025";
+  const currentIndex = useRef(0);
+  const lastClickTime = useRef(0);
 
   useEffect(() => {
     const handleClick = () => {
-      // send to hammer a click
+      const now = performance.now();
+      if (now - lastClickTime.current < 1000) return; 
+      lastClickTime.current = now;
+
       hammerClicked.current = true;
 
-      // wait 1 sec, then move sword pos left a bit. 
-      // sword.current.position.x += 1;
+      setTimeout(() => {
+        gsap.to(sword.current.position, {
+          x: "+=0.25", // move right by 0.5 units
+          duration: 0.5,
+          ease: 'power2.out',
+        });
 
-      // set textClicked.current = true; 
+        gsap.to(swordText.current.position, {
+          x: "+=0.25", // same relative move
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      }, 500);
+
+
+
+      if (currentIndex.current < fullText.length) {
+        const nextChar = fullText[currentIndex.current];
+        setSwordText(prev => prev + nextChar);
+        currentIndex.current++;
+      }
     };
 
     window.addEventListener('click', handleClick);

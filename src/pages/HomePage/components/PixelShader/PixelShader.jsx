@@ -14,11 +14,12 @@ const srgbColor = (r, g, b) => {
 
 const pixelSize_ = 5; 
 const palette_ = [
-  srgbColor(66, 0, 0),         // red - hammer
-  srgbColor(57, 193, 31),      // green - sword
-  srgbColor(0, 0, 188),        // blue - anvil
-  srgbColor(0, 0, 0),          // black
-  srgbColor(255, 255, 255)     // white
+  srgbColor(66, 0, 0),          // red - hammer
+  srgbColor(139, 90, 43),       // green - sword
+  srgbColor(0, 0, 188),         // blue - anvil
+  srgbColor(0, 0, 0),           // black
+  srgbColor(230, 226, 106),     // yellow - text
+  srgbColor(136, 88, 7)         // white - text
 ];
 
 const PixelationEffect = ({pixelSize = pixelSize_, palette = palette_}) => {

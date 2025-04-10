@@ -32,7 +32,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
 
   // sword
   if (bestIndex == 1) {
-    bestColor = vec3(0.827, 0.612, 0.416);
+    bestColor = vec3(0.827, 0.612, 0.416); 
   }
 
   // anvil

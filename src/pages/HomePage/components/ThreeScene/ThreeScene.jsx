@@ -3,6 +3,8 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import { EffectComposer } from "@react-three/postprocessing";
 import { Canvas } from '@react-three/fiber';
 
+import NavBar from "@/components/NavBar/NavBar";
+
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Camera from "./../Camera/Camera";
 import Ground from "./../Ground/Ground";
@@ -30,7 +32,7 @@ const ThreeScene = ({ props }) => {
 
   const hammerClickedRef = useRef(false); 
 
-  useClick(hammerClickedRef, swordRef, swordTextRef, setSwordText)
+  useClick(hammerClickedRef, swordRef, swordTextRef, setSwordText, cameraRef);
   useMoveCamera(cameraRef); 
 
   // makes it so spotlight can't point at null 
@@ -67,7 +69,7 @@ const ThreeScene = ({ props }) => {
             castShadow
           />
 
-          <Ground />
+          <Ground /> 
 
           <Anvil
             ref={anvilRef}
@@ -88,7 +90,7 @@ const ThreeScene = ({ props }) => {
 
           <Sword 
             ref={swordRef}
-            position={[2.5, 3.8, 0]}  
+            position={[1, 3.8, 0]}  
             rotation={[0, 0, Math.PI / 2]}
             scale={[2, 3, 3]}
             onLoad={() => setIsLoaded(true)} 
@@ -102,11 +104,23 @@ const ThreeScene = ({ props }) => {
           <Walls />
 
         </Suspense>
-        {/* <EffectComposer> 
+        <EffectComposer> 
           <PixelShader />
-        </EffectComposer> */}
+        </EffectComposer>
 
       </Canvas>
+
+      {/* <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1000,
+          pointerEvents: 'auto'
+        }}>
+        <NavBar />
+      </div> */}
     </>
   );
 };

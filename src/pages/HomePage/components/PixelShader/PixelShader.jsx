@@ -12,14 +12,14 @@ const srgbColor = (r, g, b) => {
   return new THREE.Vector3(c.r, c.g, c.b);
 };
 
-const pixelSize_ = 5; 
+const pixelSize_ = 4; 
 const palette_ = [
   srgbColor(66, 0, 0),          // red - hammer
-  srgbColor(139, 90, 43),       // green - sword
+  srgbColor(0,125,0),           // green - sword
   srgbColor(0, 0, 188),         // blue - anvil
   srgbColor(0, 0, 0),           // black
   srgbColor(230, 226, 106),     // yellow - text
-  srgbColor(136, 88, 7)         // white - text
+  srgbColor(113,113,113)        // white - text
 ];
 
 const PixelationEffect = ({pixelSize = pixelSize_, palette = palette_}) => {

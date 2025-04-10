@@ -22,6 +22,7 @@ import useClick from "../../hooks/useClick";
 const ThreeScene = ({ props }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [swordText, setSwordText] = useState("");
+  const [showNavBar, setShowNavBar] = useState(false);
 
   const cameraRef = useRef(null);
   const lightRef = useRef(null); 
@@ -32,7 +33,7 @@ const ThreeScene = ({ props }) => {
 
   const hammerClickedRef = useRef(false); 
 
-  useClick(hammerClickedRef, swordRef, swordTextRef, setSwordText, cameraRef);
+  useClick(hammerClickedRef, swordRef, swordTextRef, setSwordText, cameraRef, setShowNavBar);
   useMoveCamera(cameraRef); 
 
   // makes it so spotlight can't point at null 
@@ -110,17 +111,20 @@ const ThreeScene = ({ props }) => {
 
       </Canvas>
 
-      {/* <div 
+      <div 
         style={{
           position: 'fixed',
           top: 0,
           left: 0,
           width: '100%',
           zIndex: 1000,
-          pointerEvents: 'auto'
-        }}>
+          pointerEvents: 'auto',
+          opacity: showNavBar ? 1 : 0,
+          transition: 'opacity 1s ease-in-out',
+        }}
+      >
         <NavBar />
-      </div> */}
+      </div>
     </>
   );
 };

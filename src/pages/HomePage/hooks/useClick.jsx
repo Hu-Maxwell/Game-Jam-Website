@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import { gsap } from 'gsap';
 
-const useClick = (hammerClicked, sword, swordText, setSwordText, camera) => {
+const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShowNavBar) => {
   const fullText = "MercedJam";
   const currentIndex = useRef(0);
   const lastClickTime = useRef(0);
@@ -38,8 +38,6 @@ const useClick = (hammerClicked, sword, swordText, setSwordText, camera) => {
         }, 500);
       } 
       
-      console.log(currentIndex.current > fullText.length - 1 && !finalClick);
-      // fullText.length - 1 cuz it'd do this animation on a click after the text finishes 
       if (currentIndex.current > fullText.length - 1 && !finalClick) {
         finalClick = true; 
         gsap.to(camera.current.position, {
@@ -49,7 +47,7 @@ const useClick = (hammerClicked, sword, swordText, setSwordText, camera) => {
           ease: 'power2.inOut',
         });
 
-        // show buttons
+        setShowNavBar(true); 
       }
     };
 

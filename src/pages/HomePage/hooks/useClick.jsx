@@ -47,6 +47,12 @@ const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShow
           ease: 'power2.inOut',
         });
 
+        gsap.to(camera.current.rotation, {
+          x: 1,
+          duration: 5,
+          ease: 'power1.inOut'
+        });
+
         setShowNavBar(true); 
       }
     };

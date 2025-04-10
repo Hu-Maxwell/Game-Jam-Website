@@ -17,6 +17,13 @@ const useMoveCamera = (camera) => {
       duration: 5,
       ease: 'power1.inOut'
     });
+
+    gsap.to(camera.current.rotation, {
+      x: 0.7, 
+      duration: 5,
+      ease: 'power1.inOut'
+    });
+  
   }, [camera.current]);
 };
 

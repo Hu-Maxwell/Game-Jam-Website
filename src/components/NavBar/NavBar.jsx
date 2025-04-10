@@ -4,7 +4,7 @@ const NavBar = () => {
     return (
         <header className={styles.header}>
             <div className={styles.websiteName}>
-                Game Jam Website
+                MercedJam
             </div>
             <nav className={styles.navbar}>
                 <a className={styles.navbutton} href="/">Home</a>

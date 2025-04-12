@@ -1,10 +1,154 @@
-.footer {
-    padding: 20px;
-    background: blue;
-    text-align: center;
+@font-face {
+    font-family: 'MonroFont';
+    src: url('../../assets/fonts/Munro-2LYe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.footer .socials img {
-    width: 30px;
-    margin: 0 10px;
+
+.footer {
+    background-color: #111;
+    position: relative;
+    border-top: 4px solid #444;
+    overflow: hidden;
+    font-family: 'MonroFont';
 }
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0055, #5500ff, #00ff55, #ffaa00);
+    background-size: 200% 200%;
+    animation: rainbow 3s linear infinite;
+}
+
+.footer_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.footer_title {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-shadow: 
+      3px 3px 0 #ff0055,
+      -3px -3px 0 #5500ff;
+    letter-spacing: 2px;
+    transform: rotate(-2deg);
+    animation: pulse 2s infinite;
+}
+  
+
+.footer_tagline {
+    color: #aaa;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Social icons container */
+  .socials {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px;
+  }
+  
+  /* Base social icon styling */
+  .social_icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gmail_container {
+    display: flex;
+    width: 35px;
+    height: 30px;
+  }
+
+  .insta_container {
+    display: flex;
+    width: 35px;
+    height: 35px;
+  }
+
+  .discord_container {
+    display: flex;
+    width: 35px;
+    height: 30px;
+  }
+
+  .rufus_container {
+    display: flex;
+    width: 35px;
+    height: 40px;
+    margin-bottom: 2px
+  }
+
+
+  
+  /* Pixel icon inside each social button */
+  .pixel-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    image-rendering: pixelated;
+    transition: transform 0.2s;
+  }
+  
+  /* Icon images - replace with actual pixel art icons */
+  .gmail-icon .pixel-icon {
+    background-image: url('pixel-gmail.png');
+    background-size: contain;
+  }
+  
+  .instagram-icon .pixel-icon {
+    background-image: url('pixel-instagram.png');
+    background-size: contain;
+  }
+  
+  .discord-icon .pixel-icon {
+    background-image: url('pixel-discord.png');
+    background-size: contain;
+  }
+  
+  .bobcat-icon .pixel-icon {
+    background-image: url('pixel-bobcat.png');
+    background-size: contain;
+  }
+  
+  
+  .text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #777;
+
+  }
+  
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: rotate(-2deg) scale(1); }
+    50% { transform: rotate(-2deg) scale(1.05); }
+    100% { transform: rotate(-2deg) scale(1); }
+  }

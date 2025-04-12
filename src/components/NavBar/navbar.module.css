@@ -18,13 +18,13 @@
 .header::after {
     content: '';
     position: absolute;
-    top: 2px;        /* Distance from outer border */
-    left: 2px;       /* Distance from outer border */
-    right: 2px;      /* Distance from outer border */
-    bottom: 2px;     /* Distance from outer border */
-    border: 3px solid #333333;  /* Inner border color and thickness */
-    pointer-events: none;  /* Allows clicks to pass through to elements below */
-    z-index: 1;      /* Make sure it appears above the background but below content */
+    top: 2px;        
+    left: 2px;       
+    right: 2px;      
+    bottom: 2px;     
+    border: 3px solid #333333;  
+    pointer-events: none;  
+    z-index: 1;      
 }
 
 /* Ensure header contents appear above the inner border */

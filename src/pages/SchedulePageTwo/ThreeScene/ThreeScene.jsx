@@ -16,7 +16,6 @@ import styles from './three-scene.module.css';
 const ThreeScene = ({ props }) => {
   const towerRef = useRef(null);
   
-
   const [time, setTime] = useState(0); 
 
   return (
@@ -27,7 +26,7 @@ const ThreeScene = ({ props }) => {
       >
         <Camera 
           position={[0, 20, -20]}
-          rotation={[0, Math.PI, 0]}
+          rotation={[-Math.PI / 6, Math.PI, 0]}
           fov={85}
         />
 
@@ -45,7 +44,7 @@ const ThreeScene = ({ props }) => {
 
         <Suspense fallback={null}> 
           <Walls />
-          <Backdrop />
+          <Backdrop time={time} />
           <Tower ref={towerRef} time={time} />
         </Suspense>
       </Canvas>

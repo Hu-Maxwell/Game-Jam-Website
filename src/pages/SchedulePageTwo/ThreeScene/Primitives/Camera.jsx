@@ -12,7 +12,6 @@ const Camera = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => internalCamRef.current, []);
   useKeyboardMovement(camera); 
 
-
   return (
     <>
       <PerspectiveCamera makeDefault {...props} ref={internalCamRef} />

@@ -12,6 +12,23 @@ const srgbColor = (r, g, b) => {
   return new THREE.Vector3(c.r, c.g, c.b);
 };
 
+/*
+COLORS:
+
+(CLOCK TOWER CANNOT BE BASIC)
+red: clock tower 
+slightly darker red: shade of clock tower
+green: clock numbers (HAS TO BE BASIC)
+blue: clock hands (HAS TO BE BASIC)
+gray: moon
+yellow: sun
+
+backdrop colors:
+- all colors are known, just send chatgpt the code and it'll calculate it
+
+*/
+
+
 const pixelSize_ = 4; 
 const palette_ = [
   srgbColor(66, 0, 0),          // red - hammer

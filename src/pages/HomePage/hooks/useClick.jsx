@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import { gsap } from 'gsap';
 
-const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShowNavBar) => {
+const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShowNavBar, setShowFooter) => {
   const fullText = "MercedJam";
   const currentIndex = useRef(0);
   const lastClickTime = useRef(0);
@@ -54,6 +54,7 @@ const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShow
         });
 
         setShowNavBar(true); 
+        setShowFooter(true);
       }
     };
 

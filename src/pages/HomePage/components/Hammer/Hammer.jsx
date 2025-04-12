@@ -8,7 +8,7 @@ import Sparks from "./Sparks";
 import TextureFilter from "../TextureFilter/TextureFilter";
 
 const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
-  const { scene } = useGLTF('hammer/scene.gltf');
+  const { scene } = useGLTF('/home/hammer/scene.gltf');
   const [loaded, setLoaded] = useState(false);
 
   const hammerRef = useRef();

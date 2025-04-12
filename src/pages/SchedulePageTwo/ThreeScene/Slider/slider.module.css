@@ -1,0 +1,67 @@
+.sliderContainer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  color: white;
+  user-select: none;
+  font-family: 'Press Start 2P', monospace; /* Use a pixel font if available */
+}
+
+.scheduleText {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-shadow: 1px 1px #000;
+}
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.timeText {
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #999;
+  padding: 6px 10px;
+  width: 100px;
+  text-align: center;
+  box-shadow: inset -2px -2px #111, inset 2px 2px #666;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  max-width: 60%;
+  height: 20px;
+  background: #555;
+  border: 2px solid #999;
+  box-shadow: inset -2px -2px #111, inset 2px 2px #666;
+  cursor: pointer;
+}
+
+/* Thumb styling for Chrome */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border: 2px solid #222;
+  box-shadow: -1px -1px #666, 1px 1px #000;
+  cursor: pointer;
+}
+
+/* Thumb styling for Firefox */
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border: 2px solid #222;
+  box-shadow: -1px -1px #666, 1px 1px #000;
+  cursor: pointer;
+}

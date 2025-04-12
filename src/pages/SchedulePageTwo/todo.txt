@@ -1,0 +1,10 @@
+add text at base of clock tower
+update sky 
+update shader's colors
+update the shader so that it slowly fades out the sides of the screen 
+
+schedule:
+- Team Mixer
+- Start Jam (ensure everyone joined on itch)
+- Pitch presentations at end
+

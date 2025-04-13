@@ -9,7 +9,7 @@ const Footer = () => {
     return (
             <footer className={styles.footer}>
                 <div className={styles.footer_content}>
-                    <h2 className={styles.footer_title}>MERCED GAME JAM 2025!</h2>
+                    <h2 className={styles.footer_title}>mercedjam 2025</h2>
                     <p className={styles.footer_tagline}>BUILD · PLAY · CONNECT</p>
                                         
                     <div className={styles.socials}>
@@ -41,7 +41,7 @@ const Footer = () => {
                         </div>
                         <div className={styles.rufus_container}>
                             <a  
-                                href="https://events.ucmerced.edu/group/game_development_club " 
+                                href="https://ucmerced.presence.io/organization/game-development-club " 
                                 className={styles.social_icon}
                                 target="_blank"
                             >

@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router"
 import Homepage from "./pages/HomePage/HomePage"
 import ContactPage from "./pages/ContactPage/ContactPage"
-import ResourcesPage from "./pages/ResourcesPage/ResourcesPage"
-import SchedulePage from "./pages/SchedulePage/SchedulePage"
 import SchedulePageTwo from "./pages/SchedulePageTwo/SchedulePage"
 import AboutPage from "./pages/AboutPage/AboutPage"
 import RegisterPage from  "./pages/RegisterPage/RegisterPage"
@@ -15,10 +13,9 @@ function WebsiteRoutes() {
             <Route path="/" element={<Homepage/>}/>
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/about" element={<AboutPage/>} />
-            <Route path="/resources" element={<ResourcesPage/>}/>
             <Route path="/schedule" element={<SchedulePageTwo/>} />
             <Route path="/register" element={<RegisterPage/>} />
-            <Route path="/test" element={<ResourcesPageTest/>} />
+            <Route path="/resources" element={<ResourcesPageTest/>} />
         </Routes>
     )
 }

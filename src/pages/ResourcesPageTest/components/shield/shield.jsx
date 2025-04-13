@@ -1,38 +1,49 @@
 import { useGLTF } from "@react-three/drei";
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useEffect, useMemo } from "react";
+import { animated } from '@react-spring/three';
 import TextureFilter from "../../../HomePage/components/TextureFilter/TextureFilter";
 
-const Shield = forwardRef(({ onLoad, ...props }, ref) => {
+const Shield = forwardRef(({ onLoad, onClick, ...props }, ref) => {
     const { scene } = useGLTF('/shield/scene.gltf');
-    const [loaded, setLoaded] = useState(false); 
-  
-    const palette = [
-      [0, 255, 0], 
-    ];
-  
-    useEffect(() => {
-      if (loaded) return;
-  
-      scene.traverse((child) => {
+    const palette = useMemo(() => [ [0, 255, 0], ], []);
+
+    const processedScene = useMemo(() => {
+        if (!scene) return null; // Guard clause
+
+        console.log("Processing Hammer Scene in useMemo..."); // Debug log
+
+        const scenes = scene.clone(); // Clone before modifying
+
+        scenes.traverse((child) => {
         if (child.isMesh) {
-          child.material = child.material.clone();
-          const mat = child.material;
-  
-          TextureFilter(mat, palette);
-  
-          mat.envMap = null;
-          mat.envMapIntensity = 0;
-          mat.reflectivity = 0;
-          mat.roughness = 1;
-          mat.metalness = 0;
+            child.material = child.material.clone();
+            const mat = child.material;
+            TextureFilter(mat, palette);
         }
-      });
+        });
+
+        return scenes;
+
+    }, [scene, palette])
+
+    useEffect(() => {
+        if (processedScene && onLoad) {
+        console.log("Hammer processedScene ready, calling onLoad");
+        onLoad();
+        }
+    }, [processedScene, onLoad]);
+
+    if (!processedScene) {
+        return null;
+    }
   
-      setLoaded(true);
-      onLoad();
-    }, [loaded, onLoad, scene])
-  
-    return <primitive object={scene} ref={ref} {...props} />
+    return (
+        <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+          <primitive object={scene} />
+        </animated.group>
+    )
   });
   
+  useGLTF.preload('/home/shield/scene.gltf');
+
   export default Shield;

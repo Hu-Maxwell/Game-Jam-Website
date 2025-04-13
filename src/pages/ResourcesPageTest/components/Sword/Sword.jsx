@@ -1,39 +1,50 @@
-import { useState, useEffect, forwardRef } from 'react';
+import { useState, useEffect, forwardRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { animated } from '@react-spring/three';
 import TextureFilter from '../../../HomePage/components/TextureFilter/TextureFilter';
 
 
-const Sword = forwardRef(({ onLoad, ...props }, ref) => {
+const Sword = forwardRef(({ onLoad, onClick, ...props }, ref) => {
   const { scene } = useGLTF('/home/sword/scene.gltf');
-  const [loaded, setLoaded] = useState(false); 
+  const palette = useMemo(() => [ [0, 255, 0], ], []);
 
-  const palette = [
-    [0, 255, 0], 
-  ];
+    const processedScene = useMemo(() => {
+        if (!scene) return null; // Guard clause
 
-  useEffect(() => {
-    if (loaded) return;
+        console.log("Processing Hammer Scene in useMemo..."); // Debug log
 
-    scene.traverse((child) => {
-      if (child.isMesh) {
-        child.material = child.material.clone();
-        const mat = child.material;
+        const scenes = scene.clone(); // Clone before modifying
 
-        TextureFilter(mat, palette);
+        scenes.traverse((child) => {
+        if (child.isMesh) {
+            child.material = child.material.clone();
+            const mat = child.material;
+            TextureFilter(mat, palette);
+        }
+        });
 
-        mat.envMap = null;
-        mat.envMapIntensity = 0;
-        mat.reflectivity = 0;
-        mat.roughness = 1;
-        mat.metalness = 0;
-      }
-    });
+        return scenes;
 
-    setLoaded(true);
-    onLoad();
-  }, [loaded, onLoad, scene])
+    }, [scene, palette])
 
-  return <primitive object={scene} ref={ref} {...props} />
+    useEffect(() => {
+        if (processedScene && onLoad) {
+        console.log("Hammer processedScene ready, calling onLoad");
+        onLoad();
+        }
+    }, [processedScene, onLoad]);
+
+    if (!processedScene) {
+        return null;
+    }
+
+  return (
+    <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+      <primitive object={scene} />
+    </animated.group>
+  )
 });
+
+useGLTF.preload('/home/sword/scene.gltf');
 
 export default Sword;

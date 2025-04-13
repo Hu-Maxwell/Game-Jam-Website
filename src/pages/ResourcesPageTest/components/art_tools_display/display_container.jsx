@@ -3,30 +3,18 @@ import aespriteicon from '@/assets/resources/aesprite.png'
 import Aesprite_SVGTextureMesh from "./aesprite";
 import Procreate_SVGTextureMesh from './procreate';
 import procreateicon from '@/assets/resources/procreate.png'
+import Aesprite_Details from './aesprite';
+import Procreate_Details from './procreate';
+import SketchBook_Details from './blender';
 
 const Art_Tools_Display_Container = () => {
 
     return (
-        <>
-            <Aesprite_SVGTextureMesh
-                svgUrl={pixelButtonSVG} 
-                iconUrl={aespriteicon}
-                title="Aesprite Art Tool"
-                position={[8, 40, -5]}
-                rotation={[0, Math.PI, 0]}
-                scale={[10, 10, 1]}
-            />
-
-            <Procreate_SVGTextureMesh
-                svgUrl={pixelButtonSVG} 
-                iconUrl={procreateicon}
-                title="Procreate"
-                position={[8, 25, -5]}
-                rotation={[0, Math.PI, 0]}
-                scale={[10, 10, 1]}
-            />
-            
-        </>
+        <div className="main">
+            <Aesprite_Details/>
+            <Procreate_Details />
+            <SketchBook_Details />
+        </div>
     )
 }
 

@@ -54,7 +54,7 @@ const Footer = () => {
                         <span className={styles.text}>2025 MercedJam Team</span>
                     </div>
                     
-                    <div class="pixel-character"></div>
+                    <div className="pixelCharacter"></div>
                 </div>
                 
             </footer>

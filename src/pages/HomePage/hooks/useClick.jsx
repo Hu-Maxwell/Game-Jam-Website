@@ -54,6 +54,7 @@ const useClick = (hammerClicked, sword, swordText, setSwordText, camera, setShow
         });
 
         setShowNavBar(true); 
+        localStorage.setItem("hasSeenScene", "true");
       }
     };
 

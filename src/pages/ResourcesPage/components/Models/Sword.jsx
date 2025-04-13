@@ -1,14 +1,13 @@
-import { useState, useEffect, forwardRef, useMemo } from 'react';
+import { forwardRef,  } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { animated } from '@react-spring/three';
 
 const Sword = forwardRef(({ onLoad, onClick, ...props }, ref) => {
   const { scene } = useGLTF('/home/sword/scene.gltf');
 
   return (
-    <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+    <group ref={ref} {...props} scale={[9, 9, 9]} position={[34, 10, 0]} rotation={[0, Math.PI / 2, 0]} onClick={onClick} dispose={null}>
       <primitive object={scene} />
-    </animated.group>
+    </group>
   )
 });
 

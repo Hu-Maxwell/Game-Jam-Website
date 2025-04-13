@@ -1,15 +1,14 @@
 import { useGLTF } from "@react-three/drei";
 import { forwardRef } from "react";
-import { animated } from '@react-spring/three';
 
 const Shield = forwardRef(({ onLoad, onClick, ...props }, ref) => {
   const { scene } = useGLTF('/shield/shield.glb');
 
 
   return (
-    <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+    <group ref={ref} {...props} scale={[9, 9, 9]} position={[13, 20, 0]} rotation={[0, Math.PI, 0]} onClick={onClick} dispose={null}>
       <primitive object={scene} />
-    </animated.group>
+    </group>
   )
 });
 export default Shield;

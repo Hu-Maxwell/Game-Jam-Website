@@ -1,6 +1,5 @@
 import { useEffect, forwardRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { animated } from '@react-spring/three';
 import TextureFilter from '../TextureFilter/TextureFilter';
 
 const Hammer = forwardRef(({ onLoad, onClick, ...props }, ref) => {
@@ -31,9 +30,9 @@ const Hammer = forwardRef(({ onLoad, onClick, ...props }, ref) => {
   }, [scene])
 
   return (
-    <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+    <group ref={ref} {...props} scale={[.4, .4, .4]} position={[-10, 10, 0]} onClick={onClick} dispose={null}>
       <primitive object={scene} />
-    </animated.group>
+    </group>
   )
 });
 

@@ -23,7 +23,6 @@ import styles from "./three-scene.module.css";
 const ThreeScene = () => {
   const {
     refs,
-    springProps,
     handlers,
     state,
   } = useSceneLogic();
@@ -63,9 +62,9 @@ const ThreeScene = () => {
             </EffectComposer>
 
             <Suspense fallback={null}>
-              <Sword ref={refs.swordRef} {...springProps.swordSpring} onLoad={() => setIsLoaded(true)} onClick={handlers.handleSwordClick} />
-              <Hammer ref={refs.hammerRef} {...springProps.hammerSpring} onLoad={() => setIsLoaded(true)} onClick={handlers.handleHammerClick} />
-              <Shield ref={refs.shieldRef} {...springProps.shieldSpring} onLoad={() => setIsLoaded(true)} onClick={handlers.handleShieldClick} />
+              <Sword  ref={refs.swordRef}  onLoad={() => setIsLoaded(true)} onClick={handlers.handleSwordClick} />
+              <Hammer ref={refs.hammerRef} onLoad={() => setIsLoaded(true)} onClick={handlers.handleHammerClick} />
+              <Shield ref={refs.shieldRef} onLoad={() => setIsLoaded(true)} onClick={handlers.handleShieldClick} />
             </Suspense>
           </Canvas>
         </div>

@@ -1,7 +1,7 @@
 .faqContainer {
   width: 8.5in;
   height: 4.5in;
-  background-image: url("@assets/container.png ");
+  background-image: url("/container.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

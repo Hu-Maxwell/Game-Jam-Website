@@ -5,7 +5,7 @@ import textLargeScreen from "@assets/text-l.png";
 const Contact = () => {
     return (
         <div className={styles.contactContainer}>
-            <h1 className={styles.contactTitle}>ABOUT GAME JAM</h1>
+            <h1 className={styles.contactTitle}>about</h1>
             <div className={styles.textContainer}>
             <picture>
                 <source media="(max-width: 900px)" srcSet={textSmallScreen} />

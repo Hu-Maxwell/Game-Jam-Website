@@ -73,3 +73,62 @@
     color: #ffffff;
     transform: translate(-2px, -2px);
 }
+
+:root {
+  --glitch-color-1: #E91E63;
+  --glitch-color-2: #03A9F4;
+}
+
+.glitchText {
+  position: relative;
+  display: inline-block;
+  color: #cccccc;
+  font-weight: bold;
+}
+
+
+.glitchText::before,
+.glitchText::after {
+  content: "2025"; /* needs to match actual text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  font-weight: bold;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.glitchText:hover::before {
+  color: rgba(233, 30, 99, 0.8);
+  animation: glitchBefore 300ms linear infinite;
+}
+
+.glitchText:hover::after {
+  color: rgba(3, 169, 244, 0.8);
+  animation: glitchAfter 300ms linear infinite;
+}
+
+@keyframes glitchBefore {
+  0%    { top: 0%; left: 0%; }
+  12.5% { top: 0%; left: 2%; }
+  25%   { top: 0%; left: 4%; }
+  37.5% { top: 2%; left: 4%; }
+  50%   { top: 4%; left: 4%; }
+  62.5% { top: 4%; left: 2%; }
+  75%   { top: 4%; left: 0%; }
+  87.5% { top: 2%; left: 0%; }
+  100%  { top: 0%; left: 0%; }
+}
+
+@keyframes glitchAfter {
+  0%    { top: 4%; left: 4%; }
+  12.5% { top: 2%; left: 4%; }
+  25%   { top: 0%; left: 4%; }
+  37.5% { top: 0%; left: 2%; }
+  50%   { top: 0%; left: 0%; }
+  62.5% { top: 2%; left: 0%; }
+  75%   { top: 4%; left: 0%; }
+  87.5% { top: 4%; left: 2%; }
+  100%  { top: 4%; left: 4%; }
+}

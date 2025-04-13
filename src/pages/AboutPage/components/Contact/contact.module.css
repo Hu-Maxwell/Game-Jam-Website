@@ -1,4 +1,12 @@
+@font-face {
+    font-family: 'MonroFont';
+    src: url('../../assets/fonts/Munro-2LYe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .contactTitle {
+    font-family: 'MonroFont';
     text-align: center;
     font-size: 140px;
     color: #ffffff;

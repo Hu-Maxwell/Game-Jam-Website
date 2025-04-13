@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 import Sparks from "./Sparks";
 
-import TextureFilter from "../TextureFilter/TextureFilter";
+import TextureFilter from "../../TextureFilter/TextureFilter";
 
 const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
   const { scene } = useGLTF('/home/hammer/scene.gltf');

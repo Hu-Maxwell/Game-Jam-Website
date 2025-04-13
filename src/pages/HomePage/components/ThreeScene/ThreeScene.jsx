@@ -5,14 +5,14 @@ import { Canvas } from '@react-three/fiber';
 
 import NavBar from "@/components/NavBar/NavBar";
 
-import LoadingScreen from "../Hammer/LoadingScreen/LoadingScreen";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Camera from "./../Camera/Camera";
-import Ground from "./../Ground/Ground";
-import Anvil from "../Anvil/Anvil";
-import Hammer from "../Hammer/Hammer";
-import Sword from "../Sword/Sword";
-import Walls from "../Walls/Walls";
-import SwordText from "../SwordText/SwordText";
+import Ground from "../Models/Ground";
+import Anvil from "../Models/Anvil";
+import Hammer from "../Models/Hammer/Hammer";
+import Sword from "../Models/Sword";
+import Walls from "../Models/Walls";
+import SwordText from "../Models/SwordText";
 
 import PixelShader from "../PixelShader/PixelShader"
 
@@ -45,10 +45,11 @@ const ThreeScene = ({ props }) => {
 
   // shows navbar if scene already played
   useEffect(() => {
-    if (!localStorage.getItem("hasSeenScene")) {
+    console.log(localStorage.getItem("hasSeenScene"))
+    if (localStorage.getItem("hasSeenScene")) {
       setShowNavBar(true); 
     }
-  }, [loadedCount]);
+  }, []);
 
   return (
     <>

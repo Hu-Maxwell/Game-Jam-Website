@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import TextureFilter from "../TextureFilter/TextureFilter";
 
 const Anvil = forwardRef(({ onLoad, ...props }, ref) => {
-  const { scene } = useGLTF('anvil/scene.gltf');
+  const { scene } = useGLTF('/home/anvil/scene.gltf');
   const [loaded, setLoaded] = useState(false); 
 
   const palette = [

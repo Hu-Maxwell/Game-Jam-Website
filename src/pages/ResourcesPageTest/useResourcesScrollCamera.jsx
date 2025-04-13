@@ -1,13 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { 
-    RESOURCE_SCENE_START_POS, 
-    RESOURCE_SCENE_FINAL_POS, 
-    WORKSHOP_FINAL_POS,       
-    GAME_ENGINE_FINAL_POS,
-    SOUND_TOOL_FINAL_POS,
-    ART_TOOLS_FINAL_POS
-} from '../utils/constants';
+import { RESOURCE_SCENE_START_POS, RESOURCE_SCENE_FINAL_POS, WORKSHOP_FINAL_POS, GAME_ENGINE_FINAL_POS, SOUND_TOOL_FINAL_POS, ART_TOOLS_FINAL_POS } from '../utils/constants';
+
 import * as THREE from 'three';
 
 const useResourcesScrollCamera = (camera) => {

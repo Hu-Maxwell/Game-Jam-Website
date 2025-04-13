@@ -51,7 +51,7 @@ const Footer = () => {
                     </div>
                                         
                     <div>
-                        <span className={styles.text}>2025 Merced Game Jam Team</span>
+                        <span className={styles.text}>2025 MercedJam Team</span>
                     </div>
                     
                     <div class="pixel-character"></div>

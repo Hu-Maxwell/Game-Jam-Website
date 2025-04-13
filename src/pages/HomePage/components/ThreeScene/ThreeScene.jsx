@@ -7,12 +7,12 @@ import NavBar from "@/components/NavBar/NavBar";
 
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Camera from "./../Camera/Camera";
-import Ground from "./../Ground/Ground";
-import Anvil from "../Anvil/Anvil";
-import Hammer from "../Hammer/Hammer";
-import Sword from "../Sword/Sword";
-import Walls from "../Walls/Walls";
-import SwordText from "../SwordText/SwordText";
+import Ground from "../Models/Ground";
+import Anvil from "../Models/Anvil";
+import Hammer from "../Models/Hammer/Hammer";
+import Sword from "../Models/Sword";
+import Walls from "../Models/Walls";
+import SwordText from "../Models/SwordText";
 
 import PixelShader from "../PixelShader/PixelShader"
 
@@ -20,7 +20,7 @@ import useMoveCamera from "../../hooks/useMoveCamera";
 import useClick from "../../hooks/useClick";
 
 const ThreeScene = ({ props }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [loadedCount, setLoadedCount] = useState(0);
   const [swordText, setSwordText] = useState("");
   const [showNavBar, setShowNavBar] = useState(false);
 
@@ -38,80 +38,24 @@ const ThreeScene = ({ props }) => {
 
   // makes it so spotlight can't point at null 
   useEffect(() => {
-    if (lightRef.current && anvilRef.current) {
+    if (lightRef.current && anvilRef.current && loadedCount === 3) {
       lightRef.current.target = anvilRef.current;
     }
-  }, [isLoaded]); 
+  }, [loadedCount]); 
+
+  // shows navbar if scene already played
+  useEffect(() => {
+    console.log(localStorage.getItem("hasSeenScene"))
+    if (localStorage.getItem("hasSeenScene")) {
+      setShowNavBar(true); 
+    }
+  }, []);
 
   return (
     <>
-      {/* if not loaded, then display the loading screen */}
-      {!isLoaded && <LoadingScreen />} 
+      {(loadedCount < 3) && <LoadingScreen />} 
 
-      <Canvas
-        pixelratio={window.devicePixelRatio}
-        style={{ width: '100vw', height: '100vh' }}
-      >
-        <Suspense fallback={null}> 
-
-          <Camera 
-            ref={cameraRef}
-            position={[0, 5, -35]}
-            rotation={[0, Math.PI, 0]}
-            fov={85}
-          />
-
-          <spotLight 
-            ref={lightRef}
-            position={[2, 10, 2]}  
-            angle={Math.PI} 
-            penumbra={0.5}  
-            intensity={60}  
-            castShadow
-          />
-
-          <Ground /> 
-
-          <Anvil
-            ref={anvilRef}
-            position={[0, .5, 0]}  
-            rotation={[0, 0, 0]}
-            scale={1.5}
-            onLoad={() => setIsLoaded(true)} 
-          />
-
-          <Hammer 
-            ref={hammerRef}
-            hammerClicked={hammerClickedRef}
-            position={[-1, 3.4, -1]}  
-            rotation={[1, Math.PI / 2, 0]}
-            scale={.03}
-            onLoad={() => setIsLoaded(true)} 
-          />
-
-          <Sword 
-            ref={swordRef}
-            position={[1, 3.8, 0]}  
-            rotation={[0, 0, Math.PI / 2]}
-            scale={[2, 3, 3]}
-            onLoad={() => setIsLoaded(true)} 
-          />
-
-          <SwordText 
-            ref={swordTextRef}
-            swordText={swordText}  
-          />
-
-          <Walls />
-
-        </Suspense>
-        <EffectComposer> 
-          <PixelShader />
-        </EffectComposer>
-
-      </Canvas>
-
-      <div 
+      <div
         style={{
           position: 'fixed',
           top: 0,
@@ -120,11 +64,74 @@ const ThreeScene = ({ props }) => {
           zIndex: 1000,
           pointerEvents: 'auto',
           opacity: showNavBar ? 1 : 0,
-          transition: 'opacity 1s ease-in-out',
+          transition: showNavBar ? 'opacity 1s ease-in-out' : 'none',
         }}
       >
         <NavBar />
       </div>
+
+      <Canvas
+        pixelratio={window.devicePixelRatio}
+        style={{ width: '100vw', height: '100vh' }}
+      >
+        <Camera 
+          ref={cameraRef}
+          position={[0, 5, -35]}
+          rotation={[0, Math.PI, 0]}
+          fov={85}
+        />
+
+        <spotLight 
+          ref={lightRef}
+          position={[2, 10, 2]}  
+          angle={Math.PI} 
+          penumbra={0.5}  
+          intensity={60}  
+          castShadow
+        />
+
+        <EffectComposer> 
+          <PixelShader />
+        </EffectComposer>
+
+        <Suspense fallback={null}> 
+          <Ground /> 
+
+          <Anvil
+            ref={anvilRef}
+            position={[0, .5, 0]}  
+            rotation={[0, 0, 0]}
+            scale={1.5}
+            onLoad={() => setLoadedCount(prev => prev + 1)} 
+          />
+
+          <Hammer 
+            ref={hammerRef}
+            hammerClicked={hammerClickedRef}
+            position={[-1, 3.4, -1]}  
+            rotation={[1, Math.PI / 2, 0]}
+            scale={.03}
+            onLoad={() => setLoadedCount(prev => prev + 1)} 
+          />
+
+          <Sword 
+            ref={swordRef}
+            position={[1, 3.8, 0]}  
+            rotation={[0, 0, Math.PI / 2]}
+            scale={[2, 3, 3]}
+            onLoad={() => setLoadedCount(prev => prev + 1)} 
+          />
+
+          <SwordText 
+            ref={swordTextRef}
+            swordText={swordText}
+          />
+
+          <Walls />
+
+        </Suspense>
+
+      </Canvas>
     </>
   );
 };

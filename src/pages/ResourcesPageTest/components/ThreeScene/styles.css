@@ -3,3 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.test {
+  display: flex;
+  width: 6vw;
+  height: 4vh;
+  font-size: 21px;
+  color: #aaaaaa;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../../../assets/resourcepage/pixel-button-white.svg');
+  background-size: 100% 100%; /* Stretch to fill exactly */
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'MonroFont';
+  margin-right: 1vw;
+  text-decoration: none;
+}

@@ -1,0 +1,34 @@
+.faqContainer {
+  width: 8.5in;
+  height: 4.5in;
+  background-image: url("@assets/container.png ");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  margin: 40px auto;  /* center horizontally with some vertical spacing */
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.answer {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}

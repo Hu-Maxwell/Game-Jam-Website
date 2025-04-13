@@ -1,10 +1,10 @@
 import { useGLTF } from "@react-three/drei";
-import { forwardRef, useEffect, useMemo } from "react";
+import { forwardRef } from "react";
 import { animated } from '@react-spring/three';
-import TextureFilter from "../../../HomePage/components/TextureFilter/TextureFilter";
 
 const Shield = forwardRef(({ onLoad, onClick, ...props }, ref) => {
-  const { scene } = useGLTF('/shield/scene.gltf');
+  const { scene } = useGLTF('/shield/shield.glb');
+
 
   return (
     <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>

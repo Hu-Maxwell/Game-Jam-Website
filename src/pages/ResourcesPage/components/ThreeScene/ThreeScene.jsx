@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+
+import { EffectComposer } from "@react-three/postprocessing";
 import { Canvas } from '@react-three/fiber';
 
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -13,7 +15,7 @@ import ArtTools from '../Details/ArtTools/ArtTools';
 import GameEngines from '../Details/GameEngines/GameEngines';
 import SoundTools from '../Details/SoundTools/SoundTools';
 
-import PixelShader from "../../../HomePage/components/PixelShader/PixelShader"
+import PixelShader from "../PixelShader/PixelShader"
 import { useSceneLogic } from '../../hooks/useSceneLogic';
 
 import styles from "./three-scene.module.css";
@@ -54,17 +56,11 @@ const ThreeScene = () => {
 
             <ambientLight intensity={0.3} />
 
-            <spotLight
-              ref={refs.lightRef}
-              position={[35, 55, 10]}
-              angle={Math.PI / 2}
-              penumbra={0.5}
-              intensity={1500}
-            />
+            <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={15} />
 
-            {/* <EffectComposer>
+            <EffectComposer>
               <PixelShader />
-            </EffectComposer> */}
+            </EffectComposer>
 
             <Suspense fallback={null}>
               <Sword ref={refs.swordRef} {...springProps.swordSpring} onLoad={() => setIsLoaded(true)} onClick={handlers.handleSwordClick} />
@@ -74,7 +70,7 @@ const ThreeScene = () => {
           </Canvas>
         </div>
 
-        <div className={styles.details}>
+        <div className={`${styles.details} ${isItemSelected ? styles.detailsActive : ''}`}>
           {gameToolsActive && <GameEngines />}
           {artToolsActive && <ArtTools />}
           {soundToolsActive && <SoundTools />}
@@ -84,9 +80,8 @@ const ThreeScene = () => {
           )}
 
           {!isItemSelected && (
-            <div className={styles.empty}> Click for details! </div>
+            <div className={styles.empty}>Click for details!</div>
           )}
-
         </div>
       </div>
     </>

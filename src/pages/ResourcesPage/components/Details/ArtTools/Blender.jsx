@@ -12,7 +12,7 @@ const Blender = () => {
           <li className={styles.blenderListItem}>Support for animating 3D models</li>
         </ul>
 
-        <a className="button" href="https://www.blender.org/" target="_blank">
+        <a className={styles.button} href="https://www.blender.org/" target="_blank">
           Learn More!
         </a>
       </div> 

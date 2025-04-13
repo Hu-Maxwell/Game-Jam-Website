@@ -1,0 +1,11 @@
+.threeContainer {
+    background-color: #222; 
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative; 
+ }
+ 
+.threeScene {
+    width: 100vw;
+}

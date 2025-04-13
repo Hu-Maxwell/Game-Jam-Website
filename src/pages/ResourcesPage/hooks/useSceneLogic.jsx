@@ -21,14 +21,14 @@ export const useSceneLogic = () => {
   const initialState = {
     sword: { position: [15, 30, -10], rotation: [0, Math.PI / 2, 0], scale: [4, 4, 4] },
     hammer: { position: [20, 20, -10], rotation: [0, Math.PI / 2 + 1, 0], scale: [0.2, 0.2, 0.2] },
-    shield: { position: [10, 25, -10], rotation: [0, Math.PI / 2 + 0.5, 0], scale: [0.13, 0.13, 0.13] },
+    shield: { position: [10, 25, -10], rotation: [0, Math.PI / 2 + 0.5, 0], scale: [4, 4, 4] },
     lightTargetPos: [15, 25, -10],
   };
 
   const targetState = {
     sword: { position: [30, 33, -5], rotation: [Math.PI, Math.PI - 0.25, -Math.PI + 0.5], scale: [6, 6, 6] },
     hammer: { position: [25.6, 24.5, -32], rotation: [Math.PI, Math.PI + 0.5, -Math.PI + 0.5], scale: [0.02, 0.02, 0.02] },
-    shield: { position: [25.5, 23.4, -32], rotation: [Math.PI + 1, -Math.PI / 16, -Math.PI + 0.5], scale: [0.02, 0.02, 0.02] },
+    shield: { position: [25.5, 23.4, -32], rotation: [Math.PI + 1, -Math.PI / 16, -Math.PI + 0.5], scale: [.6, .6, .6] },
     lightTargetPos: [23, 35, 0],
   };
 

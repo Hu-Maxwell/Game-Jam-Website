@@ -1,14 +1,13 @@
 import React from 'react';
 
 import ThreeScene from './components/ThreeScene/ThreeScene.jsx';
-import NavBar from '../../components/NavBar/NavBar.jsx';
+import NavBar from '@/components/NavBar/NavBar.jsx';
 
-import './styles.css'
+import styles from './resources-page.module.css'
 
 const ResourcesPage = () => {
   return (
-    <div className="threeContainer">
-
+    <div className={styles.threeContainer}>
       <div 
         style={{
           position: 'absolute',

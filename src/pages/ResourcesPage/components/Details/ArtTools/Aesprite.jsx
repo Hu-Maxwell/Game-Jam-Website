@@ -12,7 +12,7 @@ const Aesprite = () => {
           <li className={styles.listItem}>Support for conversion of pixel art to other formats like PNG, GIF, etc through the command line</li>
         </ul>
 
-        <a className="button" href="http://aseprite.org/" target="_blank">
+        <a className={styles.button} href="http://aseprite.org/" target="_blank">
           Learn More!
         </a>
       </div> 

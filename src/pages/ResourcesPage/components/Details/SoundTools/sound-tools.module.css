@@ -1,13 +1,11 @@
 .main {
-  width: 50vw;
-  height: 100%;
-  padding-top: 18vh;
+  margin-top: 10vh;
 }
 
 .container {
   display: flex;
   width: 40vw;
-  height: 25vh;
+  height: 27vh;
   font-size: 21px;
   color: #aaaaaa;
   align-items: center;
@@ -58,7 +56,7 @@
 
 .text_container {
   width: 67%;
-  height: 80%;
+  height: 100%;
 }
 
 .title {

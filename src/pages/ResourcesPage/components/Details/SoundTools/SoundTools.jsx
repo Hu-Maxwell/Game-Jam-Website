@@ -6,7 +6,7 @@ import styles from "./sound-tools.module.css"
 
 const SoundTools = () => {
   return (
-    <main clclassName={styles.main}>
+    <main className={styles.main}>
       <Audacity />
       <Bfxr/>
       <Fmod/>

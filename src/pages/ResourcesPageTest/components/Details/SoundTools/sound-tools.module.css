@@ -18,45 +18,45 @@
   font-family: 'MonroFont';
   margin-right: 1vw;
   text-decoration: none;
-  padding-left: 1vw;
+  padding-left: 2vw;
   margin-bottom: 30px;
   animation: fadeIn 0.8s ease-in forwards;
 }
 
-.aespriteIcon {
+.audacity_icon {
   display: flex;
   width: 22%;
   height: 16vh;
-  background-image: url('@/assets/resources/aesprite.png');
+  background-image: url('@/assets/resources/audacity.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 2vw;
 }
 
-.procreateIcon {
+.bfxr_icon {
   display: flex;
-  width: 25%;
-  height: 20vh;
-  background-image: url('@/assets/resources/procreate.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 1vw;
-}
-
-.blenderIcon {
-  display: flex;
-  width: 25%;
-  height: 16vh;
-  background-image: url('@/assets/resources/blender.png');
+  width: 23%;
+  height: 17vh;
+  background-image: url('@/assets/resources/bfxr.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 2vw;
 }
 
-.textContainer {
+.fmod_icon {
+  display: flex;
+  width: 24%;
+  height: 9vh;
+  background-image: url('@/assets/resources/fmod.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 2vw;
+}
+
+.text_container {
   width: 67%;
   height: 80%;
 }
@@ -69,14 +69,14 @@
   margin-bottom: 2px;
 }
 
-.listItem {
+.list_item {
   margin-bottom: 5px;
   font-size: 18px;
 }
 
-.blenderListItem {
+.fmod_list_item {
+  font-size: 16.5px;
   margin-bottom: 5px;
-  font-size: 20px;
 }
 
 .button {

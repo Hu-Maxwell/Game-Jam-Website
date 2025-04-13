@@ -1,27 +1,23 @@
-import "./styles.css"
+import styles from './game-engines.module.css';
 
-const Unity_Details = () => {
+const Unity = () => {
+  return (
+    <main className={styles.container}>
+      <div className={styles.unity_icon} />
+      <div className={styles.text_container}>
+        <h1 className={styles.title}>Unity Game Engine</h1>
+        <ul className={styles.list}>
+          <li className={styles.list_item}>A large ecosystem of Assets Ready to be used</li>
+          <li className={styles.list_item}>Support for Terrain modeling and advanced Rendering Techniques</li>
+          <li className={styles.list_item}>User Friendly interface</li>
+        </ul>
 
-    return (
-        <main className="container">
-            <div className="unity_icon"/>
-            <div className="text_container">   
-                <h1 className="title">Unity Game Engine</h1>
-                <ul className="list">
-                    <li className="list_item">A large ecosystem of Assets Ready to be used</li>
-                    <li className="list_item">Support for Terrain modeling and advanced Rendering Techniques</li>
-                    <li className="list_item">User Friendly interface</li>
-                </ul>
-                <a 
-                    className="godot_button" 
-                    href="https://unity.com/products/unity-engine#engine-features" 
-                    target="_blank"
-                >
-                    Learn More!
-                </a>
-            </div> 
-        </main>
-    )
-}
+        <a className={styles.godot_button} href="https://unity.com/products/unity-engine#engine-features" target="_blank" rel="noreferrer">
+          Learn More!
+        </a>
+      </div>
+    </main>
+  );
+};
 
-export default Unity_Details
+export default Unity;

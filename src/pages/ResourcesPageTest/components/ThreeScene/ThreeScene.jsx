@@ -10,8 +10,8 @@ import Hammer from '../Models/Hammer'
 import Shield from '../Models/Shield';
 
 import ArtTools from '../Details/ArtTools/ArtTools';
-import GameEngines from '../Details/GameEngines/display_container';
-import SoundTools from '../Details/SoundTools/display_container';
+import GameEngines from '../Details/GameEngines/GameEngines';
+import SoundTools from '../Details/SoundTools/SoundTools';
 
 import PixelShader from "../../../HomePage/components/PixelShader/PixelShader"
 import { useSceneLogic } from './../../hooks/useSceneLogic';

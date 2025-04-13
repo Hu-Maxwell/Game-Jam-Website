@@ -41,30 +41,12 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
     }
   }
 
-  // tower
-  if (bestIndex == 0) {
-    bestColor = vec3(0.36, 0.28, 0.22);
-  }
-  // tower but darker
-  if (bestIndex == 1) {
-    bestColor = vec3(0.25, 0.20, 0.16);
-  }
-  // hand
-  if (bestIndex == 2) {
-    bestColor = vec3(0.45, 0.52, 0.60);
-  }
-  // clock texture numbers 
-  if (bestIndex == 3) {
-    bestColor = vec3(0.30, 0.33, 0.36);
-  }
-  // clock texture bg
-  if (bestIndex == 4) { 
-    bestColor = vec3(0.90, 0.84, 0.76);
-  }
-  if (bestIndex == 8) {
-    bestColor = vec3(0, 0, 0);
-  }
-
+  if (bestIndex == 0) bestColor = vec3(0.36, 0.28, 0.22);  // tower
+  if (bestIndex == 1) bestColor = vec3(0.25, 0.20, 0.16);  // tower but darker
+  if (bestIndex == 2) bestColor = vec3(0.45, 0.52, 0.60);  // hand
+  if (bestIndex == 3) bestColor = vec3(0.30, 0.33, 0.36);  // clock texture numbers 
+  if (bestIndex == 4) bestColor = vec3(0.90, 0.84, 0.76);  // clock texture bg
+  if (bestIndex == 8) bestColor = vec3(0, 0, 0);           // clock tower shadows
   // 5 - sun, 6 - moon, 7 - black
 
   float edgeStrength = 2.5; 

@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
-import Camera from './../Primitives/Camera';
+import Camera from '../Primitives/Camera';
 
 import Sword from '../Models/Sword';
 import Hammer from '../Models/Hammer'
@@ -14,7 +14,7 @@ import GameEngines from '../Details/GameEngines/GameEngines';
 import SoundTools from '../Details/SoundTools/SoundTools';
 
 import PixelShader from "../../../HomePage/components/PixelShader/PixelShader"
-import { useSceneLogic } from './../../hooks/useSceneLogic';
+import { useSceneLogic } from '../../hooks/useSceneLogic';
 
 import styles from "./three-scene.module.css";
 

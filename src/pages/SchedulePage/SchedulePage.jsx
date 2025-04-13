@@ -1,18 +1,19 @@
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
-import FullPizza from "./FullPizza";
-
 import styles from "./schedule-page.module.css";
+
+import ThreeScene from "./ThreeScene/ThreeScene";
+import NavBar from "@/components/NavBar/NavBar";
 
 const SchedulePage = () => {
     return (
-        <div className={styles.page}>
-            <NavBar />
-            <main>
-                <FullPizza />
-            </main>
-            <Footer />
+      <>
+        <div className={styles.navBar}>
+          <NavBar />
         </div>
+
+        <div className="threeContainer">
+          <ThreeScene className="threeScene"/>
+        </div>
+      </>
     );
 };
 

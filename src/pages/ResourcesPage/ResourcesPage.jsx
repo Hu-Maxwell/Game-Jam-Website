@@ -1,12 +1,14 @@
 import React from 'react';
+
 import ThreeScene from './components/ThreeScene/ThreeScene.jsx';
 import NavBar from '../../components/NavBar/NavBar.jsx';
 
 import './styles.css'
 
-const ResourcesPageTest = () => {
+const ResourcesPage = () => {
   return (
     <div className="threeContainer">
+
       <div 
         style={{
           position: 'absolute',
@@ -20,9 +22,10 @@ const ResourcesPageTest = () => {
       >
         <NavBar />
       </div>
+
       <ThreeScene/>
     </div>
   );
 };
 
-export default ResourcesPageTest;
+export default ResourcesPage;

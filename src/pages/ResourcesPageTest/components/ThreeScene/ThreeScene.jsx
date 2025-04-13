@@ -1,23 +1,21 @@
-import { useState, Suspense, useEffect, useRef, useMemo } from 'react';
-
-import { Object3D } from 'three';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { EffectComposer } from '@react-three/postprocessing';
-import { useSpring, config } from '@react-spring/three'; 
 
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
+import Camera from './../Primitives/Camera';
+
 import Sword from '../Models/Sword';
-import Camera from '../../../HomePage/components/Camera/Camera';
 import Hammer from '../Models/Hammer'
-import ArtTools from '../ArtTools/ArtTools';
-import GameEngines from '../GameEngines/display_container';
-import SoundTools from '../SoundTools/display_container';
-import Shield from '../Models/shield';
+import Shield from '../Models/Shield';
+
+import ArtTools from '../Details/ArtTools/ArtTools';
+import GameEngines from '../Details/GameEngines/display_container';
+import SoundTools from '../Details/SoundTools/display_container';
 
 import PixelShader from "../../../HomePage/components/PixelShader/PixelShader"
-
 import { useSceneLogic } from './../../hooks/useSceneLogic';
+
 import styles from "./three-scene.module.css";
 
 const ThreeScene = () => {

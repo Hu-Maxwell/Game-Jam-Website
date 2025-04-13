@@ -11,8 +11,6 @@ import PixelShader from "./PixelShader/PixelShader";
 
 import Slider from "./Slider/Slider";
 
-import styles from './three-scene.module.css';
-
 const ThreeScene = ({ props }) => {
   const towerRef = useRef(null);
   
@@ -38,12 +36,11 @@ const ThreeScene = ({ props }) => {
           castShadow
         />
 
-        {/* <EffectComposer> 
-          <PixelShader />
-        </EffectComposer> */}
+        <EffectComposer> 
+          <PixelShader time={time} />
+        </EffectComposer> 
 
         <Suspense fallback={null}> 
-          <Walls />
           <Backdrop time={time} />
           <Tower ref={towerRef} time={time} />
         </Suspense>

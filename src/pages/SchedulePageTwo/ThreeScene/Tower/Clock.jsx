@@ -4,6 +4,7 @@ import * as THREE from 'three';
 
 const Clock = ({ time }) => {
   const clockTexture = useLoader(THREE.TextureLoader, '/schedule/clock.png');
+  clockTexture.encoding = THREE.sRGBEncoding;
 
   const hourHandRef = useRef();
   const minuteHandRef = useRef();
@@ -35,14 +36,14 @@ const Clock = ({ time }) => {
       {/* clock */}
       <mesh>
         <circleGeometry args={[6  , 32]} />
-        <meshStandardMaterial map={clockTexture} side={THREE.DoubleSide} />
+        <meshBasicMaterial map={clockTexture} side={THREE.DoubleSide} />
       </mesh>
 
       {/* hour hand */}
       <group ref={hourHandRef}>
         <mesh position={[0, 2, 0]}>
           <boxGeometry args={[0.4, 4, 0.1]} />
-          <meshStandardMaterial color="green" />
+          <meshBasicMaterial color="blue" />
         </mesh>
       </group>
 
@@ -50,7 +51,7 @@ const Clock = ({ time }) => {
       <group ref={minuteHandRef}>
         <mesh position={[0, 2.5, 0]}>
           <boxGeometry args={[0.4, 5, 0.05]} />
-          <meshStandardMaterial color="blue" />
+          <meshBasicMaterial color="blue" />
         </mesh>
       </group>
     </group>

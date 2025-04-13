@@ -1,6 +1,4 @@
-add text at base of clock tower
-update sky 
-update shader's colors
+UPDATE SHADER COLORS!!
 update the shader so that it slowly fades out the sides of the screen 
 
 schedule:

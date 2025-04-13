@@ -2,7 +2,12 @@ uniform sampler2D tDiffuse;
 uniform vec2 resolution;
 uniform float pixelSize;
 uniform int paletteLength;
-uniform vec3 palette[6];
+uniform vec3 palette[9];
+uniform vec3 skyboxColor;
+
+vec3 srgbToLinear(vec3 c) {
+  return pow(c, vec3(2.2));
+}
 
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   // take the current pixel and convert it into the bigger pixel's index (which is block)
@@ -10,7 +15,17 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
   vec2 centerCoord = (blockIndex * pixelSize + pixelSize * 0.5) / resolution; // takes the center coords of the block
   vec4 sampledColor = texture2D(tDiffuse, centerCoord); // texture2D(pointer to image, coords)
   
-  vec3 currentColor = sampledColor.rgb; 
+  vec3 currentColor = sampledColor.rgb;
+
+  // for skybox only
+  const vec3 srgbBackdropPurple = vec3(0.533333, 0.015686, 0.517647);
+  vec3 backdropPurple = srgbToLinear(srgbBackdropPurple);
+  
+  if(distance(currentColor, backdropPurple) < 0.05) {
+    outputColor = vec4(skyboxColor, sampledColor.a);
+    return;
+  }
+
   float bestDistance = 1e10;
   vec3 bestColor = currentColor;
   int bestIndex = -1;
@@ -18,6 +33,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
   // calculates the color from palette closest to the current pixel's color 
   for (int i = 0; i < paletteLength; i++) {
     float d = distance(currentColor, palette[i]); 
+
     if (d < bestDistance) {
       bestDistance = d;
       bestColor = palette[i];
@@ -25,33 +41,39 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
     }
   }
 
-  // hammer
+  // tower
   if (bestIndex == 0) {
-    bestColor = vec3(0.243, 0.149, 0.078);
+    bestColor = vec3(0.36, 0.28, 0.22);
   }
-
-  // sword
+  // tower but darker
   if (bestIndex == 1) {
-    bestColor = vec3(0.827, 0.612, 0.416); 
+    bestColor = vec3(0.25, 0.20, 0.16);
   }
-
-  // anvil
+  // hand
   if (bestIndex == 2) {
-    bestColor = vec3(0.243, 0.149, 0.078);
+    bestColor = vec3(0.45, 0.52, 0.60);
+  }
+  // clock texture numbers 
+  if (bestIndex == 3) {
+    bestColor = vec3(0.30, 0.33, 0.36);
+  }
+  // clock texture bg
+  if (bestIndex == 4) { 
+    bestColor = vec3(0.90, 0.84, 0.76);
+  }
+  if (bestIndex == 8) {
+    bestColor = vec3(0, 0, 0);
   }
 
-  // 4 = white
-  if (bestIndex == 4) {
-    bestColor = vec3(1.0, 0.5686, 0.0);
-  }
+  // 5 - sun, 6 - moon, 7 - black
 
-  // text
-  if (bestIndex == 5) {
-    bestColor = vec3(0.53333333333, 0.34509803921, 0.02745098039);
-  }
+  float edgeStrength = 2.5; 
+  float centerFalloff = smoothstep(0.0, 0.5, abs(uv.x - 0.5) * edgeStrength);
+  float darkness = 1.0 - centerFalloff;
 
+  // apply darkness
+  bestColor *= darkness;
 
 
-  
   outputColor = vec4(bestColor, sampledColor.a);
 }

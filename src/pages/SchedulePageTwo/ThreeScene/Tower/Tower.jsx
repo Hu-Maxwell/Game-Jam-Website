@@ -15,7 +15,7 @@ const ClockTower = forwardRef(({ time, schedule, ...props }, ref) => {
       <Base hour={time} />
 
       {/* head */}
-      <mesh position={[0, 24.5, 4]}>
+      <mesh position={[0, 24.5, 4.5]}>
         <boxGeometry args={[13, 13, 13]} />
         <meshStandardMaterial map={texture} />
       </mesh>

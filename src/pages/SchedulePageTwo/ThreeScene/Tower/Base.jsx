@@ -19,7 +19,7 @@ const Base = ({ hour }) => {
 
   return (
     <>
-      <mesh position={[0, 13, 5]}>
+      <mesh position={[0, 13, 5.5]}>
         <boxGeometry args={[13, 20, 13]} />
         <meshStandardMaterial map={texture} />
       </mesh>

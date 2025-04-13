@@ -16,33 +16,34 @@ const Backdrop = ({ time }) => {
     y: sunAltitude * radius + verticalOffset,
     z: zPosition + 30,
   };
-
+  
   const moonPosition = {
     x: Math.cos(moonAngle) * radius,
     y: moonAltitude * radius + verticalOffset,
     z: zPosition + 30,
   };
 
-  const skyColor = useMemo(() => {
-    const nightColor = new THREE.Color("#0D1B2A");
-    const sunriseColor = new THREE.Color("#FFA07A");
-    const dayColor = new THREE.Color("#87CEEB");
-    const color = new THREE.Color();
+  // const skyColor = useMemo(() => {
+  //   const nightColor = new THREE.Color("#0D1B2A").convertSRGBToLinear();
+  //   const sunriseColor = new THREE.Color("#FFA07A").convertSRGBToLinear();
+  //   const dayColor = new THREE.Color("#87CEEB").convertSRGBToLinear();
+  //   const color = new THREE.Color();
 
-    if (sunAltitude >= 0) {
-      color.copy(sunriseColor).lerp(dayColor, sunAltitude);
-    } else {
-      color.copy(nightColor).lerp(sunriseColor, sunAltitude + 1);
-    }
-    return `#${color.getHexString()}`;
-  }, [sunAltitude]);
+  //   if (sunAltitude >= 0) 
+  //     color.copy(sunriseColor).lerp(dayColor, sunAltitude);
+  //   else 
+  //     color.copy(nightColor).lerp(sunriseColor, sunAltitude + 1);
+
+  //   color.convertLinearToSRGB();
+  //   return `#${color.getHexString()}`;
+  // }, [sunAltitude]);
 
   return (
     <>
       {/* bg */}
       <mesh position={[0, 0, zPosition + 150]} rotation={[0, Math.PI, 0]}>
-        <planeGeometry args={[700, 700]} />
-        <meshBasicMaterial color={skyColor} side={THREE.DoubleSide} />
+        <planeGeometry args={[2500, 2500]} />
+        <meshBasicMaterial color="purple" side={THREE.DoubleSide} />
       </mesh>
 
       {/* sun */}

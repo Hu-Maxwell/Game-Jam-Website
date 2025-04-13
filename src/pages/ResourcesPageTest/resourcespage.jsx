@@ -21,8 +21,8 @@ const ResourcesPageTest = () => {
       >
         <NavBar />
       </div>
-      <ThreeScene className="threeScene"/>
-      <div 
+      <ThreeScene/>
+      {/*<div 
         style={{
           position: 'absolute',
           bottom: -200,
@@ -34,7 +34,7 @@ const ResourcesPageTest = () => {
         }}
       >
         <Footer />
-      </div>
+      </div>*/}
     </div>
   );
 };

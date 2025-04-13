@@ -1,9 +1,7 @@
 .threeContainer {
     background-color: #222; /* Example: Dark grey */
-    background-image: url("../../assets/background/background.png");
  }
  
 .threeScene {
     width: 100vw;
-    height: 1040px
 }

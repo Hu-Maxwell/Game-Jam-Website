@@ -1,30 +1,25 @@
-import { useState, useRef, useEffect, forwardRef } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-
 import TextureFilter from '../../../HomePage/components/TextureFilter/TextureFilter';
 
-const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
-  const { scene } = useGLTF('/home/hammer/scene.gltf');
-  const [loaded, setLoaded] = useState(false);
 
-  const hammerRef = useRef();
+const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
+  const { scene } = useGLTF('/home/hammer/scene.gltf');
+  const [loaded, setLoaded] = useState(false); 
 
   const palette = [
-    [255, 0, 0], 
+    [0, 255, 0], 
   ];
 
   useEffect(() => {
     if (loaded) return;
 
-    const processedMaterials = new Set();
-
     scene.traverse((child) => {
       if (child.isMesh) {
+        child.material = child.material.clone();
         const mat = child.material;
-        if (!processedMaterials.has(mat)) {
-          TextureFilter(mat, palette);
-          processedMaterials.add(mat);
-        }
+
+        TextureFilter(mat, palette);
 
         mat.envMap = null;
         mat.envMapIntensity = 0;
@@ -38,15 +33,7 @@ const Hammer = forwardRef(({ onLoad, hammerClicked,...props }, ref) => {
     onLoad();
   }, [loaded, onLoad, scene])
 
-
-  return (
-    <>
-      <primitive 
-        object={scene} 
-        ref={hammerRef} {...props} 
-       />
-    </>
-  );
+  return <primitive object={scene} ref={ref} {...props} />
 });
 
 export default Hammer;

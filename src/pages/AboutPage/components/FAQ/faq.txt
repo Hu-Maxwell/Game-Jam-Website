@@ -1,0 +1,29 @@
+Where will this take place?
+  In-person, at SSB in rooms 160, 130, and 120. The opening ceremony will take place at 8PM in 160.
+  
+What can we use?
+  Anything - Unity, Godot, Unreal, GameMaker, etc. - as long as we can play it standalone as an exe.
+
+Should I know how to code?
+  No! A team can make do with less than 4 developers, and we're usually short on roles like music, SFX, and artists in general. 
+  So no, you don't need to code as long as you can contribute something to your team's game.
+  
+Do I need a team beforehand?
+  Nope. You can bring friends if you want, but we will have a team mixer on the opening ceremony to get you to 
+  form teams with other participants.
+
+What will we be doing?
+  We'll have a team mixer, team presentations throughout the jam including a pitch meeting, and a lot of time 
+  alongside our knowledgeable officers to develop your game in SSB.
+
+Will there be food?
+  Yes! We'll be serving pizza and sandwiches the whole weekend. Also cookies and snacks!
+
+Where do we submit?
+  You will submit your games and set up a page at ["https://itch.io/jam/uc-merced-gdc-game-jam-2025"]itch.io
+ 
+Prizes?
+  Yep! For all 4 team members, for games up to 3rd place.
+
+OK...What are the prizes?
+  :)

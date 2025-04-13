@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router"
 import Homepage from "./pages/HomePage/HomePage"
-import ContactPage from "./pages/ContactPage/ContactPage"
 import ResourcesPage from "./pages/ResourcesPage/ResourcesPage"
 import SchedulePage from "./pages/SchedulePage/SchedulePage"
 import SchedulePageTwo from "./pages/SchedulePageTwo/SchedulePage"
@@ -13,7 +12,6 @@ function WebsiteRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Homepage/>}/>
-            <Route path="/contact" element={<ContactPage/>} />
             <Route path="/about" element={<AboutPage/>} />
             <Route path="/resources" element={<ResourcesPage/>}/>
             <Route path="/schedule" element={<SchedulePageTwo/>} />

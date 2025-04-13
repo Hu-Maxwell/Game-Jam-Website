@@ -9,7 +9,6 @@ const NavBar = () => {
             <nav className={styles.navbar}>
                 <a className={styles.navbutton} href="/">Home</a>
                 <a className={styles.navbutton} href="/about">About</a>
-                <a className={styles.navbutton} href="/contact">Contact</a>
                 <a className={styles.navbutton} href="/schedule">Schedule</a>
                 <a className={styles.navbutton} href="/resources">Resources</a>
                 <a className={styles.navbutton} href="https://itch.io/jam/uc-merced-gdc-game-jam-2025" rel="noopener noreferrer">Itch.io</a>

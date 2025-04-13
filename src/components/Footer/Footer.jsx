@@ -43,7 +43,7 @@ const Footer = () => {
                             <a  
                                 href="https://ucmerced.presence.io/organization/game-development-club " 
                                 className={styles.social_icon}
-                                target="_blank"
+                                
                             >
                                 <img className={styles.pixel_icon} src={rufusIcon}/>
                             </a>

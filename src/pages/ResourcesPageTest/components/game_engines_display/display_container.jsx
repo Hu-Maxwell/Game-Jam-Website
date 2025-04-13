@@ -3,30 +3,17 @@ import unityicon from '@/assets/resources/unity.png'
 import godoticon from '@/assets/resources/godot.png'
 import Godot_SVGTextureMesh from './godot';
 import Unity_SVGTextureMesh from './unity';
+import "./styles.css"
+import Godot_Details from './godot';
+import Unity_Details from './unity';
 
 const Game_Engines_Display_Container = () => {
 
     return (
-        <>
-            <Godot_SVGTextureMesh
-                svgUrl={pixelButtonSVG} 
-                iconUrl={godoticon}
-                title="Godot Game Engine"
-                position={[8, 40, -5]}
-                rotation={[0, Math.PI, 0]}
-                scale={[10, 10, 1]}
-            />
-
-            <Unity_SVGTextureMesh
-                svgUrl={pixelButtonSVG}
-                iconUrl={unityicon}
-                title="Unity Game Engine"
-                position={[8, 25, -5]}
-                rotation={[0, Math.PI, 0]}
-                scale={[10, 10, 1]}
-            />
-            
-        </>
+        <div className="main">
+            <Godot_Details />
+            <Unity_Details/>
+        </div>
     )
 }
 

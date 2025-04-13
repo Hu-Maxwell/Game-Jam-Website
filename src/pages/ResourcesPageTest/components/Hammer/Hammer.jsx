@@ -1,39 +1,52 @@
-import { useState, useEffect, forwardRef } from 'react';
+import { useState, useEffect, forwardRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { animated } from '@react-spring/three';
 import TextureFilter from '../../../HomePage/components/TextureFilter/TextureFilter';
 
 
-const Hammer = forwardRef(({ onLoad, ...props }, ref) => {
+const Hammer = forwardRef(({ onLoad, onClick, ...props }, ref) => {
   const { scene } = useGLTF('/home/hammer/scene.gltf');
-  const [loaded, setLoaded] = useState(false); 
 
-  const palette = [
-    [0, 255, 0], 
-  ];
+  const palette = useMemo(() => [ [0, 255, 0], ], []);
 
-  useEffect(() => {
-    if (loaded) return;
+  const processedScene = useMemo(() => {
+    if (!scene) return null; // Guard clause
 
-    scene.traverse((child) => {
+    console.log("Processing Hammer Scene in useMemo..."); // Debug log
+
+    const scenes = scene.clone(); // Clone before modifying
+
+    scenes.traverse((child) => {
       if (child.isMesh) {
         child.material = child.material.clone();
         const mat = child.material;
-
         TextureFilter(mat, palette);
-
-        mat.envMap = null;
-        mat.envMapIntensity = 0;
-        mat.reflectivity = 0;
-        mat.roughness = 1;
-        mat.metalness = 0;
       }
     });
 
-    setLoaded(true);
-    onLoad();
-  }, [loaded, onLoad, scene])
+    return scenes;
 
-  return <primitive object={scene} ref={ref} {...props} />
+  }, [scene, palette])
+
+  useEffect(() => {
+    if (processedScene && onLoad) {
+       console.log("Hammer processedScene ready, calling onLoad");
+       onLoad();
+    }
+  }, [processedScene, onLoad]);
+
+  if (!processedScene) {
+    return null;
+  }
+
+  return (
+    <animated.group ref={ref} {...props} onClick={onClick} dispose={null}>
+      <primitive object={scene} />
+    </animated.group>
+  )
 });
+
+useGLTF.preload('/home/hammer/scene.gltf');
+
 
 export default Hammer;

@@ -22,7 +22,8 @@ const palette_ = [
   srgbColor(230, 213, 80),      // 5. yellow - sun
   srgbColor(216, 216, 216),     // 6. grey - moon
   srgbColor(0, 0, 0),           // 7. black
-  srgbColor(99, 0, 0)           // 8. shadows on clock tower
+  srgbColor(99, 0, 0),          // 8. dark dark red - shadows on clock tower
+  srgbColor(247, 40, 228)       // 9. magenta - text 
 ];
 
 const PixelationEffect = ({pixelSize = pixelSize_, palette = palette_, time}) => {

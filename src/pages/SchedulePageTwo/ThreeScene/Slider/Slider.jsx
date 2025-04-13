@@ -27,7 +27,6 @@ const Slider = ({time, setTime}) => {
   <div className={styles.sliderContainer}>
     <div className={styles.scheduleText}>
       {/* change this text to: X hours until the current time selected */}
-      wehhh 
     </div>
 
     <div className={styles.sliderRow}>

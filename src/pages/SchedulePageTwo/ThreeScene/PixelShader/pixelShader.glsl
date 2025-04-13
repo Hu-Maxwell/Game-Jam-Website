@@ -2,7 +2,7 @@ uniform sampler2D tDiffuse;
 uniform vec2 resolution;
 uniform float pixelSize;
 uniform int paletteLength;
-uniform vec3 palette[9];
+uniform vec3 palette[10];
 uniform vec3 skyboxColor;
 
 vec3 srgbToLinear(vec3 c) {
@@ -47,6 +47,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
   if (bestIndex == 3) bestColor = vec3(0.30, 0.33, 0.36);  // clock texture numbers 
   if (bestIndex == 4) bestColor = vec3(0.90, 0.84, 0.76);  // clock texture bg
   if (bestIndex == 8) bestColor = vec3(0, 0, 0);           // clock tower shadows
+  if (bestIndex == 9) bestColor = vec3(0.74, 0.86, 1.0);   // text
   // 5 - sun, 6 - moon, 7 - black
 
   float edgeStrength = 2.5; 
